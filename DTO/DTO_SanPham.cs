@@ -10,7 +10,7 @@ namespace DTO
     {
         private string MaSP;
         private string TenSP;
-        private string ThuongHieuSX;
+        private string MaTH;
         private string KichThuoc;
         private string ManHinh;
         private int SoLuong;
@@ -28,6 +28,6 @@ namespace DTO
         public double DonGiaBan1 { get => DonGiaBan; set => DonGiaBan = value; }
         public string GhiChu1 { get => GhiChu; set => GhiChu = value; }
         public string HinhAnh1 { get => HinhAnh; set => HinhAnh = value; }
-        public string ThuongHieuSX1 { get => ThuongHieuSX; set => ThuongHieuSX = value; }
+        public string MaTH1 { get => MaTH; set => MaTH = value; }
     }
 }

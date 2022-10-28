@@ -280,7 +280,7 @@
             // TenKH
             // 
             this.TenKH.DataPropertyName = "TenKH";
-            this.TenKH.HeaderText = "Tên Kh";
+            this.TenKH.HeaderText = "Tên KH";
             this.TenKH.MinimumWidth = 6;
             this.TenKH.Name = "TenKH";
             this.TenKH.Width = 125;

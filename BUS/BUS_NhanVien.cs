@@ -50,7 +50,7 @@ namespace BUS
 
             dt = HienThiNhanVien();
             dv = dt.DefaultView;
-            dv.RowFilter = "MaNV like '%" + tk + "%' or TenNV like '%" + tk + "%' or GioiTinh like '%" + tk + "%' or DienThoai like '%" + tk + "%' or " +
+            dv.RowFilter = "MaNV like '%" + tk + "%' or TenNV like '%" + tk + "%' or DienThoai like '%" + tk + "%' or " +
                 "DiaChi like '%" + tk + "%'";
             return dv;
         }

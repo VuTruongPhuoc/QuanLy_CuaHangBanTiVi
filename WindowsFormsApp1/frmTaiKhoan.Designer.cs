@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
@@ -55,6 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtMatKhauCu = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,6 +71,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel5);
             this.groupBox1.Controls.Add(this.panel4);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.panel2);
@@ -81,11 +86,40 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin tài khoản";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Controls.Add(this.txtMaNV);
+            this.panel5.Location = new System.Drawing.Point(17, 46);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(453, 54);
+            this.panel5.TabIndex = 2;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 11);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(141, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã nhân viên :";
+            // 
+            // txtMaNV
+            // 
+            this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNV.Location = new System.Drawing.Point(183, 8);
+            this.txtMaNV.Multiline = true;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.ReadOnly = true;
+            this.txtMaNV.Size = new System.Drawing.Size(241, 32);
+            this.txtMaNV.TabIndex = 1;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.txtTenDangNhap);
-            this.panel4.Location = new System.Drawing.Point(17, 267);
+            this.panel4.Location = new System.Drawing.Point(17, 328);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(453, 54);
             this.panel4.TabIndex = 2;
@@ -113,7 +147,7 @@
             // 
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.txtDiaChi);
-            this.panel3.Location = new System.Drawing.Point(17, 187);
+            this.panel3.Location = new System.Drawing.Point(17, 254);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(453, 54);
             this.panel3.TabIndex = 2;
@@ -141,7 +175,7 @@
             // 
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtSDT);
-            this.panel2.Location = new System.Drawing.Point(17, 113);
+            this.panel2.Location = new System.Drawing.Point(17, 187);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(453, 54);
             this.panel2.TabIndex = 2;
@@ -168,18 +202,19 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(137, 372);
+            this.btnCapNhat.Location = new System.Drawing.Point(134, 404);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(140, 41);
             this.btnCapNhat.TabIndex = 3;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtTenNV);
-            this.panel1.Location = new System.Drawing.Point(17, 38);
+            this.panel1.Location = new System.Drawing.Point(17, 113);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(453, 54);
             this.panel1.TabIndex = 1;
@@ -206,7 +241,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(301, 372);
+            this.btnLamMoi.Location = new System.Drawing.Point(292, 404);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(140, 41);
             this.btnLamMoi.TabIndex = 4;
@@ -220,7 +255,7 @@
             this.groupBox2.Controls.Add(this.btnDoiMatKhau);
             this.groupBox2.Controls.Add(this.panel8);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(585, 72);
+            this.groupBox2.Location = new System.Drawing.Point(585, 62);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(504, 466);
             this.groupBox2.TabIndex = 7;
@@ -288,10 +323,11 @@
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiMatKhau.Location = new System.Drawing.Point(188, 287);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(140, 41);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(160, 50);
             this.btnDoiMatKhau.TabIndex = 3;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
+            this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // panel8
             // 
@@ -329,8 +365,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTaiKhoan";
-            this.Text = "frmDangNhap";
+            this.Text = "Thông tin tài khoản";
+            this.Load += new System.EventHandler(this.frmTaiKhoan_Load);
             this.groupBox1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -378,5 +417,8 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMatKhauCu;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMaNV;
     }
 }

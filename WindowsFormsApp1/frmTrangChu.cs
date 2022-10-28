@@ -34,14 +34,14 @@ namespace WindowsFormsApp1
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
+            //if (MessageBox.Show("Bạn chắc chắn muốn đăng xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            //{
                 Form frm = new frmDangNhap();
                 frmDangNhap.taikhoan = null;
                 frmDangNhap.matkhau = null;
                 this.Close();
                 frm.Show();
-            }
+            //}
         }
 
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -73,9 +73,11 @@ namespace WindowsFormsApp1
             frmNhaCungCap.Show();
         }
 
-        private void bánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmDonHang frmBanHang = new frmDonHang();
+            frmBanHang.MdiParent = this;
+            frmBanHang.Show();
         }
     }
 }

@@ -53,9 +53,13 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThuongHieuSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaTH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ManHinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,10 +67,6 @@
             this.DonGiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HinhAnh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnLamMoi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
@@ -304,7 +304,7 @@
             this.dgvSanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
             this.TenSP,
-            this.ThuongHieuSX,
+            this.MaTH,
             this.KichThuoc,
             this.ManHinh,
             this.SoLuong,
@@ -322,6 +322,54 @@
             this.dgvSanPham.TabIndex = 33;
             this.dgvSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellClick);
             // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnThem.Location = new System.Drawing.Point(1071, 82);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(154, 45);
+            this.btnThem.TabIndex = 34;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnSua.Location = new System.Drawing.Point(1071, 167);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(154, 45);
+            this.btnSua.TabIndex = 35;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnXoa.Location = new System.Drawing.Point(1071, 249);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(154, 45);
+            this.btnXoa.TabIndex = 36;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnLamMoi.Location = new System.Drawing.Point(1071, 341);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(154, 45);
+            this.btnLamMoi.TabIndex = 37;
+            this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
+            // 
             // MaSP
             // 
             this.MaSP.DataPropertyName = "MaSP";
@@ -338,13 +386,13 @@
             this.TenSP.Name = "TenSP";
             this.TenSP.Width = 125;
             // 
-            // ThuongHieuSX
+            // MaTH
             // 
-            this.ThuongHieuSX.DataPropertyName = "ThuongHieuSX";
-            this.ThuongHieuSX.HeaderText = "Thương Hiệu";
-            this.ThuongHieuSX.MinimumWidth = 6;
-            this.ThuongHieuSX.Name = "ThuongHieuSX";
-            this.ThuongHieuSX.Width = 125;
+            this.MaTH.DataPropertyName = "MaTH";
+            this.MaTH.HeaderText = "Thương Hiệu";
+            this.MaTH.MinimumWidth = 6;
+            this.MaTH.Name = "MaTH";
+            this.MaTH.Width = 125;
             // 
             // KichThuoc
             // 
@@ -402,54 +450,6 @@
             this.GhiChu.Name = "GhiChu";
             this.GhiChu.Width = 125;
             // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnThem.Location = new System.Drawing.Point(1071, 82);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(154, 45);
-            this.btnThem.TabIndex = 34;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSua.Location = new System.Drawing.Point(1071, 167);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(154, 45);
-            this.btnSua.TabIndex = 35;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnXoa.Location = new System.Drawing.Point(1071, 249);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(154, 45);
-            this.btnXoa.TabIndex = 36;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnLamMoi
-            // 
-            this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnLamMoi.Location = new System.Drawing.Point(1071, 341);
-            this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(154, 45);
-            this.btnLamMoi.TabIndex = 37;
-            this.btnLamMoi.Text = "Làm Mới";
-            this.btnLamMoi.UseVisualStyleBackColor = true;
-            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
-            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,7 +467,7 @@
             this.Controls.Add(this.btnChonAnh);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSanPham";
-            this.Text = "frmQuanLi";
+            this.Text = "Quản Lí Sản Phẩm";
             this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -506,9 +506,13 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvSanPham;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenSP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThuongHieuSX;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaTH;
         private System.Windows.Forms.DataGridViewTextBoxColumn KichThuoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ManHinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
@@ -516,9 +520,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGiaBan;
         private System.Windows.Forms.DataGridViewTextBoxColumn HinhAnh;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnLamMoi;
     }
 }

@@ -86,6 +86,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(248, 27);
             this.txtTaiKhoan.TabIndex = 1;
+            this.txtTaiKhoan.Text = "q";
             // 
             // label1
             // 
@@ -118,6 +119,7 @@
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(248, 27);
             this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.Text = "222";
             // 
             // label2
             // 
@@ -180,6 +182,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmTaiKhoan";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

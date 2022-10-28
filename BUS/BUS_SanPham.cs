@@ -29,7 +29,7 @@ namespace BUS
         }
         public void SuaSanPham(string MaSP, string TenSP, string ThuongHieuSX, string KichThuoc, string ManHinh, int SoLuong, double DonGiaNhap, double DonGiaBan, string HinhAnh, string GhiChu)
         {
-            string sql = "update tSanPham set TenSp = N'" + TenSP + "', ThuongHieuSX = N'" + ThuongHieuSX + "', KichThuoc = N'" + KichThuoc + "'" +
+            string sql = "update tSanPham set TenSP = N'" + TenSP + "', MaTH = N'" + ThuongHieuSX + "', KichThuoc = N'" + KichThuoc + "'" +
                 ",ManHinh = N'" + ManHinh + "', SoLuong = '" + SoLuong + "', DonGiaNhap = '" + DonGiaNhap + "', DonGiaBan = '" + DonGiaBan + "'" +
                 ",HinhAnh = N'" + HinhAnh + "', GhiChu = N'" + GhiChu + "' where MaSP = N'" + MaSP + "'";
             da.DataChange(sql);
@@ -54,7 +54,7 @@ namespace BUS
             //    "or KichThuoc like '%" + tk + "%' or ManHinh like '%" + tk + "%'";
             dt = HienThiSanPham();
             dv = dt.DefaultView;
-            dv.RowFilter = "MaSP like '%" + tk + "%' or TenSP like '%" + tk + "%'or ThuongHieuSX like '%" + tk + "%' " +
+            dv.RowFilter = "MaSP like '%" + tk + "%' or TenSP like '%" + tk + "%'or MaTH like '%" + tk + "%' " +
             "or KichThuoc like '%" + tk + "%' or ManHinh like '%" + tk + "%'";
             return dv;
         }

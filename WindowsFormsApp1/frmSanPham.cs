@@ -16,6 +16,9 @@ namespace WindowsFormsApp1
     {
         BUS.BUS_SanPham bussp = new BUS.BUS_SanPham();
         DTO.DTO_SanPham dtosp = new DTO.DTO_SanPham();
+        BUS.BUS_ThuongHieu bus_th = new BUS_ThuongHieu();
+        Resources.CommonFunction comm = new Resources.CommonFunction();
+
         public frmSanPham()
         {
             InitializeComponent();
@@ -33,18 +36,6 @@ namespace WindowsFormsApp1
             txtDonGiaNhap.Text = "";
             txtDonGiaBan.Text = "";
             txtGhiChu.Text = "";
-        }
-        public void ThemcboThuongHieu()
-        {
-            cboThuongHieuSX.Items.Add("SamSung");
-            cboThuongHieuSX.Items.Add("LG Electronics");
-            cboThuongHieuSX.Items.Add("Sony");
-            cboThuongHieuSX.Items.Add("TCL");
-            cboThuongHieuSX.Items.Add("Skyworth");
-            cboThuongHieuSX.Items.Add("Panasonic");
-            cboThuongHieuSX.Items.Add("Vizio");
-            cboThuongHieuSX.Items.Add("Sanco");
-
         }
         public void ThemcboKichThuoc()
         {
@@ -77,7 +68,7 @@ namespace WindowsFormsApp1
 
         private void frmSanPham_Load(object sender, EventArgs e)
         {
-            ThemcboThuongHieu();
+            comm.FillCombo(bus_th.HienThiTH(), cboThuongHieuSX, "TenTH", "MaTH");
             ThemcboKichThuoc();
             ThemcboManHinh();
             btnSua.Enabled = false;
@@ -86,28 +77,22 @@ namespace WindowsFormsApp1
         }
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                txtMaSP.Text = dgvSanPham.CurrentRow.Cells["MaSP"].Value.ToString();
+                txtTenSP.Text = dgvSanPham.CurrentRow.Cells["TenSP"].Value.ToString();
+                cboThuongHieuSX.SelectedValue = dgvSanPham.CurrentRow.Cells["MaTH"].Value.ToString();
+                cboKichThuoc.SelectedItem = dgvSanPham.CurrentRow.Cells["KichThuoc"].Value.ToString();
+                cboManHinh.SelectedItem = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
+                numUDSoLuong.Value = Convert.ToInt32(dgvSanPham.CurrentRow.Cells["SoLuong"].Value);
+                txtDonGiaNhap.Text = dgvSanPham.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
+                txtDonGiaBan.Text = dgvSanPham.CurrentRow.Cells["DonGiaBan"].Value.ToString();
+                picAnh.Image = Image.FromFile(Application.StartupPath + "\\ImageSP\\" + dgvSanPham.CurrentRow.Cells[8].Value.ToString());
+                txtGhiChu.Text = dgvSanPham.CurrentRow.Cells["GhiChu"].Value.ToString();
+            }
+            catch { }
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            txtMaSP.Text = dgvSanPham.CurrentRow.Cells[0].Value.ToString();
-            txtTenSP.Text = dgvSanPham.CurrentRow.Cells[1].Value.ToString();
-            cboThuongHieuSX.SelectedItem = dgvSanPham.CurrentRow.Cells[2].Value.ToString();
-            cboKichThuoc.SelectedItem = dgvSanPham.CurrentRow.Cells[3].Value.ToString();
-            cboManHinh.SelectedItem = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
-            try
-            {
-                numUDSoLuong.Value = Convert.ToInt32(dgvSanPham.CurrentRow.Cells[5].Value);
-            }
-            catch { }
-
-            txtDonGiaNhap.Text = dgvSanPham.CurrentRow.Cells[6].Value.ToString();
-            txtDonGiaBan.Text = dgvSanPham.CurrentRow.Cells[7].Value.ToString();
-            try
-            {
-                picAnh.Image = Image.FromFile(Application.StartupPath + "\\ImageSP\\" + dgvSanPham.CurrentRow.Cells[8].Value.ToString());
-            }
-            catch { }
-
-            txtGhiChu.Text = dgvSanPham.CurrentRow.Cells[9].Value.ToString();
 
         }
 
@@ -145,7 +130,7 @@ namespace WindowsFormsApp1
             {
                 dtosp.MaSP1 = txtMaSP.Text.Trim();
                 dtosp.TenSP1 = txtTenSP.Text.Trim();
-                dtosp.ThuongHieuSX1 = cboThuongHieuSX.SelectedItem.ToString().Trim();
+                dtosp.MaTH1 = cboThuongHieuSX.SelectedValue.ToString().Trim();
                 dtosp.KichThuoc1 = cboKichThuoc.SelectedItem.ToString().Trim();
                 dtosp.ManHinh1 = cboManHinh.SelectedItem.ToString().Trim();
                 dtosp.SoLuong1 = Convert.ToInt32(numUDSoLuong.Value);
@@ -154,11 +139,14 @@ namespace WindowsFormsApp1
                 dtosp.HinhAnh1 = DuongdanAnh;
                 dtosp.GhiChu1 = txtGhiChu.Text.Trim();
 
-                bussp.ThemSanPham(dtosp.MaSP1, dtosp.TenSP1, dtosp.ThuongHieuSX1, dtosp.KichThuoc1, dtosp.ManHinh1, dtosp.SoLuong1, dtosp.DonGiaNhap1, dtosp.DonGiaBan1, dtosp.HinhAnh1, dtosp.GhiChu1);
+                bussp.ThemSanPham(dtosp.MaSP1, dtosp.TenSP1, dtosp.MaTH1, dtosp.KichThuoc1, dtosp.ManHinh1, dtosp.SoLuong1, dtosp.DonGiaNhap1, dtosp.DonGiaBan1, dtosp.HinhAnh1, dtosp.GhiChu1);
                 MessageBox.Show("Thêm thành công", "Thông báo");
                 dgvSanPham.DataSource = bussp.HienThiSanPham();
             }
-            catch { }
+            catch
+            {
+                MessageBox.Show("Lỗi");
+            }
             LamMoi();
 
         }
@@ -174,7 +162,7 @@ namespace WindowsFormsApp1
             {
                 dtosp.MaSP1 = txtMaSP.Text.Trim();
                 dtosp.TenSP1 = txtTenSP.Text.Trim();
-                dtosp.ThuongHieuSX1 = cboThuongHieuSX.SelectedItem.ToString().Trim();
+                dtosp.MaTH1 = cboThuongHieuSX.SelectedItem.ToString().Trim();
                 dtosp.KichThuoc1 = cboKichThuoc.SelectedItem.ToString().Trim();
                 dtosp.ManHinh1 = cboManHinh.SelectedItem.ToString().Trim();
                 dtosp.SoLuong1 = Convert.ToInt32(numUDSoLuong.Value);
@@ -183,14 +171,13 @@ namespace WindowsFormsApp1
                 dtosp.HinhAnh1 = DuongdanAnh;
                 dtosp.GhiChu1 = txtGhiChu.Text.Trim();
 
-                bussp.SuaSanPham(dtosp.MaSP1, dtosp.TenSP1, dtosp.ThuongHieuSX1, dtosp.KichThuoc1, dtosp.ManHinh1, dtosp.SoLuong1, dtosp.DonGiaNhap1, dtosp.DonGiaBan1, dtosp.HinhAnh1, dtosp.GhiChu1);
+                bussp.SuaSanPham(dtosp.MaSP1, dtosp.TenSP1, dtosp.MaTH1, dtosp.KichThuoc1, dtosp.ManHinh1, dtosp.SoLuong1, dtosp.DonGiaNhap1, dtosp.DonGiaBan1, dtosp.HinhAnh1, dtosp.GhiChu1);
                 MessageBox.Show("Sửa thành công", "Thông báo");
                 dgvSanPham.DataSource = bussp.HienThiSanPham();
                 LamMoi();
             }
             catch { }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try

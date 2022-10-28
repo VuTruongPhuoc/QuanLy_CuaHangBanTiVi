@@ -44,12 +44,12 @@ namespace WindowsFormsApp1
         {
             try
             {
-                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells[0].Value.ToString();
-                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells[1].Value.ToString();
-                dtpNgaySinh.Value = (DateTime)dgvNhanVien.CurrentRow.Cells[3].Value;
-                txtSDT.Text = dgvNhanVien.CurrentRow.Cells[4].Value.ToString();
-                txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells[5].Value.ToString();
-                if (dgvNhanVien.CurrentRow.Cells[2].Value.ToString().Trim() == "1")
+                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
+                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells["TenNV"].Value.ToString();
+                dtpNgaySinh.Value = (DateTime)dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value;
+                txtSDT.Text = dgvNhanVien.CurrentRow.Cells["DienThoai"].Value.ToString();
+                txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"].Value.ToString();
+                if (dgvNhanVien.CurrentRow.Cells["LoaiTaiKhoan"].Value.ToString().Trim() == "0")
                 {
                     rdoNhanVien.Checked = true;
                     rdoQuanTri.Checked = false;
