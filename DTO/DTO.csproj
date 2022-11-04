@@ -43,12 +43,12 @@
   <ItemGroup>
     <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_DangNhap.cs" />
+    <Compile Include="DTO_HangTon.cs" />
     <Compile Include="DTO_HoaDon.cs" />
     <Compile Include="DTO_KhachHang.cs" />
     <Compile Include="DTO_NhaCungCap.cs" />
     <Compile Include="DTO_NhanVien.cs" />
     <Compile Include="DTO_SanPham.cs" />
-    <Compile Include="DTO_TaiKhoan.cs" />
     <Compile Include="DTO_ThuongHieu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

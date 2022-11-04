@@ -92,10 +92,12 @@ namespace WindowsFormsApp1
                 dto_nv.Ngaysinh = dtpNgaySinh.Value.ToString();
                 dto_nv.Sdt = txtSDT.Text.Trim();
                 dto_nv.Diachi = txtDiaChi.Text.Trim();
+                dto_nv.Tentk = txtTaiKhoan.Text.Trim();
+                dto_nv.Mk = txtMatKhau.Text.Trim();
                 dto_nv.Chucvu = (rdoNhanVien.Checked ? "0" : "1");
 
 
-                bus_nv.ThemNhanVien(dto_nv.Manv, dto_nv.Tennv, dto_nv.Ngaysinh, dto_nv.Sdt, dto_nv.Diachi, Int16.Parse(dto_nv.Chucvu));
+                bus_nv.ThemNhanVien(dto_nv.Manv, dto_nv.Tennv, dto_nv.Ngaysinh, dto_nv.Sdt, dto_nv.Diachi, dto_nv.Tentk, dto_nv.Mk, Int16.Parse(dto_nv.Chucvu));
                 MessageBox.Show("Thêm thành công", "Thông báo");
                 dgvNhanVien.DataSource = bus_nv.HienThiNhanVien();
                 LamMoi();
@@ -116,9 +118,11 @@ namespace WindowsFormsApp1
                 dto_nv.Ngaysinh = dtpNgaySinh.Value.ToString();
                 dto_nv.Sdt = txtSDT.Text.Trim();
                 dto_nv.Diachi = txtDiaChi.Text.Trim();
+                dto_nv.Tentk = txtTaiKhoan.Text.Trim();
+                dto_nv.Mk = txtMatKhau.Text.Trim();
                 dto_nv.Chucvu = (rdoNhanVien.Checked ? "0" : "1");
 
-                bus_nv.SuaNhanVien(dto_nv.Manv, dto_nv.Tennv, dto_nv.Ngaysinh, dto_nv.Sdt, dto_nv.Diachi, Int16.Parse(dto_nv.Chucvu));
+                bus_nv.SuaNhanVien(dto_nv.Manv, dto_nv.Tennv, dto_nv.Ngaysinh, dto_nv.Sdt, dto_nv.Diachi, dto_nv.Tentk, dto_nv.Mk, Int16.Parse(dto_nv.Chucvu));
                 MessageBox.Show("Sửa thành công", "Thông báo");
                 dgvNhanVien.DataSource = bus_nv.HienThiNhanVien();
 

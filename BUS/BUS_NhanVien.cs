@@ -20,15 +20,15 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public void ThemNhanVien(string manv, String tennv, string ngaysinh, string dienthoai, string diachi, int LoaiTaiKhoan)
+        public void ThemNhanVien(string manv, String tennv, string ngaysinh, string dienthoai, string diachi,string tk, string mk, int LoaiTaiKhoan)
         {
-            string sql = "insert tNhanVien values(N'" + manv + "', N'" + tennv + "', N'" + ngaysinh + "', N'" + dienthoai + "', N'" + diachi + "', '" + LoaiTaiKhoan + "')";
+            string sql = "insert tNhanVien values(N'" + manv + "', N'" + tennv + "', N'" + ngaysinh + "', N'" + dienthoai + "', N'" + diachi + "',N'" + tk + "',N'" + mk + "', '" + LoaiTaiKhoan + "')";
             da.DataChange(sql);
         }
-        public void SuaNhanVien(string manv, String tennv, string ngaysinh, string dienthoai, string diachi, int LoaiTaiKhoan)
+        public void SuaNhanVien(string manv, String tennv, string ngaysinh, string dienthoai, string diachi, string tk, string mk, int LoaiTaiKhoan)
         {
             string sql = "update tNhanVien set TenNV = N'" + tennv + "',NgaySinh = N'" + ngaysinh + "', DienThoai = N'" + dienthoai + "'" +
-                ", DiaChi = N'" + diachi + "', '" + LoaiTaiKhoan + "' where MaNV = N'" + manv + "'";
+                ", DiaChi = N'" + diachi + "',Username = N'" + tk + "',Password = N'" + mk + "' '" + LoaiTaiKhoan + "' where MaNV = N'" + manv + "'";
             da.DataChange(sql);
         }
         public void XoaNhanVien(string manv)

@@ -10,7 +10,7 @@ namespace DAO
 {
     public class DataAccess
     {
-        string str = "Data Source=DESKTOP-V6QRKTP\\SQL;Initial Catalog=Quanli_CuaHangBanTV;Integrated Security=True";
+        string str = "Data Source=DESKTOP-V6QRKTP\\SQL;Initial Catalog=BTL_CSharp;Integrated Security=True";
         SqlConnection conn = null;
 
         public void Connect()

@@ -162,7 +162,7 @@ namespace WindowsFormsApp1
             {
                 dtosp.MaSP1 = txtMaSP.Text.Trim();
                 dtosp.TenSP1 = txtTenSP.Text.Trim();
-                dtosp.MaTH1 = cboThuongHieuSX.SelectedItem.ToString().Trim();
+                dtosp.MaTH1 = cboThuongHieuSX.SelectedValue.ToString().Trim();
                 dtosp.KichThuoc1 = cboKichThuoc.SelectedItem.ToString().Trim();
                 dtosp.ManHinh1 = cboManHinh.SelectedItem.ToString().Trim();
                 dtosp.SoLuong1 = Convert.ToInt32(numUDSoLuong.Value);
@@ -191,10 +191,6 @@ namespace WindowsFormsApp1
 
 
         }
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            dgvSanPham.DataSource = bussp.TimKiemSanPham(txtTimKiem.Text);
-        }
         string DuongdanAnh;
 
         private void btnChonAnh_Click(object sender, EventArgs e)
@@ -206,6 +202,11 @@ namespace WindowsFormsApp1
                 //cat chuoi ra ten anh
                 DuongdanAnh = dlg.FileName.Substring(dlg.FileName.LastIndexOf('\\') + 1, dlg.FileName.Length - dlg.FileName.LastIndexOf('\\') - 1);
             }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            dgvSanPham.DataSource = bussp.TimKiemSanPham(txtTimKiem.Text);
         }
     }
 }

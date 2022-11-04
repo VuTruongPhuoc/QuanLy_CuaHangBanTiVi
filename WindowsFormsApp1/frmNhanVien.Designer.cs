@@ -50,11 +50,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiTaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thongtin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
@@ -62,6 +68,10 @@
             // 
             // thongtin
             // 
+            this.thongtin.Controls.Add(this.txtMatKhau);
+            this.thongtin.Controls.Add(this.txtTaiKhoan);
+            this.thongtin.Controls.Add(this.label10);
+            this.thongtin.Controls.Add(this.label3);
             this.thongtin.Controls.Add(this.rdoQuanTri);
             this.thongtin.Controls.Add(this.rdoNhanVien);
             this.thongtin.Controls.Add(this.label9);
@@ -78,7 +88,7 @@
             this.thongtin.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.thongtin.Location = new System.Drawing.Point(12, 60);
             this.thongtin.Name = "thongtin";
-            this.thongtin.Size = new System.Drawing.Size(493, 366);
+            this.thongtin.Size = new System.Drawing.Size(493, 475);
             this.thongtin.TabIndex = 2;
             this.thongtin.TabStop = false;
             this.thongtin.Text = "Thông tin nhân viên";
@@ -86,7 +96,7 @@
             // rdoQuanTri
             // 
             this.rdoQuanTri.AutoSize = true;
-            this.rdoQuanTri.Location = new System.Drawing.Point(330, 315);
+            this.rdoQuanTri.Location = new System.Drawing.Point(340, 423);
             this.rdoQuanTri.Name = "rdoQuanTri";
             this.rdoQuanTri.Size = new System.Drawing.Size(101, 26);
             this.rdoQuanTri.TabIndex = 15;
@@ -97,7 +107,7 @@
             // rdoNhanVien
             // 
             this.rdoNhanVien.AutoSize = true;
-            this.rdoNhanVien.Location = new System.Drawing.Point(177, 317);
+            this.rdoNhanVien.Location = new System.Drawing.Point(177, 423);
             this.rdoNhanVien.Name = "rdoNhanVien";
             this.rdoNhanVien.Size = new System.Drawing.Size(113, 26);
             this.rdoNhanVien.TabIndex = 14;
@@ -109,7 +119,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 316);
+            this.label9.Location = new System.Drawing.Point(21, 424);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(101, 25);
             this.label9.TabIndex = 13;
@@ -215,9 +225,9 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(38, 460);
+            this.btnThem.Location = new System.Drawing.Point(513, 463);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(161, 46);
+            this.btnThem.Size = new System.Drawing.Size(154, 46);
             this.btnThem.TabIndex = 19;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -226,9 +236,9 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(292, 460);
+            this.btnSua.Location = new System.Drawing.Point(851, 463);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(161, 46);
+            this.btnSua.Size = new System.Drawing.Size(155, 46);
             this.btnSua.TabIndex = 20;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -237,9 +247,9 @@
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(38, 539);
+            this.btnXoa.Location = new System.Drawing.Point(691, 463);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(161, 46);
+            this.btnXoa.Size = new System.Drawing.Size(145, 46);
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -248,7 +258,7 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLamMoi.Location = new System.Drawing.Point(292, 539);
+            this.btnLamMoi.Location = new System.Drawing.Point(1022, 463);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(161, 46);
             this.btnLamMoi.TabIndex = 22;
@@ -284,14 +294,50 @@
             this.NgaySinh,
             this.DienThoai,
             this.DiaChi,
+            this.Username,
+            this.Password,
             this.LoaiTaiKhoan});
-            this.dgvNhanVien.Location = new System.Drawing.Point(513, 184);
+            this.dgvNhanVien.Location = new System.Drawing.Point(511, 150);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 51;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.Size = new System.Drawing.Size(670, 401);
+            this.dgvNhanVien.Size = new System.Drawing.Size(670, 282);
             this.dgvNhanVien.TabIndex = 25;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(21, 321);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 25);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Tài khoản : ";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 378);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 25);
+            this.label10.TabIndex = 17;
+            this.label10.Text = "Mật khẩu : ";
+            // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.Location = new System.Drawing.Point(177, 321);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(264, 30);
+            this.txtTaiKhoan.TabIndex = 13;
+            // 
+            // txtMatKhau
+            // 
+            this.txtMatKhau.Location = new System.Drawing.Point(177, 373);
+            this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Size = new System.Drawing.Size(264, 30);
+            this.txtMatKhau.TabIndex = 13;
             // 
             // MaNV
             // 
@@ -333,6 +379,22 @@
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Width = 125;
             // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Tài Khoản";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.Width = 125;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Mật Khẩu";
+            this.Password.MinimumWidth = 6;
+            this.Password.Name = "Password";
+            this.Password.Width = 125;
+            // 
             // LoaiTaiKhoan
             // 
             this.LoaiTaiKhoan.DataPropertyName = "LoaiTaiKhoan";
@@ -346,7 +408,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 644);
+            this.ClientSize = new System.Drawing.Size(1246, 644);
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label7);
@@ -391,11 +453,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.DataGridView dgvNhanVien;
+        private System.Windows.Forms.TextBox txtMatKhau;
+        private System.Windows.Forms.TextBox txtTaiKhoan;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNV;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiTaiKhoan;
     }
 }

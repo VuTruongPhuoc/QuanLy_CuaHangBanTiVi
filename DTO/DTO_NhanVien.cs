@@ -13,6 +13,8 @@ namespace DTO
         private string ngaysinh;
         private string sdt;
         private string diachi;
+        private string tentk;
+        private string mk;
         private string chucvu;
 
         public string Manv { get => manv; set => manv = value; }
@@ -21,5 +23,7 @@ namespace DTO
         public string Sdt { get => sdt; set => sdt = value; }
         public string Diachi { get => diachi; set => diachi = value; }
         public string Chucvu { get => chucvu; set => chucvu = value; }
+        public string Tentk { get => tentk; set => tentk = value; }
+        public string Mk { get => mk; set => mk = value; }
     }
 }

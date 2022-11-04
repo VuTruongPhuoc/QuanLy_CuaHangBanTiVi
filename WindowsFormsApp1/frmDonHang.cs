@@ -24,7 +24,6 @@ namespace WindowsFormsApp1
         {
             cboTimKiem.Items.Add("Số HDB");
             cboTimKiem.Items.Add("Mã KH");
-            cboTimKiem.Items.Add("Ngày");
         }
 
         private void guna2Button1_MouseLeave(object sender, EventArgs e)
@@ -36,7 +35,7 @@ namespace WindowsFormsApp1
         {
             AddCombobox();
             gunadtpNgayLap.Format = DateTimePickerFormat.Custom;
-            gunadtpNgayLap.CustomFormat = "dd/mm/yyyy";
+            //gunadtpNgayLap.CustomFormat = "dd/mm/yyyy";
             comm.FillCombo(bus_kh.HienThiKhachHang(), cboMaKH, "TenKH", "MaKH");
             gunadgvDonHang.DataSource = bus_dh.HienThiDonHang();
         }
@@ -54,9 +53,11 @@ namespace WindowsFormsApp1
         {
             DataTable dt = new DataTable();
             dt = bus_dh.HienThiDonHang();
-            if(cboTimKiem.SelectedIndex == 2)
+            if(cboTimKiem.SelectedIndex == 0)
             {
-                DateTime.Parse(dt.Rows[0]["NgayLap"].ToString().Trim());
+                gunadgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);
+            }else if(cboTimKiem.SelectedIndex == 1)
+            {
                 gunadgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);
             }
             
@@ -67,5 +68,6 @@ namespace WindowsFormsApp1
             frmHoaDon frmHoaDon = new frmHoaDon();
             frmHoaDon.Show();
         }
+
     }
 }

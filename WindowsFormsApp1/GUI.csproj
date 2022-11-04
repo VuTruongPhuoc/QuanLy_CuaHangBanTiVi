@@ -55,6 +55,12 @@
     <Compile Include="frmDonHang.Designer.cs">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHangTon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHangTon.Designer.cs">
+      <DependentUpon>frmHangTon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Resources\CommonFunction.cs" />
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHangTon.resx">
+      <DependentUpon>frmHangTon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>

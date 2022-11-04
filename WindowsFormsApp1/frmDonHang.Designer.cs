@@ -87,8 +87,9 @@
             // 
             this.gunadtpNgayLap.BackColor = System.Drawing.Color.Transparent;
             this.gunadtpNgayLap.Checked = true;
+            this.gunadtpNgayLap.CustomFormat = "dd/MM/yyyy";
             this.gunadtpNgayLap.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunadtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.gunadtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.gunadtpNgayLap.Location = new System.Drawing.Point(746, 34);
             this.gunadtpNgayLap.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.gunadtpNgayLap.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -283,9 +284,9 @@
             this.btnTaoDonHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTaoDonHang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnTaoDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnTaoDonHang.Location = new System.Drawing.Point(968, 233);
+            this.btnTaoDonHang.Location = new System.Drawing.Point(957, 241);
             this.btnTaoDonHang.Name = "btnTaoDonHang";
-            this.btnTaoDonHang.Size = new System.Drawing.Size(75, 44);
+            this.btnTaoDonHang.Size = new System.Drawing.Size(86, 36);
             this.btnTaoDonHang.TabIndex = 14;
             this.btnTaoDonHang.Text = "TẠO";
             this.btnTaoDonHang.Click += new System.EventHandler(this.btnTaoDonHang_Click);

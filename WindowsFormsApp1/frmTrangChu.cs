@@ -79,5 +79,12 @@ namespace WindowsFormsApp1
             frmBanHang.MdiParent = this;
             frmBanHang.Show();
         }
+
+        private void hàngTồnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHangTon frmHangTon = new frmHangTon();
+            frmHangTon.MdiParent = this;
+            frmHangTon.Show();
+        }
     }
 }

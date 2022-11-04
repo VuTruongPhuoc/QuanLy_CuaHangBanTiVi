@@ -17,7 +17,6 @@ namespace WindowsFormsApp1
         BUS.BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         frmDangNhap frmDangNhap = new frmDangNhap();
         DTO.DTO_NhanVien dto_nv = new DTO_NhanVien();
-        DTO.DTO_TaiKhoan dto_tk = new DTO.DTO_TaiKhoan();
         public frmTaiKhoan()
         {
             InitializeComponent();
@@ -42,11 +41,10 @@ namespace WindowsFormsApp1
                 dto_nv.Tennv = txtTenNV.Text;
                 dto_nv.Sdt = txtSDT.Text;
                 dto_nv.Diachi = txtDiaChi.Text;
-                dto_tk.Manv = txtMaNV.Text;
-                dto_tk.Username = txtTenDangNhap.Text;
+                dto_nv.Tentk = txtTenDangNhap.Text;
 
-                bus_tk.SuaTaiKhoan(dto_nv.Manv, dto_nv.Tennv, dto_nv.Sdt, dto_nv.Diachi);
-                bus_tk.SuaTenDN(dto_tk.Manv, dto_tk.Username);
+                bus_tk.SuaTaiKhoan(dto_nv.Manv, dto_nv.Tennv, dto_nv.Sdt, dto_nv.Diachi,dto_nv.Tentk);
+  
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thông báo");
             }
             catch
@@ -63,8 +61,8 @@ namespace WindowsFormsApp1
             else if (txtMatKhauCu.Text != frmDangNhap.matkhau) { MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác vui lòng nhập lại");txtTenDangNhap.Focus(); return; }
             try
             {
-                dto_tk.Username = txtMatKhauCu.Text;
-                dto_tk.Password = txtMatKhauMoi.Text;
+                dto_nv.Tentk = txtMatKhauCu.Text;
+                dto_nv.Mk = txtMatKhauMoi.Text;
                 bus_tk.DoiMatKhau(txtTenDangNhap.Text, txtMatKhauMoi.Text);
                 MessageBox.Show("Đổi Mật Khẩu thành công", "Thông báo");
             }

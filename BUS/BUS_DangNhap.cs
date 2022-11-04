@@ -15,7 +15,7 @@ namespace BUS
 
         public bool Check_Login(string UserName, string PassWord)
         {
-            string sql = "select * from tTaiKhoan where Username = N'" + UserName + "' and Password = N'" + PassWord + "'";
+            string sql = "select * from tNhanVien where Username = N'" + UserName + "' and Password = N'" + PassWord + "'";
             DataTable dt = new DataTable();
             dt = da.DataReader(sql);
             if (dt.Rows.Count > 0) return true;
@@ -23,7 +23,7 @@ namespace BUS
         }
         public bool IsAdmin(string UserName, string PassWord)
         {
-            string sql = "select * from tNhanVien,tTaiKhoan where tNhanVien.MaNV = tTaiKhoan.MaNV and Username = N'" + UserName + "' and Password = N'" + PassWord + "' and LoaiTaiKhoan = 1";
+            string sql = "select * from tNhanVien where Username = N'" + UserName + "' and Password = N'" + PassWord + "' and LoaiTaiKhoan = 1";
             DataTable dt = new DataTable();
             dt = da.DataReader(sql);
             if (dt.Rows.Count > 0) return true;
