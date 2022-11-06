@@ -36,6 +36,7 @@ Create Table tChitietHDN
 	SoHDN Nvarchar(10) not null,
 	MaSP Nvarchar(10) not null,
 	SLNhap int,
+	Khuyenmai float,
 	Constraint [PK_tChiTietHDN] PRIMARY KEY CLUSTERED
 (
 	[SoHDN] ASC,
@@ -194,6 +195,8 @@ insert tNhanVien values('nv003', 'vu truong phuoc', '2013-4-5', '0123456789', 'h
 insert tNhanVien values('nv002', 'vuong kien quoc', '2015-6-5', '0987654321', 'ha noi','p','123', 0)
 select * from tNhanVien
 
+insert tNhaCungCap values('NCC002', 'Kha banh', '0111112222', 'ha noi')
+select * from tNhaCungCap
 
 insert tHoaDonBan values('HDB001','nv002', 'KH002', '2022-10-14', 5000000)
 insert tHoaDonBan values('HDB002','nv002', 'KH003', '2022-10-13', 9000000)
@@ -213,12 +216,10 @@ select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien 
 select * from tChiTietHDB
 select * from tHoaDonBan
 
-delete tChiTietHDB where SoHDB = 'hdb145' and MaSP = 'sp002'
-
-delete tHoaDonBan where SoHDB = 'hdb144'
-
 select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham 
                 where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
+
+--cap nhat hoa don ban--
 --cập nhật hàng trong kho sau khi đặt hàng hoặc cập nhập
 create trigger trg_dathang on tChiTietHDB after insert as 
 begin
@@ -243,4 +244,29 @@ begin
 	(select SoLuong from deleted where MaSP = tSanPHam.MaSP)
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
-select * from tHoaDonBan 
+
+--cap nhat hoa don nhat--
+--cập nhật hàng trong kho sau khi nhập hàng hoặc cập nhập
+create trigger trg_nhaphang on tChiTietHDN after insert as 
+begin
+	update tSanPham set SoLuong = SoLuong +
+	(select SLNhap from inserted
+	where MaSP = tSanPham.MaSP) from tSanPham
+	join inserted on tSanPham.MaSP = inserted.MaSP
+end
+--cập nhật hàng trong kho sau khi hủy nhập hàng
+create trigger trg_huynhaphang on tChiTietHDN for delete as
+begin
+	update tSanPham set SoLuong = SoLuong -
+	(select SLNhap from deleted
+	where MaSP = tSanPham.MaSP) from tSanPham
+	join deleted on tSanPham.MaSP = deleted.MaSP
+end
+--cap nhat hàng trong kho sua khi cập nhật nhập hàng
+create trigger trg_CapNhatNhapHang on tChiTietHDN for update as
+begin
+	update tSanPham set SoLuong = SoLuong + 
+	(select SoLuong from inserted where MaSP = tSanPham.MaSP) -
+	(select SoLuong from deleted where MaSP = tSanPHam.MaSP)
+	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
+end

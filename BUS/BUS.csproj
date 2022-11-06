@@ -42,13 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS_CTHD.cs" />
+    <Compile Include="BUS_CTHDN.cs" />
     <Compile Include="BUS_DonHang.cs" />
     <Compile Include="BUS_DangNhap.cs" />
     <Compile Include="BUS_HangTon.cs" />
-    <Compile Include="BUS_HoaDon.cs" />
+    <Compile Include="BUS_HoaDonBan.cs" />
+    <Compile Include="BUS_HoaDonNhap.cs" />
     <Compile Include="BUS_KhachHang.cs" />
     <Compile Include="BUS_NhaCungCap.cs" />
     <Compile Include="BUS_NhanVien.cs" />
+    <Compile Include="BUS_DonNhap.cs" />
     <Compile Include="BUS_SanPham.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="BUS_ThuongHieu.cs" />

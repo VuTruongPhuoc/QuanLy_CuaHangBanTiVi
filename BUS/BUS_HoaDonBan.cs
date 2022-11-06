@@ -9,7 +9,7 @@ using DAO;
 
 namespace BUS
 {
-    public class BUS_HoaDon
+    public class BUS_HoaDonBan
     {
         DAO.DataAccess da = new DAO.DataAccess();
         public DataTable HienThiCTHoaDon(string sohd)
@@ -31,7 +31,7 @@ namespace BUS
         public DataTable HienThiKH()
         {
             DataTable dt = new DataTable();
-            string sql = "select MaKH, MaKH + ' | ' + TenKH as 'TTKH', MaKH from tKhachHang";
+            string sql = "select MaKH, MaKH + ' | ' + TenKH as 'TTKH' from tKhachHang";
             dt = da.DataReader(sql);
             return dt;
         }

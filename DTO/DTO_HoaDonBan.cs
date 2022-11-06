@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_HoaDon
+    public class DTO_HoaDonBan
     {
         private string sohdb, masp, km;
         int slban;

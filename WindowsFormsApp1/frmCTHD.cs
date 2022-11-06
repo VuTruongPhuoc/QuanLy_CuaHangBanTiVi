@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmCTHD : Form
     {
-        BUS_HoaDon bus_hd = new BUS_HoaDon();
+        BUS_HoaDonBan bus_hd = new BUS_HoaDonBan();
         BUS_CTHD bus_ct = new BUS_CTHD();
         public frmCTHD()
         {
@@ -47,8 +47,8 @@ namespace WindowsFormsApp1
                 bus_ct.XoaHD(txtSoHDB.Text);
                 MessageBox.Show("Xóa hóa đơn thành công");
             }
-            
-
+            frmDonHang frmDonHang = new frmDonHang();
+            this.Close();
         }
     }
 }
