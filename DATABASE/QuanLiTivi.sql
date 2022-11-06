@@ -181,11 +181,14 @@ REFERENCES [tThuongHieu] ([MaTH])
 
 insert tThuongHieu values(N'TH001', 'Sonny')
 insert tThuongHieu values(N'TH002', 'SamSung')
+select * from tThuongHieu
 
 insert tSanPham values(N'SP002', 'SamSung oled', 'TH002', '32 inch', 'oled',9 , 32432, 3432243, 'df.png','ol')
-insert tSanPham values(N'SP003', 'sony oled', 'TH001', '39 inch', 'oled',6, 4000000, 9000000, 'd.png','ol')
-insert tSanPham values(N'SP004', 'sony ofd', 'TH001', '56 inch', 'OLED',4, 5000000, 9000000, 'h.png','ol')
+	insert tSanPham values(N'SP003', 'sony oled', 'TH001', '39 inch', 'oled',6, 4000000, 9000000, 'd.png','ol')
+	insert tSanPham values(N'SP004', 'sony ofd', 'TH001', '56 inch', 'OLED',4, 5000000, 9000000, 'h.png','ol')
 insert tSanPham values(N'SP005', 'sony ffd', 'TH001', '48 inch', 'oled', 7, 6000000, 9000000, 'h.png','ol')
+
+select * from tSanPham
 
 insert tNhanVien values('nv003', 'vu truong phuoc', '2013-4-5', '0123456789', 'hai duong','q','222', 1)
 insert tNhanVien values('nv002', 'vuong kien quoc', '2015-6-5', '0987654321', 'ha noi','p','123', 0)
@@ -208,6 +211,11 @@ select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien 
 	group by tSanPham.MaSP, TenSP,SLBan, DonGiaBan
 
 select * from tChiTietHDB
+select * from tHoaDonBan
+
+delete tChiTietHDB where SoHDB = 'hdb145' and MaSP = 'sp002'
+
+delete tHoaDonBan where SoHDB = 'hdb144'
 
 select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham 
                 where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
@@ -235,6 +243,4 @@ begin
 	(select SoLuong from deleted where MaSP = tSanPHam.MaSP)
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
-
-select TenSP,SoLuong from tSanPham,tChiTietHDB
-select sum(SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100) from tChiTietHDB, tSanPham where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
+select * from tHoaDonBan 

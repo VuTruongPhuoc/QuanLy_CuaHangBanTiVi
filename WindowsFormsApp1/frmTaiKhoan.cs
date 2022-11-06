@@ -21,7 +21,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             txtTenDangNhap.Text = frmDangNhap.taikhoan;

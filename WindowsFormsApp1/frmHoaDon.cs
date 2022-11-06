@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             dt = bus_hd.HienThiNV(frmDangNhap.taikhoan);
             txtNV.Text = dt.Rows[0]["MaNV"].ToString().Trim() + " | " + dt.Rows[0]["TenNV"].ToString().Trim();
             comm.FillCombo(bus_hd.HienThiKH(), cboKH, "TTKH", "MaKH");
-
+            dtpThoiGian.Value = DateTime.Now;
             Random rd = new Random();
             txtSoHD.Text = "HDB" + rd.Next(1, 1000).ToString();
             
@@ -44,6 +44,7 @@ namespace WindowsFormsApp1
             {
                 cboSP.Items.Add(dt2.Rows[i][0].ToString() + " | " + dt2.Rows[i][1].ToString() + " | " + dt2.Rows[i][5].ToString());
             }
+            bus_dh.ThemDonHang(txtSoHD.Text, null, null, dtpThoiGian.Value.ToString(), 0);
         }
 
         private void cboSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,7 +53,7 @@ namespace WindowsFormsApp1
             string[] a = str.Split('|');
             string TenSP = a[1].Trim();
             DataTable dt = new DataTable();
-            dt = bus_hd.HienThiSP(TenSP);
+            dt = bus_hd.HienThiDonGia(TenSP);
             txtDonGia.Text = dt.Rows[0]["DonGiaBan"].ToString().Trim();
 
         }
@@ -110,8 +111,8 @@ namespace WindowsFormsApp1
             string TenSP = a[1].Trim();
             DataTable dt = new DataTable();
             dt = bus_hd.HienThiSP(TenSP);
-            //try
-            //{
+            try
+            {
                 dto_hd.Sohdb = txtSoHD.Text.ToString();
                 dto_hd.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
                 dto_hd.Slban = Int16.Parse(txtSoLuong.Text.ToString().Trim());
@@ -119,71 +120,55 @@ namespace WindowsFormsApp1
 
                 bus_hd.ThemCTHD(dto_hd.Sohdb, dto_hd.Masp, dto_hd.Slban, dto_hd.Km);
                 MessageBox.Show("Thêm thành công!");
-                gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(txtSoHD.Text);
+                gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
 
-            //}
-            //catch { MessageBox.Show("Lỗi"); }
-            DataTable dt3 = new DataTable();
-            dt3 = bus_hd.HienThiThanhTien(txtSoHD.Text);
-            lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            String str = cboSP.SelectedItem.ToString();
-            string[] a = str.Split('|');
-            string TenSP = a[1].Trim();
-            DataTable dt = new DataTable();
-            dt = bus_hd.HienThiSP(TenSP);
-            try
-            {
-                dto_hd.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
             }
-            catch { }
-            bus_hd.XoaSP(dto_hd.Masp);
-            MessageBox.Show("Xóa thành công!");
-            gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(txtSoHD.Text);
+            catch { MessageBox.Show("Lỗi"); }
             DataTable dt3 = new DataTable();
             dt3 = bus_hd.HienThiThanhTien(txtSoHD.Text);
             lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
         }
-
-        private void btnSua_Click(object sender, EventArgs e)
+        string masp;
+        private void gunadgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+               masp = gunadgvHoaDon.CurrentRow.Cells["MaSP"].Value.ToString();
+        }
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             try
             {
                 dto_hd.Sohdb = txtSoHD.Text.ToString().Trim();
-                dto_hd.Slban = int.Parse(txtSoLuong.Text.ToString().Trim());
-                dto_hd.Km = txtKhuyenMai.Text.ToString().Trim();
-            }catch { }
-            bus_hd.SuaCTHD(dto_hd.Sohdb, dto_hd.Slban, dto_hd.Km);
-            MessageBox.Show("Sửa thành công!");
-            gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(txtSoHD.Text);
-            DataTable dt3 = new DataTable();
-            dt3 = bus_hd.HienThiThanhTien(txtSoHD.Text);
-            lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
+                dto_hd.Masp = masp.Trim();
+            }
+            catch { }
+            bus_hd.XoaSP(dto_hd.Sohdb, dto_hd.Masp);
+            MessageBox.Show("Xóa thành công!");
+            gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
+            DataTable dt = new DataTable();
+            dt = bus_hd.HienThiThanhTien(txtSoHD.Text);
+            lbThanhTien.Text = dt.Rows[0]["ThanhTien"].ToString().Trim();
         }
+
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            String str = cboKH.SelectedValue.ToString();
+            string[] a = str.Split('|');
+            string makh = a[0].ToString();
             DataTable dt = new DataTable();
             dt = bus_dh.HienThiMaNV(frmDangNhap.taikhoan);
-            DataTable dt1 = new DataTable();
-            dt1 = bus_hd.HienThiKH();
-            try
-            {
+            //try
+            //{
                 dto_dh.Sohdb1 = txtSoHD.Text.ToString().Trim();
                 dto_dh.Manv = dt.Rows[0]["MaNV"].ToString().Trim();
-                dto_dh.Makh = dt1.Rows[0]["MaKH"].ToString().Trim();
-                dto_dh.Ngaylap = dtpThoiGian.Value.ToString().Trim();
+                dto_dh.Makh = makh;
                 dto_dh.Thanhtien = double.Parse(lbThanhTien.Text.ToString().Trim());
-            }
-            catch { }
-            bus_dh.ThemDonHang(dto_dh.Sohdb1, dto_dh.Manv, dto_dh.Makh, dto_dh.Ngaylap, dto_dh.Thanhtien);
-            MessageBox.Show("Thêm đơn hàng thành công!!");
-            frmHoaDon frmHoaDon = new frmHoaDon();
-            frmHoaDon.Close();
+            //}
+            //catch { }
+            bus_dh.SuaDonHang(dto_dh.Sohdb1, dto_dh.Manv, dto_dh.Makh,dto_dh.Thanhtien);
+            MessageBox.Show("Thanh toán thành công!!");
         }
 
+       
     }
 }

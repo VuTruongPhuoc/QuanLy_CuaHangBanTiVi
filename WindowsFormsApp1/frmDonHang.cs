@@ -13,17 +13,14 @@ namespace WindowsFormsApp1
 {
     public partial class frmDonHang : Form
     {
+        public static string sohdb;
         BUS.BUS_DonHang bus_dh = new BUS_DonHang();
-        BUS.BUS_KhachHang bus_kh = new BUS_KhachHang(); 
+        BUS.BUS_KhachHang bus_kh = new BUS_KhachHang();
+        BUS.BUS_HoaDon bus_hd = new BUS_HoaDon();
         Resources.CommonFunction comm = new Resources.CommonFunction();
         public frmDonHang()
         {
             InitializeComponent();
-        }
-        public void AddCombobox()
-        {
-            cboTimKiem.Items.Add("Số HDB");
-            cboTimKiem.Items.Add("Mã KH");
         }
 
         private void guna2Button1_MouseLeave(object sender, EventArgs e)
@@ -33,7 +30,6 @@ namespace WindowsFormsApp1
 
         private void frmDonHang_Load(object sender, EventArgs e)
         {
-            AddCombobox();
             gunadtpNgayLap.Format = DateTimePickerFormat.Custom;
             //gunadtpNgayLap.CustomFormat = "dd/mm/yyyy";
             comm.FillCombo(bus_kh.HienThiKhachHang(), cboMaKH, "TenKH", "MaKH");
@@ -51,16 +47,7 @@ namespace WindowsFormsApp1
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            dt = bus_dh.HienThiDonHang();
-            if(cboTimKiem.SelectedIndex == 0)
-            {
-                gunadgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);
-            }else if(cboTimKiem.SelectedIndex == 1)
-            {
-                gunadgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);
-            }
-            
+            gunadgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);           
         }
 
         private void btnTaoDonHang_Click(object sender, EventArgs e)
@@ -69,5 +56,11 @@ namespace WindowsFormsApp1
             frmHoaDon.Show();
         }
 
+        private void gunadgvDonHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            sohdb = gunadgvDonHang.CurrentRow.Cells["SoHDB"].Value.ToString().Trim();
+            frmCTHD frmCTHD = new frmCTHD();
+            frmCTHD.Show();
+        }
     }
 }

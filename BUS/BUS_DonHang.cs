@@ -23,6 +23,12 @@ namespace BUS
             string sql = "insert tHoaDonBan values(N'" + sohdb + "', N'" + manv + "','" + makh + "','" + ngayban + "', '" + trigia + "')";
             da.DataChange(sql);
         }
+        public void SuaDonHang(string sohdb, string manv, string makh,double trigia)
+        {
+            string sql = "update tHoaDonBan set MaNV = '" + manv + "', MaKH = '" + makh + "', ThanhTien = '" + trigia + "'" +
+                "where SoHDB = '"+sohdb+"'";
+            da.DataChange(sql);
+        }
         public DataTable HienThiMaNV(string user)
         {
             DataTable dt = new DataTable();
