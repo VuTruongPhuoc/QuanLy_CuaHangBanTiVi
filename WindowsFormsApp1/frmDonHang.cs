@@ -53,7 +53,6 @@ namespace WindowsFormsApp1
         {
             sohdb = dgvDonHang.CurrentRow.Cells["SoHDB"].Value.ToString().Trim();
             frmCTHD frmCTHD = new frmCTHD();
-            this.Hide();
             frmCTHD.Show();
         }
 

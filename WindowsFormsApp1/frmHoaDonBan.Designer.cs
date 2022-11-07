@@ -153,7 +153,7 @@
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(476, 36);
             this.dtpThoiGian.TabIndex = 10;
-            this.dtpThoiGian.Value = new System.DateTime(2022, 11, 1, 0, 0, 0, 0);
+            this.dtpThoiGian.Value = new System.DateTime(2022, 6, 10, 0, 0, 0, 0);
             // 
             // txtSoHD
             // 

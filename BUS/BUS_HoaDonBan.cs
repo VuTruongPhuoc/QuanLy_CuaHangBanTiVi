@@ -67,5 +67,14 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
+        public DataTable HienThiThongTinExport(string sohdb)
+        {
+            DataTable dt = new DataTable();
+            string sql = "select SoHDB, TenKH, DiaChi, DienThoai, NgayLap from tHoaDonBan as hdb, tKhachHang as kh " +
+                "where hdb.MaKH = kh.MaKH and " +
+                "SoHDB = '" + sohdb + "'";
+            dt = da.DataReader(sql);
+            return dt;
+        }
     }
 }

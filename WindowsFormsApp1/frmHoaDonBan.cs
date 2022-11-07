@@ -10,6 +10,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
+using System.IO;
+using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;
+using OfficeOpenXml.Style;
 
 namespace WindowsFormsApp1
 {
@@ -36,7 +40,7 @@ namespace WindowsFormsApp1
             comm.FillCombo(bus_hd.HienThiKH(), cboKH, "TTKH", "MaKH");
             dtpThoiGian.Value = DateTime.Now;
             Random rd = new Random();
-            txtSoHD.Text = "HDB" + rd.Next(1, 1000).ToString();
+            txtSoHD.Text = "HDB" + rd.Next(1, 10000).ToString();
             
             DataTable dt2 = new DataTable();
             dt2 = bus_sp.HienThiSanPham();
@@ -146,8 +150,6 @@ namespace WindowsFormsApp1
             dt = bus_hd.HienThiThanhTien(txtSoHD.Text);
             lbThanhTien.Text = dt.Rows[0]["ThanhTien"].ToString().Trim();
         }
-
-
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             String str = cboKH.SelectedValue.ToString();
@@ -164,13 +166,87 @@ namespace WindowsFormsApp1
             }
             catch { }
             bus_dh.SuaDonHang(dto_dh.Sohdb1, dto_dh.Manv, dto_dh.Makh,dto_dh.Thanhtien);
+            //xuat file ra excel
+            if(MessageBox.Show("Bạn có muốn in hóa đơn không ?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Export Excel";
+                saveFileDialog.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ExportExcel(saveFileDialog.FileName);
+                        MessageBox.Show("Xuất file thành công");
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xuất file\r" +ex.Message);
+                    }
+                }
+            }
             MessageBox.Show("Thanh toán thành công!!");
-
             frmDonHang frmDonHang = new frmDonHang();
             this.Close();
-            frmDonHang.frmDonHang_Load(sender, e);
         }
+        private void ExportExcel(string path)
+        {
+            Excel.Application exApp = new Excel.Application();
+            exApp.Application.Workbooks.Add(Type.Missing);
+            Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+            Excel.Range tenTruong = (Excel.Range)exSheet.Cells[1, 1]; //Đưa con trỏ vào ô A1
+            //Tiêu đề
+            tenTruong.Font.Size = 10; //Đặt cỡ chữ là 10
+            tenTruong.Font.Name = "Times new roman"; //Chọn font Times new roman
+            tenTruong.Font.Bold = true; //Định dạng kiểu font chữ là in đậm
+            tenTruong.Font.Color = Color.Blue;
 
+            tenTruong.Range["C2:E2"].MergeCells = true;
+            tenTruong.Range["C2:E2"].Value = "HÓA ĐƠN BÁN HÀNG";
+            tenTruong.Range["C2:E2"].Font.Size = 15;
+            tenTruong.Range["C2:E2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; 
+            DataTable dt = bus_hd.HienThiThongTinExport(txtSoHD.Text.ToString());
+            tenTruong.Range["B4:C7"].Font.Size = 12;
+            tenTruong.Range["B4:B4"].Value = "Mã hóa đơn:";
+            tenTruong.Range["C4:E4"].MergeCells = true;
+            tenTruong.Range["C4:E4"].Value = dt.Rows[0][0].ToString();
+            tenTruong.Range["B5:B5"].Value = "Khách hàng:";
+            tenTruong.Range["C5:E5"].MergeCells = true;
+            tenTruong.Range["C5:E5"].Value = dt.Rows[0][1].ToString();
+            tenTruong.Range["B6:B6"].Value = "Địa chỉ:";
+            tenTruong.Range["C6:E6"].MergeCells = true;
+            tenTruong.Range["C6:E6"].Value = dt.Rows[0][2].ToString();
+            tenTruong.Range["B7:B7"].Value = "Điện thoại:";
+            tenTruong.Range["C7:E7"].MergeCells = true;
+            tenTruong.Range["C7:E7"].Value = dt.Rows[0][3].ToString();
+            //in dữ liệu từ datagraview
+            int i, j;
+            for (i = 0; i < gunadgvHoaDon.Columns.Count; i++)
+            {
+                exApp.Cells[9, i+1] = gunadgvHoaDon.Columns[i].HeaderText;
+            }
+            for(i = 0; i < gunadgvHoaDon.Rows.Count; i++)
+            {
+                for (j = 0; j < gunadgvHoaDon.Columns.Count; j++)
+                {
+                    exApp.Cells[i+10, j + 1] = gunadgvHoaDon.Rows[i].Cells[j].Value;
+                }
+            }
+            tenTruong.Range["A9:E9"].Font.Bold = true;
+            DataTable dt2 = bus_hd.HienThiThanhTien(txtSoHD.Text.ToString());
+            tenTruong = exSheet.Cells[4][i + 12];
+            tenTruong.Font.Bold = true;
+            tenTruong.Value2 = "Tổng tiền";
+            tenTruong = exSheet.Cells[5][i + 12];
+            tenTruong.Font.Bold = true;
+            tenTruong.Value2 = dt2.Rows[0][0].ToString();
+
+            //set save file 
+            exApp.Columns.ColumnWidth = 14;
+            exApp.ActiveWorkbook.SaveCopyAs(path);
+            exApp.ActiveWorkbook.Saved = true;
+        }
        
     }
 }

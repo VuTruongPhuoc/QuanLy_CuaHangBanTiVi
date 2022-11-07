@@ -213,8 +213,8 @@ select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien 
 	where tSanPham.MaSP = tChiTietHDB.MaSP 
 	group by tSanPham.MaSP, TenSP,SLBan, DonGiaBan
 
-select * from tChiTietHDB
-select * from tHoaDonBan
+select * from tChiTietHDN
+select * from tHoaDonNhap
 
 select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham 
                 where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
@@ -270,3 +270,31 @@ begin
 	(select SoLuong from deleted where MaSP = tSanPHam.MaSP)
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
+
+--thong ke doanh thu tung thang
+create function DoanhThuTheoNam() returns table
+as return
+(
+select
+isnull(sum(case month (NgayLap) when 1 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang1,
+isnull(sum(case month (NgayLap) when 2 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang2,
+isnull(sum(case month (NgayLap) when 3 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang3,
+isnull(sum(case month (NgayLap) when 4 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang4,
+isnull(sum(case month (NgayLap) when 5 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang5,
+isnull(sum(case month (NgayLap) when 6 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang6,
+isnull(sum(case month (NgayLap) when 7 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang7,
+isnull(sum(case month (NgayLap) when 8 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang8,
+isnull(sum(case month (NgayLap) when 9 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang9,
+isnull(sum(case month (NgayLap) when 10 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang10,
+isnull(sum(case month (NgayLap) when 11 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang11,
+isnull(sum(case month (NgayLap) when 12 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang12
+from tChiTietHDB ct
+	join tHoaDonBan hdb on ct.SoHDB = hdb.SoHDB 
+	join tSanPham s on ct.MaSP = s.MaSP
+where year(hdb.NgayLap) = 2022
+)
+select * from dbo.DoanhThuTheoNam()
+
+select SoHDB, TenKH, DiaChi, DienThoai, NgayLap from tHoaDonBan as hdb, tKhachHang as kh
+where hdb.MaKH = kh.MaKH 
+	and SoHDB = 'HDB474'

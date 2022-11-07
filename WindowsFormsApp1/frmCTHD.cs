@@ -47,7 +47,6 @@ namespace WindowsFormsApp1
                 bus_ct.XoaHD(txtSoHDB.Text);
                 MessageBox.Show("Xóa hóa đơn thành công");
             }
-            frmDonHang frmDonHang = new frmDonHang();
             this.Close();
         }
     }

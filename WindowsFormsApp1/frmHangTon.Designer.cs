@@ -99,14 +99,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gunadgvHangTon.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gunadgvHangTon.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunadgvHangTon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunadgvHangTon.Location = new System.Drawing.Point(0, 286);
+            this.gunadgvHangTon.Location = new System.Drawing.Point(34, 285);
             this.gunadgvHangTon.Name = "gunadgvHangTon";
             this.gunadgvHangTon.RowHeadersVisible = false;
             this.gunadgvHangTon.RowHeadersWidth = 51;
             this.gunadgvHangTon.RowTemplate.Height = 24;
-            this.gunadgvHangTon.Size = new System.Drawing.Size(612, 424);
+            this.gunadgvHangTon.Size = new System.Drawing.Size(578, 413);
             this.gunadgvHangTon.TabIndex = 0;
             this.gunadgvHangTon.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gunadgvHangTon.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -136,7 +135,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(162, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(300, 39);
+            this.label1.Size = new System.Drawing.Size(288, 38);
             this.label1.TabIndex = 3;
             this.label1.Text = "Thống kê hàng tồn";
             // 
@@ -154,7 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 710);
+            this.ClientSize = new System.Drawing.Size(626, 710);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtHangTon);

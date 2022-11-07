@@ -177,5 +177,19 @@ namespace WindowsFormsApp1
                 ActiveChildForm("frmHangTon");
             }
         }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmDoanhThu"))
+            {
+                frmDoanhThu frmDoanhThu = new frmDoanhThu();
+                frmDoanhThu.MdiParent = this;
+                frmDoanhThu.Show();
+            }
+            else
+            {
+                ActiveChildForm("frmDoanhThu");
+            }
+        }
     }
 }
