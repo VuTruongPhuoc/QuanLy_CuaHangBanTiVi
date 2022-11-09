@@ -9,14 +9,14 @@ using DAO;
 
 namespace BUS
 {
-    public class BUS_HoaDon
+    public class BUS_HoaDonBan
     {
         DAO.DataAccess da = new DAO.DataAccess();
         public DataTable HienThiCTHoaDon(string sohd)
         {
             DataTable dt = new DataTable();
             string sql = "select tSanPham.MaSP, TenSP,SLBan, DonGiaBan," +
-                "SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham " +
+                "format(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100,'N','en-US') as TongTien from tChiTietHDB,tSanPham " +
                 "where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = '" + sohd + "'";
             dt = da.DataReader(sql);
             return dt;
@@ -31,7 +31,7 @@ namespace BUS
         public DataTable HienThiKH()
         {
             DataTable dt = new DataTable();
-            string sql = "select MaKH, MaKH + ' | ' + TenKH as 'TTKH', MaKH from tKhachHang";
+            string sql = "select MaKH, MaKH + ' | ' + TenKH as 'TTKH' from tKhachHang";
             dt = da.DataReader(sql);
             return dt;
         }
@@ -42,36 +42,39 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
+        public DataTable HienThiDonGia(string tensp)
+        {
+            DataTable dt = new DataTable();
+            string sql = "select DonGiaBan from tSanPham where TenSP = '" + tensp + "'";
+            dt = da.DataReader(sql);
+            return dt;
+        }
         public void ThemCTHD(string sohdb, string masp, int sl, string km)
         {
             string sql = "insert tChiTietHDB values (N'" + sohdb + "', N'" + masp + "','" + sl + "','" + km + "')";
             da.DataChange(sql);
         }
-        public void XoaSP(string masp)
+        public void XoaSP(string sohdb, string masp)
         {
-            string sql = "delete tChiTietHDB where MaSP = '" + masp + "'";
-            da.DataChange(sql);
-        }
-        public void SuaCTHD(string sohdb, int sl, string km)
-        {
-            string sql = "update tChiTietHDB set SLBan = '" + sl + "', Khuyenmai = '" + km + "' " +
-                "where Sohdb = '" + sohdb + "'";
+            string sql = "delete tChiTietHDB where SoHDB = '" + sohdb+"' and MaSP = '" + masp + "'";
             da.DataChange(sql);
         }
         public DataTable HienThiThanhTien(string sohd)
         {
             DataTable dt = new DataTable();
-            string sql = "select sum(SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100) as ThanhTien " +
+            string sql = "select format(sum(SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100),'N','en-US') as ThanhTien " +
                 "from tChiTietHDB, tSanPham where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB  ='" + sohd + "'";
             dt = da.DataReader(sql);
             return dt;
         }
-        public void XoaCTHD(string sohdb)
+        public DataTable HienThiThongTinExport(string sohdb)
         {
-            string sql = "delete tChiTietHDB where SoHDB = '" + sohdb + "'";
-            da.DataChange(sql);
+            DataTable dt = new DataTable();
+            string sql = "select SoHDB, TenKH, DiaChi, DienThoai, NgayLap from tHoaDonBan as hdb, tKhachHang as kh " +
+                "where hdb.MaKH = kh.MaKH and " +
+                "SoHDB = '" + sohdb + "'";
+            dt = da.DataReader(sql);
+            return dt;
         }
-        
-
     }
 }

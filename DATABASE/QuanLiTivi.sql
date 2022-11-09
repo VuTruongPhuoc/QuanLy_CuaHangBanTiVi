@@ -36,6 +36,7 @@ Create Table tChitietHDN
 	SoHDN Nvarchar(10) not null,
 	MaSP Nvarchar(10) not null,
 	SLNhap int,
+	Khuyenmai float,
 	Constraint [PK_tChiTietHDN] PRIMARY KEY CLUSTERED
 (
 	[SoHDN] ASC,
@@ -181,16 +182,21 @@ REFERENCES [tThuongHieu] ([MaTH])
 
 insert tThuongHieu values(N'TH001', 'Sonny')
 insert tThuongHieu values(N'TH002', 'SamSung')
+select * from tThuongHieu
 
 insert tSanPham values(N'SP002', 'SamSung oled', 'TH002', '32 inch', 'oled',9 , 32432, 3432243, 'df.png','ol')
-insert tSanPham values(N'SP003', 'sony oled', 'TH001', '39 inch', 'oled',6, 4000000, 9000000, 'd.png','ol')
-insert tSanPham values(N'SP004', 'sony ofd', 'TH001', '56 inch', 'OLED',4, 5000000, 9000000, 'h.png','ol')
+	insert tSanPham values(N'SP003', 'sony oled', 'TH001', '39 inch', 'oled',6, 4000000, 9000000, 'd.png','ol')
+	insert tSanPham values(N'SP004', 'sony ofd', 'TH001', '56 inch', 'OLED',4, 5000000, 9000000, 'h.png','ol')
 insert tSanPham values(N'SP005', 'sony ffd', 'TH001', '48 inch', 'oled', 7, 6000000, 9000000, 'h.png','ol')
+
+select * from tSanPham
 
 insert tNhanVien values('nv003', 'vu truong phuoc', '2013-4-5', '0123456789', 'hai duong','q','222', 1)
 insert tNhanVien values('nv002', 'vuong kien quoc', '2015-6-5', '0987654321', 'ha noi','p','123', 0)
 select * from tNhanVien
 
+insert tNhaCungCap values('NCC002', 'Kha banh', '0111112222', 'ha noi')
+select * from tNhaCungCap
 
 insert tHoaDonBan values('HDB001','nv002', 'KH002', '2022-10-14', 5000000)
 insert tHoaDonBan values('HDB002','nv002', 'KH003', '2022-10-13', 9000000)
@@ -207,10 +213,13 @@ select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien 
 	where tSanPham.MaSP = tChiTietHDB.MaSP 
 	group by tSanPham.MaSP, TenSP,SLBan, DonGiaBan
 
-select * from tChiTietHDB
+select * from tChiTietHDN
+select * from tHoaDonNhap
 
 select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham 
                 where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
+
+--cap nhat hoa don ban--
 --cập nhật hàng trong kho sau khi đặt hàng hoặc cập nhập
 create trigger trg_dathang on tChiTietHDB after insert as 
 begin
@@ -236,5 +245,56 @@ begin
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
 
-select TenSP,SoLuong from tSanPham,tChiTietHDB
-select sum(SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100) from tChiTietHDB, tSanPham where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
+--cap nhat hoa don nhat--
+--cập nhật hàng trong kho sau khi nhập hàng hoặc cập nhập
+create trigger trg_nhaphang on tChiTietHDN after insert as 
+begin
+	update tSanPham set SoLuong = SoLuong +
+	(select SLNhap from inserted
+	where MaSP = tSanPham.MaSP) from tSanPham
+	join inserted on tSanPham.MaSP = inserted.MaSP
+end
+--cập nhật hàng trong kho sau khi hủy nhập hàng
+create trigger trg_huynhaphang on tChiTietHDN for delete as
+begin
+	update tSanPham set SoLuong = SoLuong -
+	(select SLNhap from deleted
+	where MaSP = tSanPham.MaSP) from tSanPham
+	join deleted on tSanPham.MaSP = deleted.MaSP
+end
+--cap nhat hàng trong kho sua khi cập nhật nhập hàng
+create trigger trg_CapNhatNhapHang on tChiTietHDN for update as
+begin
+	update tSanPham set SoLuong = SoLuong + 
+	(select SoLuong from inserted where MaSP = tSanPham.MaSP) -
+	(select SoLuong from deleted where MaSP = tSanPHam.MaSP)
+	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
+end
+
+--thong ke doanh thu tung thang
+create function DoanhThuTheoNam() returns table
+as return
+(
+select
+isnull(sum(case month (NgayLap) when 1 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang1,
+isnull(sum(case month (NgayLap) when 2 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang2,
+isnull(sum(case month (NgayLap) when 3 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang3,
+isnull(sum(case month (NgayLap) when 4 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang4,
+isnull(sum(case month (NgayLap) when 5 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang5,
+isnull(sum(case month (NgayLap) when 6 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang6,
+isnull(sum(case month (NgayLap) when 7 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang7,
+isnull(sum(case month (NgayLap) when 8 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang8,
+isnull(sum(case month (NgayLap) when 9 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang9,
+isnull(sum(case month (NgayLap) when 10 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang10,
+isnull(sum(case month (NgayLap) when 11 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang11,
+isnull(sum(case month (NgayLap) when 12 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Thang12
+from tChiTietHDB ct
+	join tHoaDonBan hdb on ct.SoHDB = hdb.SoHDB 
+	join tSanPham s on ct.MaSP = s.MaSP
+where year(hdb.NgayLap) = 2022
+)
+select * from dbo.DoanhThuTheoNam()
+
+select SoHDB, TenKH, DiaChi, DienThoai, NgayLap from tHoaDonBan as hdb, tKhachHang as kh
+where hdb.MaKH = kh.MaKH 
+	and SoHDB = 'HDB474'
