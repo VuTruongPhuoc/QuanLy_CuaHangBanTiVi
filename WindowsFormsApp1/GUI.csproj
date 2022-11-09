@@ -100,17 +100,17 @@
     <Compile Include="frmHangTon.Designer.cs">
       <DependentUpon>frmHangTon.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHoaDonNhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHoaDonNhap.Designer.cs">
-      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmDonNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDonNhap.Designer.cs">
       <DependentUpon>frmDonNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHoaDonNhap.Designer.cs">
+      <DependentUpon>frmHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaiKhoan.cs">
       <SubType>Form</SubType>

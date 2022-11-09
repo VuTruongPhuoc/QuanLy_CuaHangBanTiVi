@@ -49,6 +49,8 @@ namespace WindowsFormsApp1
                 dtpNgaySinh.Value = (DateTime)dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value;
                 txtSDT.Text = dgvNhanVien.CurrentRow.Cells["DienThoai"].Value.ToString();
                 txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"].Value.ToString();
+                txtTaiKhoan.Text = dgvNhanVien.CurrentRow.Cells["Username"].Value.ToString();
+                txtMatKhau.Text = dgvNhanVien.CurrentRow.Cells["Password"].Value.ToString();
                 if (dgvNhanVien.CurrentRow.Cells["LoaiTaiKhoan"].Value.ToString().Trim() == "0")
                 {
                     rdoNhanVien.Checked = true;

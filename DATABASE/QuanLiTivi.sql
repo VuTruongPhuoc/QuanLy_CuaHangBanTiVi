@@ -208,6 +208,7 @@ insert tKhachHang values('KH001', 'nguyen thi cao', 'Nữ', '0939292929', 'tp hc
 
 insert tChiTietHDB values('HDB001','sp002', '3', null)
 insert tChiTietHDB values('HDB001','sp003', '1', null)
+select * from tChiTietHDB
 
 select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien from tChiTietHDB,tSanPham 
 	where tSanPham.MaSP = tChiTietHDB.MaSP 
@@ -245,7 +246,7 @@ begin
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
 
---cap nhat hoa don nhat--
+--cap nhat hoa don nhap--
 --cập nhật hàng trong kho sau khi nhập hàng hoặc cập nhập
 create trigger trg_nhaphang on tChiTietHDN after insert as 
 begin

@@ -42,13 +42,6 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public DataTable HienThiDonGia(string tensp)
-        {
-            DataTable dt = new DataTable();
-            string sql = "select DonGiaBan from tSanPham where TenSP = '" + tensp + "'";
-            dt = da.DataReader(sql);
-            return dt;
-        }
         public void ThemCTHD(string sohdb, string masp, int sl, string km)
         {
             string sql = "insert tChiTietHDB values (N'" + sohdb + "', N'" + masp + "','" + sl + "','" + km + "')";
@@ -75,6 +68,13 @@ namespace BUS
                 "SoHDB = '" + sohdb + "'";
             dt = da.DataReader(sql);
             return dt;
+        }
+        public bool KiemTraTrungMaHDB(string mahdb)
+        {
+            string Tenbang = "tHoaDonBan";
+            string Mabang = "SoHDB";
+            if (da.check(Tenbang, Mabang, mahdb)) return true;
+            return false;
         }
     }
 }
