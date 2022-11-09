@@ -120,8 +120,8 @@ namespace WindowsFormsApp1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if(cboSP.SelectedIndex == -1) { MessageBox.Show("Vui lòng chọn sản phẩm!", "Thông báo"); return; }
-            if(numSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo"); return; }
+            if (cboSP.SelectedIndex == -1) { MessageBox.Show("Vui lòng chọn sản phẩm!", "Thông báo"); return; }
+            if (numSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo"); return; }
             String str = cboSP.SelectedItem.ToString();
             string[] a = str.Split('|');
             string TenSP = a[1].Trim();
@@ -129,14 +129,14 @@ namespace WindowsFormsApp1
             dt = bus_hdn.HienThiSP(TenSP);
             try
             {
-            dto_hdn.Sohdn = txtSoHD.Text.ToString();
-            dto_hdn.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
-            dto_hdn.Sl = Int16.Parse(numSoLuong.Value.ToString().Trim());
-            dto_hdn.Km = txtKhuyenMai.Text.ToString();
+                dto_hdn.Sohdn = txtSoHD.Text.ToString();
+                dto_hdn.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
+                dto_hdn.Sl = Int16.Parse(numSoLuong.Value.ToString().Trim());
+                dto_hdn.Km = txtKhuyenMai.Text.ToString();
 
-            bus_hdn.ThemCTHDN(dto_hdn.Sohdn, dto_hdn.Masp, dto_hdn.Sl, dto_hdn.Km);
-            MessageBox.Show("Thêm thành công!");
-            dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
+                bus_hdn.ThemCTHDN(dto_hdn.Sohdn, dto_hdn.Masp, dto_hdn.Sl, dto_hdn.Km);
+                MessageBox.Show("Thêm thành công!");
+                dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
 
             }
             catch { MessageBox.Show("Vui lòng chọn sản phẩm khác!"); }
@@ -251,11 +251,11 @@ namespace WindowsFormsApp1
                 exApp.Cells[9, 1] = "STT";
                 exApp.Cells[9, i + 2] = dgvHoaDonNhap.Columns[i].HeaderText;
             }
-            for (i = 0; i < dgvHoaDonNhap.Rows.Count; i++)
+            for (i = 0; i < dgvHoaDonNhap.Rows.Count - 1; i++)
             {
-                for (j = 0; j < dgvHoaDonNhap.Columns.Count - 1; j++)
+                for (j = 0; j < dgvHoaDonNhap.Columns.Count ; j++)
                 {
-                    exApp.Cells[i + 10, 1] = i+1;
+                    exApp.Cells[i + 10, 1] = i + 1;
                     exApp.Cells[i + 10, j + 2] = dgvHoaDonNhap.Rows[i].Cells[j].Value;
                 }
             }

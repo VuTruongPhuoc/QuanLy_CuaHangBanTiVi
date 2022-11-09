@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
         private void gunadgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txtSoHDB.Text = dgvDonHang.CurrentRow.Cells["SoHDB"].Value.ToString();
-            lbNhanVien.Text = dgvDonHang.CurrentRow.Cells["MaNV"].Value.ToString();
             cboMaKH.SelectedValue = dgvDonHang.CurrentRow.Cells["MaKH"].Value.ToString();       
             gunadtpNgayLap.Value = (DateTime)dgvDonHang.CurrentRow.Cells["NgayLap"].Value;
             txtThanhTien.Text = dgvDonHang.CurrentRow.Cells["ThanhTien"].Value.ToString();
@@ -45,8 +44,8 @@ namespace WindowsFormsApp1
 
         private void btnTaoDonHang_Click(object sender, EventArgs e)
         {
-            frmHoaDonBan frmHoaDon = new frmHoaDonBan();
-            frmHoaDon.Show();
+            frmHoaDonBan frmHoaDonBan = new frmHoaDonBan();
+            frmHoaDonBan.Show();
         }
 
         private void gunadgvDonHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
