@@ -10,11 +10,11 @@ namespace DTO
     {
         private string sohdn, masp;
         private int sl;
-        private double km;
+        private string km;
 
         public string Sohdn { get => sohdn; set => sohdn = value; }
         public string Masp { get => masp; set => masp = value; }
         public int Sl { get => sl; set => sl = value; }
-        public double Km { get => km; set => km = value; }
+        public string Km { get => km; set => km = value; }
     }
 }

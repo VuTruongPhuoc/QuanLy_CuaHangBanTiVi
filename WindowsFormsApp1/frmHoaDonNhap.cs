@@ -1,4 +1,6 @@
 ﻿using BUS;
+using DTO;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
+using System.IO;
+using OfficeOpenXml;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WindowsFormsApp1
 {
@@ -19,7 +23,6 @@ namespace WindowsFormsApp1
         BUS_DonNhap bus_nh = new BUS_DonNhap();
         DTO_HoaDonNhap dto_hdn = new DTO_HoaDonNhap();
         DTO_DonNhap dto_nh = new DTO_DonNhap();
-        
         Resources.CommonFunction comm = new Resources.CommonFunction();
         public frmHoaDonNhap()
         {
@@ -33,8 +36,20 @@ namespace WindowsFormsApp1
             txtNV.Text = dt.Rows[0]["MaNV"].ToString().Trim() + " | " + dt.Rows[0]["TenNV"].ToString().Trim();
             comm.FillCombo(bus_hdn.HienThiNCC(), cboNCC, "TTNCC", "MaNCC");
             dtpThoiGian.Value = DateTime.Now;
-            Random rd = new Random();
-            txtSoHD.Text = "HDN" + rd.Next(1, 1000).ToString();
+            try
+            {
+                Random rd = new Random();
+                txtSoHD.Text = "HDB" + rd.Next(1, 10000).ToString();
+                if (bus_hdn.KiemTraTrungMaHDN(txtSoHD.Text.ToString().Trim()))
+                {
+                    frmHoaDonNhap_Load(sender, e);
+                    return;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Mã hóa đơn đã bị trùng! Vui lòng tạo mới");
+            }
 
             DataTable dt2 = new DataTable();
             dt2 = bus_sp.HienThiSanPham();
@@ -43,28 +58,32 @@ namespace WindowsFormsApp1
                 cboSP.Items.Add(dt2.Rows[i][0].ToString() + " | " + dt2.Rows[i][1].ToString());
             }
             bus_nh.ThemDonNhap(txtSoHD.Text, null, null, dtpThoiGian.Value.ToString(), 0);
+            Lammoi();
         }
 
         private void cboSP_SelectedIndexChanged(object sender, EventArgs e)
-        {         
-             String str = cboSP.SelectedItem.ToString();
-             string[] a = str.Split('|');
-             string TenSP = a[1].Trim();
-             DataTable dt = new DataTable();
-             dt = bus_hdn.HienThiSP(TenSP);
-             txtDonGia.Text = dt.Rows[0]["DonGiaNhap"].ToString().Trim();
+        {
+            if (cboSP.SelectedIndex != -1)
+            {
+                String str = cboSP.SelectedItem.ToString();
+                string[] a = str.Split('|');
+                string TenSP = a[1].Trim();
+                DataTable dt = new DataTable();
+                dt = bus_hdn.HienThiSP(TenSP);
+                txtDonGia.Text = dt.Rows[0]["DonGiaNhap"].ToString().Trim();
+            }
         }
 
-        private void txtSoLuong_TextChanged(object sender, EventArgs e)
+        private void numSoLuong_ValueChanged(object sender, EventArgs e)
         {
             double sl, dg, gg;
             try
             {
-                if (txtSoLuong.Text == "")
+                if (numSoLuong.Value == 0)
                     sl = 0;
                 else
-                    sl = Double.Parse(txtSoLuong.Text);
-                if (txtKhuyenMai.Text == "")
+                    sl = Double.Parse(numSoLuong.Value.ToString());
+                if (txtKhuyenMai.Text == "0" || txtKhuyenMai.Text == "")
                     gg = 0;
                 else
                     gg = Double.Parse(txtKhuyenMai.Text);
@@ -82,11 +101,11 @@ namespace WindowsFormsApp1
             double sl, dg, gg;
             try
             {
-                if (txtSoLuong.Text == "")
+                if (numSoLuong.Value == 0)
                     sl = 0;
                 else
-                    sl = Double.Parse(txtSoLuong.Text);
-                if (txtKhuyenMai.Text == "")
+                    sl = Double.Parse(numSoLuong.Value.ToString());
+                if (txtKhuyenMai.Text == "0" || txtKhuyenMai.Text == "")
                     gg = 0;
                 else
                     gg = Double.Parse(txtKhuyenMai.Text);
@@ -101,7 +120,8 @@ namespace WindowsFormsApp1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            if(cboSP.SelectedIndex == -1) { MessageBox.Show("Vui lòng chọn sản phẩm!", "Thông báo"); return; }
+            if(numSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo"); return; }
             String str = cboSP.SelectedItem.ToString();
             string[] a = str.Split('|');
             string TenSP = a[1].Trim();
@@ -109,40 +129,40 @@ namespace WindowsFormsApp1
             dt = bus_hdn.HienThiSP(TenSP);
             try
             {
-                dto_hdn.Sohdn = txtSoHD.Text.ToString();
-                dto_hdn.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
-                dto_hdn.Sl = Int16.Parse(txtSoLuong.Text.ToString().Trim());
-                dto_hdn.Km = double.Parse(txtKhuyenMai.Text.ToString());
+            dto_hdn.Sohdn = txtSoHD.Text.ToString();
+            dto_hdn.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
+            dto_hdn.Sl = Int16.Parse(numSoLuong.Value.ToString().Trim());
+            dto_hdn.Km = txtKhuyenMai.Text.ToString();
 
-                bus_hdn.ThemCTHDN(dto_hdn.Sohdn, dto_hdn.Masp, dto_hdn.Sl, dto_hdn.Km);
-                MessageBox.Show("Thêm thành công!");
-                dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
+            bus_hdn.ThemCTHDN(dto_hdn.Sohdn, dto_hdn.Masp, dto_hdn.Sl, dto_hdn.Km);
+            MessageBox.Show("Thêm thành công!");
+            dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
 
             }
-            catch { MessageBox.Show("Lỗi"); }
+            catch { MessageBox.Show("Vui lòng chọn sản phẩm khác!"); }
             DataTable dt3 = new DataTable();
             dt3 = bus_hdn.HienThiThanhTien(txtSoHD.Text);
             lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
+            Lammoi();
         }
-        string masp;
-        private void gunadgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            masp = dgvHoaDonNhap.CurrentRow.Cells["MaSP"].Value.ToString();
-        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if(dgvHoaDonNhap.CurrentRow.Cells["MaSP"].Value.ToString() == "") { MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo"); return; }
             try
             {
                 dto_hdn.Sohdn = txtSoHD.Text.ToString().Trim();
-                dto_hdn.Masp = masp.Trim();
+                dto_hdn.Masp = dgvHoaDonNhap.CurrentRow.Cells["MaSP"].Value.ToString();
+
+                bus_hdn.XoaSP(dto_hdn.Sohdn, dto_hdn.Masp);
+                MessageBox.Show("Xóa thành công!");
+                dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
             }
             catch { }
-            bus_hdn.XoaSP(dto_hdn.Sohdn, dto_hdn.Masp);
-            MessageBox.Show("Xóa thành công!");
-            dgvHoaDonNhap.DataSource = bus_hdn.HienThiCTHDN(dto_hdn.Sohdn);
             DataTable dt = new DataTable();
             dt = bus_hdn.HienThiThanhTien(txtSoHD.Text);
             lbThanhTien.Text = dt.Rows[0]["ThanhTien"].ToString().Trim();
+            Lammoi();
         }
 
         private void btnThanhToan_Click(object sender, EventArgs e)
@@ -156,15 +176,102 @@ namespace WindowsFormsApp1
             {
                 dto_nh.Sohdn = txtSoHD.Text.ToString().Trim();
                 dto_nh.Mancc = mancc;
-                dto_nh.Manv = dt.Rows[0]["MaNV"].ToString().Trim();               
+                dto_nh.Manv = dt.Rows[0]["MaNV"].ToString().Trim();
                 dto_nh.Thanhtien = double.Parse(lbThanhTien.Text.ToString().Trim());
             }
             catch { }
-            bus_nh.SuaDonNhap(dto_nh.Sohdn,  dto_nh.Mancc, dto_nh.Manv, dto_nh.Thanhtien);
-            MessageBox.Show("Thanh toán thành công!!");
+            bus_nh.SuaDonNhap(dto_nh.Sohdn, dto_nh.Mancc, dto_nh.Manv, dto_nh.Thanhtien);
+            //xuat file ra excel
+            if (MessageBox.Show("Bạn có muốn in hóa đơn nhập không ?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Title = "Export Excel";
+                saveFileDialog.Filter = "Excel Workbook (*.xlsx)|*.xlsx|Excel 2003 (*.xls)|*.xls";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        ExportExcel(saveFileDialog.FileName);
+                        MessageBox.Show("Xuất file thành công");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi xuất file\r" + ex.Message);
+                    }
+                }
+            }
 
+            MessageBox.Show("Thanh toán thành công!!");
             frmDonNhap frmDonNhap = new frmDonNhap();
             this.Close();
+        }
+        private void Lammoi()
+        {
+            cboSP.SelectedIndex = -1;
+            txtDonGia.Text = "";
+            numSoLuong.Value = 0;
+            txtKhuyenMai.Text = "0";
+            txtThanhTien.Text = "";
+        }
+        private void ExportExcel(string path)
+        {
+            Excel.Application exApp = new Excel.Application();
+            exApp.Application.Workbooks.Add(Type.Missing);
+            Excel.Workbook exBook = exApp.Workbooks.Add(Excel.XlWBATemplate.xlWBATWorksheet);
+            Excel.Worksheet exSheet = (Excel.Worksheet)exBook.Worksheets[1];
+            Excel.Range tenTruong = (Excel.Range)exSheet.Cells[1, 1]; //Đưa con trỏ vào ô A1
+            //Tiêu đề
+            tenTruong.Font.Size = 10; //Đặt cỡ chữ là 10
+            tenTruong.Font.Name = "Times new roman"; //Chọn font Times new roman
+            tenTruong.Font.Bold = true; //Định dạng kiểu font chữ là in đậm
+            tenTruong.Font.Color = Color.Blue;
+            //Set cac thong tin co ban cua hoa don
+            tenTruong.Range["C2:E2"].MergeCells = true;
+            tenTruong.Range["C2:E2"].Value = "HÓA ĐƠN NHẬP HÀNG";
+            tenTruong.Range["C2:E2"].Font.Size = 15;
+            tenTruong.Range["C2:E2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
+            DataTable dt = bus_hdn.HienThiThongTinExport(txtSoHD.Text.ToString());
+            tenTruong.Range["B4:C7"].Font.Size = 12;
+            tenTruong.Range["B4:B4"].Value = "Mã hóa đơn:";
+            tenTruong.Range["C4:E4"].MergeCells = true;
+            tenTruong.Range["C4:E4"].Value = dt.Rows[0][0].ToString();
+            tenTruong.Range["B5:B5"].Value = "Nhà cung cấp:";
+            tenTruong.Range["C5:E5"].MergeCells = true;
+            tenTruong.Range["C5:E5"].Value = dt.Rows[0][1].ToString();
+            tenTruong.Range["B6:B6"].Value = "Địa chỉ:";
+            tenTruong.Range["C6:E6"].MergeCells = true;
+            tenTruong.Range["C6:E6"].Value = dt.Rows[0][2].ToString();
+            tenTruong.Range["B7:B7"].Value = "Điện thoại:";
+            tenTruong.Range["C7:E7"].MergeCells = true;
+            tenTruong.Range["C7:E7"].Value = dt.Rows[0][3].ToString();
+            //in dữ liệu từ datagraview
+            int i, j;
+            for (i = 0; i < dgvHoaDonNhap.Columns.Count; i++)
+            {
+                exApp.Cells[9, 1] = "STT";
+                exApp.Cells[9, i + 2] = dgvHoaDonNhap.Columns[i].HeaderText;
+            }
+            for (i = 0; i < dgvHoaDonNhap.Rows.Count; i++)
+            {
+                for (j = 0; j < dgvHoaDonNhap.Columns.Count - 1; j++)
+                {
+                    exApp.Cells[i + 10, 1] = i+1;
+                    exApp.Cells[i + 10, j + 2] = dgvHoaDonNhap.Rows[i].Cells[j].Value;
+                }
+            }
+            tenTruong.Range["A9:E9"].Font.Bold = true;
+            DataTable dt2 = bus_hdn.HienThiThanhTien(txtSoHD.Text.ToString());
+            tenTruong = exSheet.Cells[5][i + 12];
+            tenTruong.Font.Bold = true;
+            tenTruong.Value2 = "Tổng tiền";
+            tenTruong = exSheet.Cells[6][i + 12];
+            tenTruong.Font.Bold = true;
+            tenTruong.Value2 = dt2.Rows[0][0].ToString();
+
+            //set save file 
+            exApp.Columns.ColumnWidth = 14;
+            exApp.ActiveWorkbook.SaveCopyAs(path);
+            exApp.ActiveWorkbook.Saved = true;
         }
     }
 }
