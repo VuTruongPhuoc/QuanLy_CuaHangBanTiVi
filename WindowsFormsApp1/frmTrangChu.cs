@@ -150,7 +150,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void nhậpHàngToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!CheckExitsForm("frmDonNhap"))
             {
@@ -163,7 +163,6 @@ namespace WindowsFormsApp1
                 ActiveChildForm("frmDonNhap");
             }
         }
-
         private void hàngTồnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (!CheckExitsForm("frmHangTon"))
@@ -191,5 +190,7 @@ namespace WindowsFormsApp1
                 ActiveChildForm("frmDoanhThu");
             }
         }
+
+        
     }
 }

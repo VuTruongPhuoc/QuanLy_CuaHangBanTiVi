@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DTO_DonHang.cs" />
     <Compile Include="DTO_DangNhap.cs" />
+    <Compile Include="DTO_DonNhap.cs" />
     <Compile Include="DTO_HangTon.cs" />
     <Compile Include="DTO_HoaDonBan.cs" />
     <Compile Include="DTO_HoaDonNhap.cs" />

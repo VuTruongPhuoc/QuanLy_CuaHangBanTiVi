@@ -48,7 +48,6 @@
             this.txtMaSP = new System.Windows.Forms.TextBox();
             this.lbMaSP = new System.Windows.Forms.Label();
             this.btnChonAnh = new System.Windows.Forms.Button();
-            this.picAnh = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -67,10 +66,11 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
+            this.picAnh = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -124,7 +124,7 @@
             // 
             // numUDSoLuong
             // 
-            this.numUDSoLuong.Location = new System.Drawing.Point(26, 227);
+            this.numUDSoLuong.Location = new System.Drawing.Point(26, 225);
             this.numUDSoLuong.Name = "numUDSoLuong";
             this.numUDSoLuong.Size = new System.Drawing.Size(169, 30);
             this.numUDSoLuong.TabIndex = 24;
@@ -259,15 +259,6 @@
             this.btnChonAnh.Text = "Chọn Ảnh";
             this.btnChonAnh.UseVisualStyleBackColor = true;
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
-            // 
-            // picAnh
-            // 
-            this.picAnh.Location = new System.Drawing.Point(740, 82);
-            this.picAnh.Name = "picAnh";
-            this.picAnh.Size = new System.Drawing.Size(284, 179);
-            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAnh.TabIndex = 29;
-            this.picAnh.TabStop = false;
             // 
             // label1
             // 
@@ -451,6 +442,15 @@
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
+            // picAnh
+            // 
+            this.picAnh.Location = new System.Drawing.Point(740, 82);
+            this.picAnh.Name = "picAnh";
+            this.picAnh.Size = new System.Drawing.Size(284, 179);
+            this.picAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picAnh.TabIndex = 29;
+            this.picAnh.TabStop = false;
+            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -473,8 +473,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numUDSoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAnh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

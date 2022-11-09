@@ -42,8 +42,8 @@ namespace WindowsFormsApp1
             try
             {
                 Random rd = new Random();
-                txtSoHD.Text = "HDB" + rd.Next(1, 10000).ToString();
-                if (bus_hd.KiemTraTrungMaHDB(txtSoHD.Text.ToString().Trim()))
+                txtSoHDN.Text = "HDB" + rd.Next(1, 10000).ToString();
+                if (bus_hd.KiemTraTrungMaHDB(txtSoHDN.Text.ToString().Trim()))
                 {
                     frmHoaDonBan_Load(sender, e);
                     return;
@@ -61,7 +61,7 @@ namespace WindowsFormsApp1
             {
                 cboSP.Items.Add(dt2.Rows[i][0].ToString() + " | " + dt2.Rows[i][1].ToString() + " | " + dt2.Rows[i][5].ToString());
             }
-            bus_dh.ThemDonHang(txtSoHD.Text, null, null, dtpThoiGian.Value.ToString(), 0);
+            bus_dh.ThemDonHang(txtSoHDN.Text, null, null, dtpThoiGian.Value.ToString(), 0);
             Lammoi();
         }
 
@@ -131,37 +131,37 @@ namespace WindowsFormsApp1
             dt = bus_hd.HienThiSP(TenSP);
             try
             {
-                dto_hd.Sohdb = txtSoHD.Text.ToString();
+                dto_hd.Sohdb = txtSoHDN.Text.ToString();
                 dto_hd.Masp = dt.Rows[0]["MaSP"].ToString().Trim();
                 dto_hd.Slban = Int16.Parse(numSoLuong.Value.ToString().Trim());
                 dto_hd.Km = txtKhuyenMai.Text.ToString();
 
                 bus_hd.ThemCTHD(dto_hd.Sohdb, dto_hd.Masp, dto_hd.Slban, dto_hd.Km);
                 MessageBox.Show("Thêm thành công!");
-                gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
+                dgvHoaDonBan.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
 
             }
             catch { MessageBox.Show("Vui lòng chọn sản phẩm khác"); }
             DataTable dt3 = new DataTable();
-            dt3 = bus_hd.HienThiThanhTien(txtSoHD.Text);
+            dt3 = bus_hd.HienThiThanhTien(txtSoHDN.Text);
             lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
             Lammoi();
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (gunadgvHoaDon.CurrentRow.Cells["MaSP"].Value.ToString() == "") { MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo"); return; }
+            if (dgvHoaDonBan.CurrentRow.Cells["MaSP"].Value.ToString() == "") { MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo"); return; }
             try
             {
-                dto_hd.Sohdb = txtSoHD.Text.ToString().Trim();
-                dto_hd.Masp = gunadgvHoaDon.CurrentRow.Cells["MaSP"].Value.ToString(); ;
+                dto_hd.Sohdb = txtSoHDN.Text.ToString().Trim();
+                dto_hd.Masp = dgvHoaDonBan.CurrentRow.Cells["MaSP"].Value.ToString(); ;
 
                 bus_hd.XoaSP(dto_hd.Sohdb, dto_hd.Masp);
-                gunadgvHoaDon.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
+                dgvHoaDonBan.DataSource = bus_hd.HienThiCTHoaDon(dto_hd.Sohdb);
             }
             catch { MessageBox.Show("Vui lòng chọn sản phẩm để xóa"); }      
             DataTable dt = new DataTable();
             MessageBox.Show("Xóa thành công!");
-            dt = bus_hd.HienThiThanhTien(txtSoHD.Text);
+            dt = bus_hd.HienThiThanhTien(txtSoHDN.Text);
             lbThanhTien.Text = dt.Rows[0]["ThanhTien"].ToString().Trim();
             Lammoi();
         }
@@ -174,15 +174,15 @@ namespace WindowsFormsApp1
             dt = bus_dh.HienThiMaNV(frmDangNhap.taikhoan);
             try
             {
-                dto_dh.Sohdb1 = txtSoHD.Text.ToString().Trim();
+                dto_dh.Sohdb1 = txtSoHDN.Text.ToString().Trim();
                 dto_dh.Manv = dt.Rows[0]["MaNV"].ToString().Trim();
                 dto_dh.Makh = makh;
                 dto_dh.Thanhtien = double.Parse(lbThanhTien.Text.ToString().Trim());
             }
             catch { }
-            bus_dh.SuaDonHang(dto_dh.Sohdb1, dto_dh.Manv, dto_dh.Makh,dto_dh.Thanhtien);
+            bus_dh.SuaDonHang(dto_dh.Sohdb1, dto_dh.Manv, dto_dh.Makh, dto_dh.Thanhtien);
             //xuat file ra excel
-            if(MessageBox.Show("Bạn có muốn in hóa đơn không ?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn in hóa đơn không ?", "Thông báo", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Title = "Export Excel";
@@ -229,7 +229,7 @@ namespace WindowsFormsApp1
             tenTruong.Range["C2:E2"].Value = "HÓA ĐƠN BÁN HÀNG";
             tenTruong.Range["C2:E2"].Font.Size = 15;
             tenTruong.Range["C2:E2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; 
-            DataTable dt = bus_hd.HienThiThongTinExport(txtSoHD.Text.ToString());
+            DataTable dt = bus_hd.HienThiThongTinExport(txtSoHDN.Text.ToString());
             tenTruong.Range["B4:C7"].Font.Size = 12;
             tenTruong.Range["B4:B4"].Value = "Mã hóa đơn:";
             tenTruong.Range["C4:E4"].MergeCells = true;
@@ -245,21 +245,21 @@ namespace WindowsFormsApp1
             tenTruong.Range["C7:E7"].Value = dt.Rows[0][3].ToString();
             //in dữ liệu từ datagraview
             int i, j;
-            for (i = 0; i < gunadgvHoaDon.Columns.Count; i++)
+            for (i = 0; i < dgvHoaDonBan.Columns.Count; i++)
             {
                 exApp.Cells[9, 1] = "STT";
-                exApp.Cells[9, i + 2] = gunadgvHoaDon.Columns[i].HeaderText;
+                exApp.Cells[9, i + 2] = dgvHoaDonBan.Columns[i].HeaderText;
             }
-            for(i = 0; i < gunadgvHoaDon.Rows.Count -1; i++)
+            for(i = 0; i < dgvHoaDonBan.Rows.Count - 1; i++)
             {
-                for (j = 0; j < gunadgvHoaDon.Columns.Count; j++)
+                for (j = 0; j < dgvHoaDonBan.Columns.Count; j++)
                 {
                     exApp.Cells[i + 10, 1] = i + 1;
-                    exApp.Cells[i+10, j + 2] = gunadgvHoaDon.Rows[i].Cells[j].Value;
+                    exApp.Cells[i + 10, j + 2] = dgvHoaDonBan.Rows[i].Cells[j].Value;
                 }
             }
             tenTruong.Range["A9:E9"].Font.Bold = true;
-            DataTable dt2 = bus_hd.HienThiThanhTien(txtSoHD.Text.ToString());
+            DataTable dt2 = bus_hd.HienThiThanhTien(txtSoHDN.Text.ToString());
             tenTruong = exSheet.Cells[5][i + 12];
             tenTruong.Font.Bold = true;
             tenTruong.Value2 = "Tổng tiền";
