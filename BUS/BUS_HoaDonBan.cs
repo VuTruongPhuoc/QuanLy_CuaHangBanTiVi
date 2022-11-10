@@ -38,7 +38,7 @@ namespace BUS
         public DataTable HienThiSP(string tensp )
         {
             DataTable dt = new DataTable();
-            string sql = "select MaSP,DonGiaBan from tSanPham where TenSP = '"+tensp+"'";
+            string sql = "select MaSP,DonGiaBan,SoLuong from tSanPham where TenSP = '"+tensp+"'";
             dt = da.DataReader(sql);
             return dt;
         }

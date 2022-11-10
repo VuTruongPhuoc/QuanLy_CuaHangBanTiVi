@@ -53,15 +53,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Mã hóa đơn đã bị trùng! Vui lòng tạo mới");
             }
-            
-
-            DataTable dt2 = new DataTable();
-            dt2 = bus_sp.HienThiSanPham();
-            for (int i = 0; i < dt2.Rows.Count; i++)
-            {
-                cboSP.Items.Add(dt2.Rows[i][0].ToString() + " | " + dt2.Rows[i][1].ToString() + " | " + dt2.Rows[i][5].ToString());
-            }
-            bus_dh.ThemDonHang(txtSoHDN.Text, null, null, dtpThoiGian.Value.ToString(), 0);
+            bus_dh.ThemDonHang(txtSoHDN.Text, dt.Rows[0]["MaNV"].ToString().Trim(), null, dtpThoiGian.Value.ToString(), 0);
             Lammoi();
         }
 
@@ -129,6 +121,10 @@ namespace WindowsFormsApp1
             string TenSP = a[1].Trim();
             DataTable dt = new DataTable();
             dt = bus_hd.HienThiSP(TenSP);
+            if (Int16.Parse(numSoLuong.Value.ToString()) > Int16.Parse(dt.Rows[0]["SoLuong"].ToString().Trim()))
+            {
+                MessageBox.Show("Số Lượng sản phẩm còn " + dt.Rows[0]["SoLuong"].ToString().Trim() + ", Vui lòng chọn lại!"); return;
+            }
             try
             {
                 dto_hd.Sohdb = txtSoHDN.Text.ToString();
@@ -145,10 +141,12 @@ namespace WindowsFormsApp1
             DataTable dt3 = new DataTable();
             dt3 = bus_hd.HienThiThanhTien(txtSoHDN.Text);
             lbThanhTien.Text = dt3.Rows[0]["ThanhTien"].ToString().Trim();
+            cboSP.Items.Clear();
             Lammoi();
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (dgvHoaDonBan.Rows.Count <= 1) { MessageBox.Show("Không có chi tiết sản phẩm để xóa!", "Thông báo"); return; }
             if (dgvHoaDonBan.CurrentRow.Cells["MaSP"].Value.ToString() == "") { MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo"); return; }
             try
             {
@@ -163,10 +161,12 @@ namespace WindowsFormsApp1
             MessageBox.Show("Xóa thành công!");
             dt = bus_hd.HienThiThanhTien(txtSoHDN.Text);
             lbThanhTien.Text = dt.Rows[0]["ThanhTien"].ToString().Trim();
+            cboSP.Items.Clear();
             Lammoi();
         }
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+            if (dgvHoaDonBan.Rows.Count <= 1) { MessageBox.Show("Vui lòng thêm chi tiết sản phẩm!", "Thông báo"); return; }           
             String str = cboKH.SelectedValue.ToString();
             string[] a = str.Split('|');
             string makh = a[0].ToString();
@@ -206,6 +206,12 @@ namespace WindowsFormsApp1
         }
         private void Lammoi()
         {
+            DataTable dt = new DataTable();
+            dt = bus_sp.HienThiSanPham();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cboSP.Items.Add(dt.Rows[i][0].ToString() + " | " + dt.Rows[i][1].ToString() + " | " + dt.Rows[i][5].ToString());
+            }
             cboSP.SelectedIndex = -1;
             txtDonGia.Text = "";
             numSoLuong.Value = 0;
@@ -258,7 +264,7 @@ namespace WindowsFormsApp1
                     exApp.Cells[i + 10, j + 2] = dgvHoaDonBan.Rows[i].Cells[j].Value;
                 }
             }
-            tenTruong.Range["A9:E9"].Font.Bold = true;
+            tenTruong.Range["A9:F9"].Font.Bold = true;
             DataTable dt2 = bus_hd.HienThiThanhTien(txtSoHDN.Text.ToString());
             tenTruong = exSheet.Cells[5][i + 12];
             tenTruong.Font.Bold = true;
