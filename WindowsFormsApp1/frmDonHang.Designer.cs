@@ -268,11 +268,12 @@
             this.btnTaoDonHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnTaoDonHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTaoDonHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnTaoDonHang.FillColor = System.Drawing.Color.Magenta;
             this.btnTaoDonHang.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnTaoDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnTaoDonHang.Location = new System.Drawing.Point(833, 241);
+            this.btnTaoDonHang.Location = new System.Drawing.Point(821, 241);
             this.btnTaoDonHang.Name = "btnTaoDonHang";
-            this.btnTaoDonHang.Size = new System.Drawing.Size(86, 36);
+            this.btnTaoDonHang.Size = new System.Drawing.Size(98, 36);
             this.btnTaoDonHang.TabIndex = 14;
             this.btnTaoDonHang.Text = "TẠO";
             this.btnTaoDonHang.Click += new System.EventHandler(this.btnTaoDonHang_Click);
@@ -294,6 +295,7 @@
             this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoad.FillColor = System.Drawing.Color.Magenta;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
             this.btnLoad.Location = new System.Drawing.Point(967, 241);

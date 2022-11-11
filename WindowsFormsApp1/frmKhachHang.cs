@@ -38,8 +38,7 @@ namespace WindowsFormsApp1
             LamMoi();
             dgvKhachHang.DataSource = bus_kh.HienThiKhachHang();
         }
-
-        private void dgvKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -63,6 +62,11 @@ namespace WindowsFormsApp1
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnThem.Enabled = false;
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            dgvKhachHang.DataSource = bus_kh.TimKiemKhachHang(txtTimKiem.Text.Trim());
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -148,9 +152,6 @@ namespace WindowsFormsApp1
             LamMoi();
         }
 
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
-        {
-            dgvKhachHang.DataSource = bus_kh.TimKiemKhachHang(txtTimKiem.Text.Trim());
-        }
+        
     }
 }

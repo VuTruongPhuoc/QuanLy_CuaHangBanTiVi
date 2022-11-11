@@ -42,8 +42,8 @@ namespace WindowsFormsApp1
                 dto_nv.Diachi = txtDiaChi.Text;
                 dto_nv.Tentk = txtTenDangNhap.Text;
 
-                bus_tk.SuaTaiKhoan(dto_nv.Manv, dto_nv.Tennv, dto_nv.Sdt, dto_nv.Diachi,dto_nv.Tentk);
-  
+                bus_tk.SuaTaiKhoan(dto_nv.Manv, dto_nv.Tennv, dto_nv.Sdt, dto_nv.Diachi, dto_nv.Tentk);
+
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thông báo");
             }
             catch
@@ -54,10 +54,10 @@ namespace WindowsFormsApp1
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            if (txtMatKhauCu.TextLength == 0) { MessageBox.Show("Vui lòng nhập mật khẩu !", "Thông báo");txtMatKhauCu.Focus(); return; }
-            else if (txtMatKhauMoi.TextLength == 0) { MessageBox.Show("Vui lòng nhập mật khẩu mới !", "Thông báo");txtMatKhauMoi.Focus(); return; }
-            else if (txtNhapLai.Text != txtMatKhauMoi.Text) { MessageBox.Show("Mật khẩu xác nhận không chính xác, vui lòng nhập lại!! ", "Thông báo");txtNhapLai.Focus(); return; }
-            else if (txtMatKhauCu.Text != frmDangNhap.matkhau) { MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác vui lòng nhập lại");txtTenDangNhap.Focus(); return; }
+            if (txtMatKhauCu.TextLength == 0) { MessageBox.Show("Vui lòng nhập mật khẩu !", "Thông báo"); txtMatKhauCu.Focus(); return; }
+            else if (txtMatKhauMoi.TextLength == 0) { MessageBox.Show("Vui lòng nhập mật khẩu mới !", "Thông báo"); txtMatKhauMoi.Focus(); return; }
+            else if (txtNhapLai.Text != txtMatKhauMoi.Text) { MessageBox.Show("Mật khẩu xác nhận không chính xác, vui lòng nhập lại!! ", "Thông báo"); txtNhapLai.Focus(); return; }
+            else if (txtMatKhauCu.Text != frmDangNhap.matkhau) { MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác vui lòng nhập lại"); txtTenDangNhap.Focus(); return; }
             try
             {
                 dto_nv.Tentk = txtMatKhauCu.Text;
@@ -69,7 +69,11 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Lỗi");
             }
-           
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

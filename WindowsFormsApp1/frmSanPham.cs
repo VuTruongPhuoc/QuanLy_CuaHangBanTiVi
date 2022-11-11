@@ -75,27 +75,6 @@ namespace WindowsFormsApp1
             btnXoa.Enabled = false;
             dgvSanPham.DataSource = bussp.HienThiSanPham();
         }
-        private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                txtMaSP.Text = dgvSanPham.CurrentRow.Cells["MaSP"].Value.ToString();
-                txtTenSP.Text = dgvSanPham.CurrentRow.Cells["TenSP"].Value.ToString();
-                cboThuongHieuSX.SelectedValue = dgvSanPham.CurrentRow.Cells["MaTH"].Value.ToString();
-                cboKichThuoc.SelectedItem = dgvSanPham.CurrentRow.Cells["KichThuoc"].Value.ToString();
-                cboManHinh.SelectedItem = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
-                numUDSoLuong.Value = Convert.ToInt32(dgvSanPham.CurrentRow.Cells["SoLuong"].Value);
-                txtDonGiaNhap.Text = dgvSanPham.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
-                txtDonGiaBan.Text = dgvSanPham.CurrentRow.Cells["DonGiaBan"].Value.ToString();
-                picAnh.Image = Image.FromFile(Application.StartupPath + "\\ImageSP\\" + dgvSanPham.CurrentRow.Cells[8].Value.ToString());
-                txtGhiChu.Text = dgvSanPham.CurrentRow.Cells["GhiChu"].Value.ToString();
-            }
-            catch { }
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             double a;
@@ -148,12 +127,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Lỗi");
             }
             LamMoi();
-
-        }
-
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            LamMoi();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -178,6 +151,7 @@ namespace WindowsFormsApp1
             }
             catch { }
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -188,11 +162,8 @@ namespace WindowsFormsApp1
                 dgvSanPham.DataSource = bussp.HienThiSanPham();
             }
             catch { }
-
-
         }
         string DuongdanAnh;
-
         private void btnChonAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
@@ -203,10 +174,33 @@ namespace WindowsFormsApp1
                 DuongdanAnh = dlg.FileName.Substring(dlg.FileName.LastIndexOf('\\') + 1, dlg.FileName.Length - dlg.FileName.LastIndexOf('\\') - 1);
             }
         }
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             dgvSanPham.DataSource = bussp.TimKiemSanPham(txtTimKiem.Text);
+        }
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
+        }
+
+        private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtMaSP.Text = dgvSanPham.CurrentRow.Cells["MaSP"].Value.ToString();
+                txtTenSP.Text = dgvSanPham.CurrentRow.Cells["TenSP"].Value.ToString();
+                cboThuongHieuSX.SelectedValue = dgvSanPham.CurrentRow.Cells["MaTH"].Value.ToString();
+                cboKichThuoc.SelectedItem = dgvSanPham.CurrentRow.Cells["KichThuoc"].Value.ToString();
+                cboManHinh.SelectedItem = dgvSanPham.CurrentRow.Cells[4].Value.ToString();
+                numUDSoLuong.Value = Convert.ToInt32(dgvSanPham.CurrentRow.Cells["SoLuong"].Value);
+                txtDonGiaNhap.Text = dgvSanPham.CurrentRow.Cells["DonGiaNhap"].Value.ToString();
+                txtDonGiaBan.Text = dgvSanPham.CurrentRow.Cells["DonGiaBan"].Value.ToString();
+                picAnh.Image = Image.FromFile(Application.StartupPath + "\\ImageSP\\" + dgvSanPham.CurrentRow.Cells[8].Value.ToString());
+                txtGhiChu.Text = dgvSanPham.CurrentRow.Cells["GhiChu"].Value.ToString();
+            }
+            catch { }
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
         }
     }
 }
