@@ -28,7 +28,7 @@ namespace BUS
         public void SuaNhanVien(string manv, String tennv, string ngaysinh, string dienthoai, string diachi, string tk, string mk, int LoaiTaiKhoan)
         {
             string sql = "update tNhanVien set TenNV = N'" + tennv + "',NgaySinh = N'" + ngaysinh + "', DienThoai = N'" + dienthoai + "'" +
-                ", DiaChi = N'" + diachi + "',Username = N'" + tk + "',Password = N'" + mk + "' '" + LoaiTaiKhoan + "' where MaNV = N'" + manv + "'";
+                ", DiaChi = N'" + diachi + "',Username = N'" + tk + "',Password = N'" + mk + "', LoaiTaiKhoan = '" + LoaiTaiKhoan + "' where MaNV = N'" + manv + "'";
             da.DataChange(sql);
         }
         public void XoaNhanVien(string manv)

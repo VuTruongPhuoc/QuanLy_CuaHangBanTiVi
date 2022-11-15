@@ -191,7 +191,7 @@
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(33, 69);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(536, 332);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(487, 332);
             this.guna2GroupBox1.TabIndex = 22;
             this.guna2GroupBox1.Text = "Thông tin hóa đơn";
             this.guna2GroupBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -251,7 +251,7 @@
             this.dtpThoiGian.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpThoiGian.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpThoiGian.Name = "dtpThoiGian";
-            this.dtpThoiGian.Size = new System.Drawing.Size(476, 36);
+            this.dtpThoiGian.Size = new System.Drawing.Size(438, 36);
             this.dtpThoiGian.TabIndex = 10;
             this.dtpThoiGian.Value = new System.DateTime(2022, 11, 1, 0, 0, 0, 0);
             // 
@@ -272,7 +272,7 @@
             this.txtSoHD.PlaceholderText = "";
             this.txtSoHD.ReadOnly = true;
             this.txtSoHD.SelectedText = "";
-            this.txtSoHD.Size = new System.Drawing.Size(476, 29);
+            this.txtSoHD.Size = new System.Drawing.Size(438, 29);
             this.txtSoHD.TabIndex = 9;
             // 
             // cboNCC
@@ -287,7 +287,7 @@
             this.cboNCC.ItemHeight = 30;
             this.cboNCC.Location = new System.Drawing.Point(14, 145);
             this.cboNCC.Name = "cboNCC";
-            this.cboNCC.Size = new System.Drawing.Size(476, 36);
+            this.cboNCC.Size = new System.Drawing.Size(438, 36);
             this.cboNCC.TabIndex = 7;
             // 
             // txtNV
@@ -307,7 +307,7 @@
             this.txtNV.PlaceholderText = "";
             this.txtNV.ReadOnly = true;
             this.txtNV.SelectedText = "";
-            this.txtNV.Size = new System.Drawing.Size(476, 29);
+            this.txtNV.Size = new System.Drawing.Size(438, 29);
             this.txtNV.TabIndex = 1;
             // 
             // guna2GroupBox2

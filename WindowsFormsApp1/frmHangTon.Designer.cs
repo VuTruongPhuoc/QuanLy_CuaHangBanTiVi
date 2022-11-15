@@ -51,7 +51,7 @@
             this.txtHangTon.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHangTon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtHangTon.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHangTon.Location = new System.Drawing.Point(198, 178);
+            this.txtHangTon.Location = new System.Drawing.Point(553, 161);
             this.txtHangTon.Name = "txtHangTon";
             this.txtHangTon.PasswordChar = '\0';
             this.txtHangTon.PlaceholderText = "";
@@ -78,6 +78,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.gunadgvHangTon.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.gunadgvHangTon.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,7 +101,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gunadgvHangTon.DefaultCellStyle = dataGridViewCellStyle3;
             this.gunadgvHangTon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gunadgvHangTon.Location = new System.Drawing.Point(34, 285);
+            this.gunadgvHangTon.Location = new System.Drawing.Point(383, 236);
             this.gunadgvHangTon.Name = "gunadgvHangTon";
             this.gunadgvHangTon.RowHeadersVisible = false;
             this.gunadgvHangTon.RowHeadersWidth = 51;
@@ -133,7 +134,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(162, 9);
+            this.label1.Location = new System.Drawing.Point(490, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(288, 38);
             this.label1.TabIndex = 3;
@@ -143,7 +144,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(28, 178);
+            this.label2.Location = new System.Drawing.Point(377, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 32);
             this.label2.TabIndex = 4;
@@ -153,11 +154,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(626, 710);
+            this.ClientSize = new System.Drawing.Size(1261, 710);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtHangTon);
             this.Controls.Add(this.gunadgvHangTon);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmHangTon";
             this.Text = "frmHangTon";
             this.Load += new System.EventHandler(this.frmHangTon_Load);

@@ -86,7 +86,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(248, 27);
             this.txtTaiKhoan.TabIndex = 1;
-            this.txtTaiKhoan.Text = "q";
+            this.txtTaiKhoan.Text = "p";
             // 
             // label1
             // 
@@ -119,7 +119,7 @@
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(248, 27);
             this.txtMatKhau.TabIndex = 1;
-            this.txtMatKhau.Text = "222";
+            this.txtMatKhau.Text = "123";
             // 
             // label2
             // 

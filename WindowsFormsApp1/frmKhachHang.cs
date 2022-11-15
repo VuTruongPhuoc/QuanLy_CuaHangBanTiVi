@@ -109,6 +109,12 @@ namespace WindowsFormsApp1
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (!Regex.IsMatch(txtSDT.Text, @"^\d{9,11}$"))
+            {
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!!", "Thông báo");
+                txtSDT.Focus();
+                return;
+            }
             try
             {
                 dto_kh.Makh1 = txtMaKH.Text.Trim();

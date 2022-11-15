@@ -30,5 +30,12 @@ namespace BUS
             string sql = "update tNhanVien set Password = '" + password + "' where Username = '" + username + "'";
             da.DataChange(sql);
         }
+        public bool KiemTraTrungTaiKhoan(string tk)
+        {
+            string TenBang = "tNhanVien";
+            string TaiKhoan = "Username";
+            if(da.check(TenBang,TaiKhoan, tk)) return true;
+            return false;
+        }
     }
 }

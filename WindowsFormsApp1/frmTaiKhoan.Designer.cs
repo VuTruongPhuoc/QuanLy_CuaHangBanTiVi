@@ -280,7 +280,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Magenta;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(36, 62);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(111, 62);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(508, 464);
             this.guna2GroupBox1.TabIndex = 9;
@@ -299,7 +299,7 @@
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Magenta;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(647, 62);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(719, 62);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.Size = new System.Drawing.Size(475, 464);
             this.guna2GroupBox2.TabIndex = 10;
@@ -310,10 +310,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1190, 654);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1284, 654);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmTaiKhoan";
             this.Text = "Thông tin tài khoản";
             this.Load += new System.EventHandler(this.frmTaiKhoan_Load);

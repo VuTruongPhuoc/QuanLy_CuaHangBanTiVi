@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(399, 9);
+            this.label1.Location = new System.Drawing.Point(569, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 38);
             this.label1.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(274, 112);
+            this.txtTimKiem.Location = new System.Drawing.Point(368, 123);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(289, 36);
@@ -74,7 +74,7 @@
             this.btnNhap.FillColor = System.Drawing.Color.Magenta;
             this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnNhap.ForeColor = System.Drawing.Color.White;
-            this.btnNhap.Location = new System.Drawing.Point(692, 106);
+            this.btnNhap.Location = new System.Drawing.Point(873, 123);
             this.btnNhap.Name = "btnNhap";
             this.btnNhap.Size = new System.Drawing.Size(105, 42);
             this.btnNhap.TabIndex = 15;
@@ -85,7 +85,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(109, 123);
+            this.label4.Location = new System.Drawing.Point(143, 123);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 25);
             this.label4.TabIndex = 17;
@@ -95,6 +95,7 @@
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvNhapHang.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvNhapHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -103,7 +104,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvNhapHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvNhapHang.ColumnHeadersHeight = 29;
+            this.dgvNhapHang.ColumnHeadersHeight = 37;
             this.dgvNhapHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvNhapHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SoHDN,
@@ -120,12 +121,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNhapHang.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhapHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhapHang.Location = new System.Drawing.Point(43, 207);
+            this.dgvNhapHang.Location = new System.Drawing.Point(148, 205);
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.RowHeadersVisible = false;
             this.dgvNhapHang.RowHeadersWidth = 51;
             this.dgvNhapHang.RowTemplate.Height = 24;
-            this.dgvNhapHang.Size = new System.Drawing.Size(935, 347);
+            this.dgvNhapHang.Size = new System.Drawing.Size(1025, 347);
             this.dgvNhapHang.TabIndex = 18;
             this.dgvNhapHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhapHang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -139,7 +140,7 @@
             this.dgvNhapHang.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvNhapHang.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvNhapHang.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvNhapHang.ThemeStyle.HeaderStyle.Height = 29;
+            this.dgvNhapHang.ThemeStyle.HeaderStyle.Height = 37;
             this.dgvNhapHang.ThemeStyle.ReadOnly = false;
             this.dgvNhapHang.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhapHang.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -195,7 +196,7 @@
             this.btnLoad.FillColor = System.Drawing.Color.Magenta;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(844, 106);
+            this.btnLoad.Location = new System.Drawing.Point(1055, 123);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(118, 42);
             this.btnLoad.TabIndex = 19;
@@ -206,13 +207,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 605);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1285, 605);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvNhapHang);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnNhap);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDonNhap";
             this.Text = "Nhập Hàng";
             this.Load += new System.EventHandler(this.frmNhapHang_Load);

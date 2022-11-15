@@ -54,6 +54,7 @@ namespace WindowsFormsApp1
             {
                 frmTaiKhoan frmTaiKhoan = new frmTaiKhoan();
                 frmTaiKhoan.MdiParent = this;
+                frmTaiKhoan.Dock = DockStyle.Fill;
                 frmTaiKhoan.Show();
             }
             else
@@ -98,6 +99,7 @@ namespace WindowsFormsApp1
             {
                 frmKhachHang frmKhachHang = new frmKhachHang();
                 frmKhachHang.MdiParent = this;
+                frmKhachHang.Dock = DockStyle.Fill;
                 frmKhachHang.Show();
             }
             else
@@ -113,6 +115,7 @@ namespace WindowsFormsApp1
             {
                 frmNhanVien frmNhanVien = new frmNhanVien();
                 frmNhanVien.MdiParent = this;
+                frmNhanVien.Dock = DockStyle.Fill;
                 frmNhanVien.Show();
             }
             else
@@ -128,6 +131,7 @@ namespace WindowsFormsApp1
             {
                 frmNhaCungCap frmNhaCungCap = new frmNhaCungCap();
                 frmNhaCungCap.MdiParent = this;
+                frmNhaCungCap.Dock = DockStyle.Fill;
                 frmNhaCungCap.Show();
             }
             else
@@ -142,6 +146,7 @@ namespace WindowsFormsApp1
             {
                 frmDonHang frmDonHang = new frmDonHang();
                 frmDonHang.MdiParent = this;
+                frmDonHang.Dock = DockStyle.Fill;
                 frmDonHang.Show();
             }
             else
@@ -156,6 +161,7 @@ namespace WindowsFormsApp1
             {
                 frmDonNhap frmDonNhap = new frmDonNhap();
                 frmDonNhap.MdiParent = this;
+                frmDonNhap.Dock = DockStyle.Fill;
                 frmDonNhap.Show();
             }
             else
@@ -169,6 +175,7 @@ namespace WindowsFormsApp1
             {
                 frmHangTon frmHangTon = new frmHangTon();
                 frmHangTon.MdiParent = this;
+                frmHangTon.Dock = DockStyle.Fill;
                 frmHangTon.Show();
             }
             else
@@ -191,6 +198,19 @@ namespace WindowsFormsApp1
             }
         }
 
-        
+        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmLoaiSanPham"))
+            {
+                frmLoaiSanPham frmLoaiSanPham = new frmLoaiSanPham();
+                frmLoaiSanPham.MdiParent = this;
+                frmLoaiSanPham.Dock = DockStyle.Fill;
+                frmLoaiSanPham.Show();
+            }
+            else
+            {
+                ActiveChildForm("frmLoaiSanPham");
+            }
+        }
     }
 }

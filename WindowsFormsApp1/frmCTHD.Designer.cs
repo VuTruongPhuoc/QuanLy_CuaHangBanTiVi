@@ -73,7 +73,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Fuchsia;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(82, 51);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(82, 85);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(663, 360);
             this.guna2GroupBox1.TabIndex = 2;
@@ -235,12 +235,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(332, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 38);
+            this.label2.Size = new System.Drawing.Size(223, 39);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Hóa đơn";
+            this.label2.Text = "Hóa đơn bán";
             // 
             // dgvCTHD
             // 
@@ -271,7 +271,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCTHD.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCTHD.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvCTHD.Location = new System.Drawing.Point(82, 434);
+            this.dgvCTHD.Location = new System.Drawing.Point(82, 477);
             this.dgvCTHD.Name = "dgvCTHD";
             this.dgvCTHD.RowHeadersVisible = false;
             this.dgvCTHD.RowHeadersWidth = 51;
@@ -343,7 +343,7 @@
             this.btnXoaHD.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXoaHD.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoaHD.ForeColor = System.Drawing.Color.White;
-            this.btnXoaHD.Location = new System.Drawing.Point(82, 647);
+            this.btnXoaHD.Location = new System.Drawing.Point(82, 699);
             this.btnXoaHD.Name = "btnXoaHD";
             this.btnXoaHD.Size = new System.Drawing.Size(180, 45);
             this.btnXoaHD.TabIndex = 5;
@@ -355,7 +355,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.DeepPink;
-            this.label12.Location = new System.Drawing.Point(349, 657);
+            this.label12.Location = new System.Drawing.Point(333, 712);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(173, 32);
             this.label12.TabIndex = 16;
@@ -366,7 +366,7 @@
             this.lbThanhTien.AutoSize = true;
             this.lbThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbThanhTien.ForeColor = System.Drawing.Color.DeepPink;
-            this.lbThanhTien.Location = new System.Drawing.Point(570, 660);
+            this.lbThanhTien.Location = new System.Drawing.Point(568, 715);
             this.lbThanhTien.Name = "lbThanhTien";
             this.lbThanhTien.Size = new System.Drawing.Size(32, 29);
             this.lbThanhTien.TabIndex = 17;
@@ -377,7 +377,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DeepPink;
-            this.label7.Location = new System.Drawing.Point(746, 660);
+            this.label7.Location = new System.Drawing.Point(726, 715);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(63, 29);
             this.label7.TabIndex = 18;
@@ -387,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(852, 727);
+            this.ClientSize = new System.Drawing.Size(852, 780);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbThanhTien);
             this.Controls.Add(this.label12);

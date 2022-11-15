@@ -29,6 +29,8 @@ namespace WindowsFormsApp1
             dtpNgaySinh.Value = DateTime.Today;
             txtSDT.Text = "";
             txtDiaChi.Text = "";
+            txtTaiKhoan.Text = "";
+            txtMatKhau.Text = "";
             rdoNhanVien.Checked = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
@@ -39,35 +41,11 @@ namespace WindowsFormsApp1
             LamMoi();
             dgvNhanVien.DataSource = bus_nv.HienThiNhanVien();
         }
-
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
-            try
-            {
-                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
-                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells["TenNV"].Value.ToString();
-                dtpNgaySinh.Value = (DateTime)dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value;
-                txtSDT.Text = dgvNhanVien.CurrentRow.Cells["DienThoai"].Value.ToString();
-                txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"].Value.ToString();
-                txtTaiKhoan.Text = dgvNhanVien.CurrentRow.Cells["Username"].Value.ToString();
-                txtMatKhau.Text = dgvNhanVien.CurrentRow.Cells["Password"].Value.ToString();
-                if (dgvNhanVien.CurrentRow.Cells["LoaiTaiKhoan"].Value.ToString().Trim() == "0")
-                {
-                    rdoNhanVien.Checked = true;
-                    rdoQuanTri.Checked = false;
-                }
-                else
-                {
-                    rdoNhanVien.Checked = false;
-                    rdoQuanTri.Checked = true;
-                }
-            }
-            catch { }
-
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnThem.Enabled = false;
+            dgvNhanVien.DataSource = bus_nv.TimKiemNhanVien(txtTimKiem.Text);
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (txtMaNV.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã NV !", "Thông báo"); return; }
@@ -108,13 +86,12 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Lỗi!!!");
             }
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 dto_nv.Manv = txtMaNV.Text.Trim();
                 dto_nv.Tennv = txtTenNV.Text.Trim();
                 dto_nv.Ngaysinh = dtpNgaySinh.Value.ToString();
@@ -128,12 +105,13 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Sửa thành công", "Thông báo");
                 dgvNhanVien.DataSource = bus_nv.HienThiNhanVien();
 
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi!!!");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Lỗi!!!");
+            //}
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             try
@@ -156,11 +134,33 @@ namespace WindowsFormsApp1
             LamMoi();
         }
 
-        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvNhanVien.DataSource = bus_nv.TimKiemNhanVien(txtTimKiem.Text);
-        }
+            try
+            {
+                txtMaNV.Text = dgvNhanVien.CurrentRow.Cells["MaNV"].Value.ToString();
+                txtTenNV.Text = dgvNhanVien.CurrentRow.Cells["TenNV"].Value.ToString();
+                dtpNgaySinh.Value = (DateTime)dgvNhanVien.CurrentRow.Cells["NgaySinh"].Value;
+                txtSDT.Text = dgvNhanVien.CurrentRow.Cells["DienThoai"].Value.ToString();
+                txtDiaChi.Text = dgvNhanVien.CurrentRow.Cells["DiaChi"].Value.ToString();
+                txtTaiKhoan.Text = dgvNhanVien.CurrentRow.Cells["Username"].Value.ToString();
+                txtMatKhau.Text = dgvNhanVien.CurrentRow.Cells["Password"].Value.ToString();
+                if (dgvNhanVien.CurrentRow.Cells["LoaiTaiKhoan"].Value.ToString().Trim() == "0")
+                {
+                    rdoNhanVien.Checked = true;
+                    rdoQuanTri.Checked = false;
+                }
+                else
+                {
+                    rdoNhanVien.Checked = false;
+                    rdoQuanTri.Checked = true;
+                }
+            }
+            catch { }
 
-        
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            btnThem.Enabled = false;
+        }
     }
 }

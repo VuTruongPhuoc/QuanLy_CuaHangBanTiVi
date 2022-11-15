@@ -34,6 +34,7 @@ namespace WindowsFormsApp1
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            if (bus_tk.KiemTraTrungTaiKhoan(txtTenDangNhap.Text.Trim())) { MessageBox.Show("Tài khoản này đã được đăng kí , vui lòng nhập lại !", "Thông báo"); return; }
             try
             {
                 dto_nv.Manv = txtMaNV.Text;
@@ -43,7 +44,6 @@ namespace WindowsFormsApp1
                 dto_nv.Tentk = txtTenDangNhap.Text;
 
                 bus_tk.SuaTaiKhoan(dto_nv.Manv, dto_nv.Tennv, dto_nv.Sdt, dto_nv.Diachi, dto_nv.Tentk);
-
                 MessageBox.Show("Cập nhật tài khoản thành công!", "Thông báo");
             }
             catch

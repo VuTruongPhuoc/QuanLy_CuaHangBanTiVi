@@ -32,102 +32,167 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            this.ChartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.cboDoanhThu = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ChartDoanhThu = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.cboThang = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboNam = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ChartDoanhThu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ChartDoanhThu
-            // 
-            this.ChartDoanhThu.BackImageTransparentColor = System.Drawing.Color.White;
-            this.ChartDoanhThu.BackSecondaryColor = System.Drawing.Color.White;
-            this.ChartDoanhThu.BorderlineColor = System.Drawing.Color.LightGray;
-            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            chartArea1.AxisX.LineColor = System.Drawing.SystemColors.ActiveCaptionText;
-            chartArea1.AxisX2.LineColor = System.Drawing.Color.RosyBrown;
-            chartArea1.AxisX2.TitleForeColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.LineColor = System.Drawing.SystemColors.ActiveCaptionText;
-            chartArea1.AxisY2.LineColor = System.Drawing.Color.OrangeRed;
-            chartArea1.AxisY2.TitleForeColor = System.Drawing.Color.Transparent;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            chartArea1.BorderColor = System.Drawing.Color.Gainsboro;
-            chartArea1.Name = "ChartArea1";
-            this.ChartDoanhThu.ChartAreas.Add(chartArea1);
-            legend1.AutoFitMinFontSize = 12;
-            legend1.BackColor = System.Drawing.Color.White;
-            legend1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            legend1.IsDockedInsideChartArea = false;
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "Legend1";
-            this.ChartDoanhThu.Legends.Add(legend1);
-            this.ChartDoanhThu.Location = new System.Drawing.Point(65, 145);
-            this.ChartDoanhThu.Name = "ChartDoanhThu";
-            this.ChartDoanhThu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalLeft;
-            series1.BackImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.BorderColor = System.Drawing.Color.DeepPink;
-            series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            series1.ChartArea = "ChartArea1";
-            series1.Color = System.Drawing.SystemColors.Highlight;
-            series1.LabelBackColor = System.Drawing.Color.White;
-            series1.LabelForeColor = System.Drawing.Color.Gainsboro;
-            series1.Legend = "Legend1";
-            series1.LegendText = "Doanh Thu";
-            series1.Name = "DoanhThu";
-            series1.ShadowColor = System.Drawing.Color.LavenderBlush;
-            this.ChartDoanhThu.Series.Add(series1);
-            this.ChartDoanhThu.Size = new System.Drawing.Size(1095, 473);
-            this.ChartDoanhThu.TabIndex = 0;
-            this.ChartDoanhThu.Text = "chart1";
-            title1.BackColor = System.Drawing.Color.Transparent;
-            title1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.Center;
-            title1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            title1.BorderColor = System.Drawing.Color.White;
-            title1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            title1.ForeColor = System.Drawing.Color.Teal;
-            title1.Name = "Title1";
-            title1.Text = "Đồ thị doanh thu năm 2022";
-            this.ChartDoanhThu.Titles.Add(title1);
             // 
             // cboDoanhThu
             // 
             this.cboDoanhThu.BackColor = System.Drawing.Color.Transparent;
             this.cboDoanhThu.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboDoanhThu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDoanhThu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.cboDoanhThu.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboDoanhThu.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cboDoanhThu.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboDoanhThu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboDoanhThu.ForeColor = System.Drawing.Color.Black;
             this.cboDoanhThu.ItemHeight = 30;
-            this.cboDoanhThu.Location = new System.Drawing.Point(65, 76);
+            this.cboDoanhThu.Location = new System.Drawing.Point(117, 98);
             this.cboDoanhThu.Name = "cboDoanhThu";
-            this.cboDoanhThu.Size = new System.Drawing.Size(168, 36);
+            this.cboDoanhThu.Size = new System.Drawing.Size(207, 36);
+            this.cboDoanhThu.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cboDoanhThu.TabIndex = 1;
             this.cboDoanhThu.SelectedIndexChanged += new System.EventHandler(this.cboDoanhThu_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(491, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(353, 38);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Thống Kê Tăng Trưởng";
+            // 
+            // ChartDoanhThu
+            // 
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea1.AxisX.TitleForeColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.ChartDoanhThu.ChartAreas.Add(chartArea1);
+            legend1.BorderWidth = 10;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.ForeColor = System.Drawing.Color.Tomato;
+            legend1.HeaderSeparator = System.Windows.Forms.DataVisualization.Charting.LegendSeparatorStyle.Line;
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            this.ChartDoanhThu.Legends.Add(legend1);
+            this.ChartDoanhThu.Location = new System.Drawing.Point(117, 190);
+            this.ChartDoanhThu.Name = "ChartDoanhThu";
+            this.ChartDoanhThu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.IsXValueIndexed = true;
+            series1.LabelForeColor = System.Drawing.Color.IndianRed;
+            series1.Legend = "Legend1";
+            series1.LegendText = "Doanh Thu";
+            series1.Name = "DoanhThu";
+            this.ChartDoanhThu.Series.Add(series1);
+            this.ChartDoanhThu.Size = new System.Drawing.Size(1045, 393);
+            this.ChartDoanhThu.TabIndex = 3;
+            this.ChartDoanhThu.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            title1.Name = "Title1";
+            title1.Text = "Thống kê tăng trưởng doanh thu";
+            this.ChartDoanhThu.Titles.Add(title1);
+            // 
+            // cboThang
+            // 
+            this.cboThang.AccessibleRole = System.Windows.Forms.AccessibleRole.TitleBar;
+            this.cboThang.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.cboThang.BackColor = System.Drawing.Color.Transparent;
+            this.cboThang.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboThang.DropDownHeight = 120;
+            this.cboThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboThang.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cboThang.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboThang.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboThang.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboThang.ForeColor = System.Drawing.Color.Black;
+            this.cboThang.IntegralHeight = false;
+            this.cboThang.ItemHeight = 30;
+            this.cboThang.Location = new System.Drawing.Point(657, 98);
+            this.cboThang.Name = "cboThang";
+            this.cboThang.Size = new System.Drawing.Size(207, 36);
+            this.cboThang.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cboThang.TabIndex = 4;
+            // 
+            // cboNam
+            // 
+            this.cboNam.BackColor = System.Drawing.Color.Transparent;
+            this.cboNam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboNam.DropDownHeight = 120;
+            this.cboNam.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNam.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cboNam.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboNam.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboNam.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboNam.ForeColor = System.Drawing.Color.Black;
+            this.cboNam.IntegralHeight = false;
+            this.cboNam.ItemHeight = 30;
+            this.cboNam.Location = new System.Drawing.Point(955, 98);
+            this.cboNam.Name = "cboNam";
+            this.cboNam.Size = new System.Drawing.Size(207, 36);
+            this.cboNam.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
+            this.cboNam.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(657, 76);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 16);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tháng";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(952, 76);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Năm";
             // 
             // frmDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1208, 666);
-            this.Controls.Add(this.cboDoanhThu);
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ClientSize = new System.Drawing.Size(1302, 666);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.cboNam);
+            this.Controls.Add(this.cboThang);
             this.Controls.Add(this.ChartDoanhThu);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboDoanhThu);
             this.Name = "frmDoanhThu";
             this.Text = "frmDoanhThu";
             this.Load += new System.EventHandler(this.frmDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ChartDoanhThu)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDoanhThu;
         private Guna.UI2.WinForms.Guna2ComboBox cboDoanhThu;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ChartDoanhThu;
+        private Guna.UI2.WinForms.Guna2ComboBox cboThang;
+        private Guna.UI2.WinForms.Guna2ComboBox cboNam;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -272,8 +272,50 @@ begin
 	from tSanPHam join deleted on tSanPham.MaSP = deleted.MaSP
 end
 
+--thong ke doanh thu tung ngay
+create function DoanhThuTheoThang(@thang int, @nam int) returns table
+as return
+(
+select
+isnull(sum(case day (NgayLap) when 1 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay1,
+isnull(sum(case day (NgayLap) when 2 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay2,
+isnull(sum(case day (NgayLap) when 3 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay3,
+isnull(sum(case day (NgayLap) when 4 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay4,
+isnull(sum(case day (NgayLap) when 5 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay5,
+isnull(sum(case day (NgayLap) when 6 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay6,
+isnull(sum(case day (NgayLap) when 7 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay7,
+isnull(sum(case day (NgayLap) when 8 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay8,
+isnull(sum(case day (NgayLap) when 9 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay9,
+isnull(sum(case day (NgayLap) when 10 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay10,
+isnull(sum(case day (NgayLap) when 11 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay11,
+isnull(sum(case day (NgayLap) when 12 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay12,
+isnull(sum(case day (NgayLap) when 13 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay13,
+isnull(sum(case day (NgayLap) when 14 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay14,
+isnull(sum(case day (NgayLap) when 15 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay15,
+isnull(sum(case day (NgayLap) when 16 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay16,
+isnull(sum(case day (NgayLap) when 17 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay17,
+isnull(sum(case day (NgayLap) when 18 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay18,
+isnull(sum(case day (NgayLap) when 19 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay19,
+isnull(sum(case day (NgayLap) when 20 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay20,
+isnull(sum(case day (NgayLap) when 21 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay21,
+isnull(sum(case day (NgayLap) when 22 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay22,
+isnull(sum(case day (NgayLap) when 23 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay23,
+isnull(sum(case day (NgayLap) when 24 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay24,
+isnull(sum(case day (NgayLap) when 25 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay25,
+isnull(sum(case day (NgayLap) when 26 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay26,
+isnull(sum(case day (NgayLap) when 27 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay27,
+isnull(sum(case day (NgayLap) when 28 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay28,
+isnull(sum(case day (NgayLap) when 29 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay29,
+isnull(sum(case day (NgayLap) when 30 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay30,
+isnull(sum(case day (NgayLap) when 31 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Ngay31
+from tChiTietHDB ct
+	join tHoaDonBan hdb on ct.SoHDB = hdb.SoHDB 
+	join tSanPham s on ct.MaSP = s.MaSP
+where month(hdb.NgayLap) = @thang and YEAR(hdb.NgayLap) = @nam
+)
+select * from dbo.DoanhThuTheoThang(11, 2022)
 --thong ke doanh thu tung thang
-create function DoanhThuTheoNam() returns table
+create function DoanhThuTheoNam(@nam int) returns table
 as return
 (
 select
@@ -292,10 +334,52 @@ isnull(sum(case month (NgayLap) when 12 then (SLBan*DonGiaBan - Khuyenmai*(SLBan
 from tChiTietHDB ct
 	join tHoaDonBan hdb on ct.SoHDB = hdb.SoHDB 
 	join tSanPham s on ct.MaSP = s.MaSP
-where year(hdb.NgayLap) = 2022
+where year(hdb.NgayLap) = @nam
 )
-select * from dbo.DoanhThuTheoNam()
+select * from dbo.DoanhThuTheoNam(2022)
+--thong ke doanh thu tung quy
+create function DoanhThuTheoTungQuy(@nam int) returns table
+as return
+(
+select
+isnull(sum(case month (NgayLap) when 1 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) + 
+isnull(sum(case month (NgayLap) when 2 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 3 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Quy1,
+isnull(sum(case month (NgayLap) when 4 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 5 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 6 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Quy2,
+isnull(sum(case month (NgayLap) when 7 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 8 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 9 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Quy3,
+isnull(sum(case month (NgayLap) when 10 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 11 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) +
+isnull(sum(case month (NgayLap) when 12 then (SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) end),0) as Quy4
+from tChiTietHDB ct
+	join tHoaDonBan hdb on ct.SoHDB = hdb.SoHDB 
+	join tSanPham s on ct.MaSP = s.MaSP
+where year(hdb.NgayLap) = @nam
+)
+select * from dbo.DoanhThuTheoTungQuy()
 
-select SoHDB, TenKH, DiaChi, DienThoai, NgayLap from tHoaDonBan as hdb, tKhachHang as kh
-where hdb.MaKH = kh.MaKH 
-	and SoHDB = 'HDB474'
+--thong ke theo mat hang
+create function MatHangBanRa(@ngaydau date , @ngaycuoi date) returns table
+as return (
+select TenSP,sum(SLBan) as SoLuongBan from tChiTietHDB,tHoaDonBan,tSanPham
+	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
+	tChiTietHDB.MaSP = tSanPham.MaSP and
+	NgayLap between @ngaydau and @ngaycuoi	
+	group by TenSP	
+)
+select * from dbo.MatHangBanRa('2022/4/2','2022/11/9')
+--thống kê doanh thu từng mặt hàng
+create function DoanhThuTungMatHang(@ngaydau date , @ngaycuoi date) returns table
+as return (
+	select TenSP, sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) DoanhThu from tChiTietHDB,tHoaDonBan,tSanPham
+	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
+	tChiTietHDB.MaSP = tSanPham.MaSP and
+	NgayLap between @ngaydau and @ngaycuoi
+	group by TenSP
+)
+select * from dbo.DoanhThuTungMatHang('2022/4/2','2022/11/9')
+
+

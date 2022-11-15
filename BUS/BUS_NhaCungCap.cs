@@ -20,14 +20,14 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public void ThemNCC(string MaNCC, string TenNCC)
+        public void ThemNCC(string MaNCC, string TenNCC, string dt, string dc)
         {
-            string sql = "insert tNhaCungCap values(N'" + MaNCC + "', N'" + TenNCC + "')";
+            string sql = "insert tNhaCungCap values(N'" + MaNCC + "', N'" + TenNCC + "', N'"+dt+"', N'"+dc+"')";
             da.DataChange(sql);
         }
-        public void SuaNCC(string MaNCC, string TenNCC)
+        public void SuaNCC(string MaNCC, string TenNCC,string dt, string dc)
         {
-            string sql = "update tNhaCungCap set TenNCC = N'" + TenNCC + "' where MaNCC = N'" + MaNCC + "'";
+            string sql = "update tNhaCungCap set TenNCC = N'" + TenNCC + "', DienThoai = '"+dt+"', DiaChi = '"+dc+"' where MaNCC = N'" + MaNCC + "'";
             da.DataChange(sql);
         }
         public void XoaNCC(string MaNCC)
@@ -49,7 +49,7 @@ namespace BUS
 
             dt = HienThiNCC();
             dv = dt.DefaultView;
-            dv.RowFilter = "MaNCC like '%" + tk + "%' or TenNCC like '%" + tk + "%'";
+            dv.RowFilter = "MaNCC like '%" + tk + "%' or TenNCC like '%" + tk + "%' or DienThoai like '%"+tk+"%'";
             return dv;
         }
 
