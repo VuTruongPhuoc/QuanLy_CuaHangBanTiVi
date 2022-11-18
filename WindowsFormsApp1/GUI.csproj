@@ -70,6 +70,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBaoCaoDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCTHD.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +88,11 @@
     <Compile Include="frmCTHDN.Designer.cs">
       <DependentUpon>frmCTHDN.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoanhThu.cs">
+    <Compile Include="frmTangTruong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoanhThu.Designer.cs">
-      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    <Compile Include="frmTangTruong.Designer.cs">
+      <DependentUpon>frmTangTruong.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDonHang.cs">
       <SubType>Form</SubType>
@@ -174,14 +180,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\CommonFunction.cs" />
+    <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
+      <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCTHD.resx">
       <DependentUpon>frmCTHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCTHDN.resx">
       <DependentUpon>frmCTHDN.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDoanhThu.resx">
-      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    <EmbeddedResource Include="frmTangTruong.resx">
+      <DependentUpon>frmTangTruong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>

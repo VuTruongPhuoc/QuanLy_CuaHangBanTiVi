@@ -383,6 +383,7 @@
             this.btnLamMoi.Size = new System.Drawing.Size(180, 45);
             this.btnLamMoi.TabIndex = 44;
             this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // dgvSanPham
             // 

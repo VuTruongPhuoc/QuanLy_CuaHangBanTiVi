@@ -100,6 +100,7 @@ Create Table tKhachHang
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON ) ON [PRIMARY]
 )ON [PRIMARY]
 ;
+select * from tNhanVien
 GO
 ALTER TABLE tKhachHang
 ADD
@@ -370,11 +371,12 @@ select TenSP,sum(SLBan) as SoLuongBan from tChiTietHDB,tHoaDonBan,tSanPham
 	NgayLap between @ngaydau and @ngaycuoi	
 	group by TenSP	
 )
-select * from dbo.MatHangBanRa('2022/4/2','2022/11/9')
+select * from dbo.MatHangBanRa('2022/1/2','2022/11/12')
+order by SoLuongBan desc
 --thống kê doanh thu từng mặt hàng
 create function DoanhThuTungMatHang(@ngaydau date , @ngaycuoi date) returns table
 as return (
-	select TenSP, sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) DoanhThu from tChiTietHDB,tHoaDonBan,tSanPham
+	select TenSP, sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) as DoanhThu from tChiTietHDB,tHoaDonBan,tSanPham
 	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
 	tChiTietHDB.MaSP = tSanPham.MaSP and
 	NgayLap between @ngaydau and @ngaycuoi
@@ -382,4 +384,26 @@ as return (
 )
 select * from dbo.DoanhThuTungMatHang('2022/4/2','2022/11/9')
 
+create function BaoCaoDoanhThuThang(@thang int , @nam int) returns table
+as return (
+select tSanPham.MaSP as MaSP,count(distinct tHoaDonBan.SoHDB) as SoLuongBan ,sum(SLBan*DonGiaBan) as TienHang,sum(Khuyenmai*(SLBan*DonGiaBan)/100) as Khuyenmai,sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) as DoanhThu
+from tKhachHang,tHoaDonBan,tChiTietHDB,tSanPham
+	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
+	tChiTietHDB.MaSP = tSanPham.MaSP and
+	tHoaDonBan.MaKH = tKhachHang.MaKH and
+	month(NgayLap) = @thang and year(NgayLap) = @nam
+	group by tSanPham.MaSP
+)
+select * from dbo.BaoCaoDoanhThuThang('11','2022')
 
+create function dbo.BaoCaoDoanhThuNam(@nam int) returns table
+as return (
+select tSanPham.MaSP as MaSP,count(distinct tHoaDonBan.SoHDB) as SoLuongBan ,sum(SLBan*DonGiaBan) as TienHang,sum(Khuyenmai*(SLBan*DonGiaBan)/100) as Khuyenmai,sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) as DoanhThu
+from tKhachHang,tHoaDonBan,tChiTietHDB,tSanPham
+	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
+	tChiTietHDB.MaSP = tSanPham.MaSP and
+	tHoaDonBan.MaKH = tKhachHang.MaKH and
+	year(NgayLap) = @nam
+	group by tSanPham.MaSP
+)
+select * from dbo.BaoCaoDoanhThuNam('2022')

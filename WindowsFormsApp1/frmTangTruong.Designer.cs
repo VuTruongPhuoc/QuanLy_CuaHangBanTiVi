@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class frmDoanhThu
+    partial class frmTangTruong
     {
         /// <summary>
         /// Required designer variable.
@@ -177,6 +177,7 @@
             this.Controls.Add(this.ChartDoanhThu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboDoanhThu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDoanhThu";
             this.Text = "frmDoanhThu";
             this.Load += new System.EventHandler(this.frmDoanhThu_Load);

@@ -11,10 +11,10 @@ using BUS;
 
 namespace WindowsFormsApp1
 {
-    public partial class frmDoanhThu : Form
+    public partial class frmTangTruong : Form
     {
         BUS.BUS_ThongKe bus_dt = new BUS_ThongKe();
-        public frmDoanhThu()
+        public frmTangTruong()
         {
             InitializeComponent();
         }

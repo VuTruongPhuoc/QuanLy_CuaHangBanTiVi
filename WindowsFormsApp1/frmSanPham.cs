@@ -178,11 +178,6 @@ namespace WindowsFormsApp1
         {
             dgvSanPham.DataSource = bussp.TimKiemSanPham(txtTimKiem.Text);
         }
-        private void btnLamMoi_Click(object sender, EventArgs e)
-        {
-            LamMoi();
-        }
-
         private void dgvSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -201,6 +196,11 @@ namespace WindowsFormsApp1
             catch { }
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            LamMoi();
         }
     }
 }

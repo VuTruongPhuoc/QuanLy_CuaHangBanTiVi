@@ -186,15 +186,16 @@ namespace WindowsFormsApp1
 
         private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!CheckExitsForm("frmDoanhThu"))
+            if (!CheckExitsForm("frmBaoCaoDoanhThu"))
             {
-                frmDoanhThu frmDoanhThu = new frmDoanhThu();
-                frmDoanhThu.MdiParent = this;
-                frmDoanhThu.Show();
+                frmBaoCaoDoanhThu frmBaoCaoDoanhThu = new frmBaoCaoDoanhThu();
+                frmBaoCaoDoanhThu.MdiParent = this;
+                frmBaoCaoDoanhThu.Dock = DockStyle.Fill;
+                frmBaoCaoDoanhThu.Show();
             }
             else
             {
-                ActiveChildForm("frmDoanhThu");
+                ActiveChildForm("frmBaoCaoDoanhThu");
             }
         }
 
@@ -210,6 +211,21 @@ namespace WindowsFormsApp1
             else
             {
                 ActiveChildForm("frmLoaiSanPham");
+            }
+        }
+
+        private void tăngTrưởngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmDoanhThu"))
+            {
+                frmTangTruong frmDoanhThu = new frmTangTruong();
+                frmDoanhThu.MdiParent = this;
+                frmDoanhThu.Dock = DockStyle.Fill;
+                frmDoanhThu.Show();
+            }
+            else
+            {
+                ActiveChildForm("frmDoanhThu");
             }
         }
     }
