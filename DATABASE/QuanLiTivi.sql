@@ -386,7 +386,7 @@ select * from dbo.DoanhThuTungMatHang('2022/4/2','2022/11/9')
 
 create function BaoCaoDoanhThuThang(@thang int , @nam int) returns table
 as return (
-select tSanPham.MaSP as MaSP,count(distinct tHoaDonBan.SoHDB) as SoLuongBan ,sum(SLBan*DonGiaBan) as TienHang,sum(Khuyenmai*(SLBan*DonGiaBan)/100) as Khuyenmai,sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) as DoanhThu
+select tSanPham.MaSP as MaSP,count(distinct tHoaDonBan.SoHDB) as SoLuongBan ,(sum(SLBan*DonGiaBan)) as TienHang,sum(Khuyenmai*(SLBan*DonGiaBan)/100) as Khuyenmai,sum(SLBan*DonGiaBan - Khuyenmai*(SLBan*DonGiaBan)/100) as DoanhThu
 from tKhachHang,tHoaDonBan,tChiTietHDB,tSanPham
 	where tChiTietHDB.SoHDB = tHoaDonBan.SoHDB and
 	tChiTietHDB.MaSP = tSanPham.MaSP and

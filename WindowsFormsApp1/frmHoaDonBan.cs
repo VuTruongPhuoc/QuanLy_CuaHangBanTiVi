@@ -236,45 +236,51 @@ namespace WindowsFormsApp1
             tenTruong.Range["C2:E2"].Font.Size = 15;
             tenTruong.Range["C2:E2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center; 
             DataTable dt = bus_hd.HienThiThongTinExport(txtSoHDN.Text.ToString());
-            tenTruong.Range["B4:C7"].Font.Size = 12;
-            tenTruong.Range["B4:B4"].Value = "Mã hóa đơn:";
+
+            tenTruong.Range["B3:C8"].Font.Size = 12;
             tenTruong.Range["C4:E4"].MergeCells = true;
-            tenTruong.Range["C4:E4"].Value = dt.Rows[0][0].ToString();
-            tenTruong.Range["B5:B5"].Value = "Khách hàng:";
+            tenTruong.Range["C4:E4"].Value = "Ngày " + dtpThoiGian.Value.Day.ToString() + " Tháng " + dtpThoiGian.Value.Month.ToString() + " Năm " + dtpThoiGian.Value.Year.ToString();       
+            tenTruong.Range["B5:B5"].Value = "Mã hóa đơn:";
             tenTruong.Range["C5:E5"].MergeCells = true;
-            tenTruong.Range["C5:E5"].Value = dt.Rows[0][1].ToString();
-            tenTruong.Range["B6:B6"].Value = "Địa chỉ:";
+            tenTruong.Range["C5:E5"].Value = dt.Rows[0][0].ToString();
+
+            tenTruong.Range["B6:B6"].Value = "Khách hàng:";
             tenTruong.Range["C6:E6"].MergeCells = true;
-            tenTruong.Range["C6:E6"].Value = dt.Rows[0][2].ToString();
-            tenTruong.Range["B7:B7"].Value = "Điện thoại:";
+            tenTruong.Range["C6:E6"].Value = dt.Rows[0][1].ToString();
+
+            tenTruong.Range["B7:B7"].Value = "Địa chỉ:";
             tenTruong.Range["C7:E7"].MergeCells = true;
-            tenTruong.Range["C7:E7"].Value = dt.Rows[0][3].ToString();
+            tenTruong.Range["C7:E7"].Value = dt.Rows[0][2].ToString();
+
+            tenTruong.Range["B8:B8"].Value = "Điện thoại:";
+            tenTruong.Range["C8:E8"].MergeCells = true;
+            tenTruong.Range["C8:E8"].Value = dt.Rows[0][3].ToString();
             //in dữ liệu từ datagraview
             int i, j;
             for (i = 0; i < dgvHoaDonBan.Columns.Count; i++)
             {
-                exApp.Cells[9, 1] = "STT";
-                exApp.Cells[9, i + 2] = dgvHoaDonBan.Columns[i].HeaderText;
+                exApp.Cells[10, 1] = "STT";
+                exApp.Cells[10, i + 2] = dgvHoaDonBan.Columns[i].HeaderText;
             }
             for(i = 0; i < dgvHoaDonBan.Rows.Count - 1; i++)
             {
                 for (j = 0; j < dgvHoaDonBan.Columns.Count; j++)
                 {
-                    exApp.Cells[i + 10, 1] = i + 1;
-                    exApp.Cells[i + 10, j + 2] = dgvHoaDonBan.Rows[i].Cells[j].Value;
+                    exApp.Cells[i + 11, 1] = i + 1;
+                    exApp.Cells[i + 11, j + 2] = dgvHoaDonBan.Rows[i].Cells[j].Value;
                 }
             }
-            tenTruong.Range["A9:F9"].Font.Bold = true;
+            tenTruong.Range["A10:F10"].Font.Bold = true;
             DataTable dt2 = bus_hd.HienThiThanhTien(txtSoHDN.Text.ToString());
-            tenTruong = exSheet.Cells[5][i + 12];
+            tenTruong = exSheet.Cells[5][i + 13];
             tenTruong.Font.Bold = true;
             tenTruong.Value2 = "Tổng tiền";
-            tenTruong = exSheet.Cells[6][i + 12];
+            tenTruong = exSheet.Cells[6][i + 13];
             tenTruong.Font.Bold = true;
-            tenTruong.Value2 = dt2.Rows[0][0].ToString();
-
+            tenTruong.Value2 = dt2.Rows[0][0].ToString() + "  VND";
+            
             //set save file 
-            exApp.Columns.ColumnWidth = 14;
+            exApp.Columns.ColumnWidth = 15;
             exApp.ActiveWorkbook.SaveCopyAs(path);
             exApp.ActiveWorkbook.Saved = true;
         }   

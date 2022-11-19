@@ -233,19 +233,23 @@ namespace WindowsFormsApp1
             tenTruong.Range["C2:E2"].Font.Size = 15;
             tenTruong.Range["C2:E2"].Style.HorizontalAlignment = ExcelHorizontalAlignment.Center;
             DataTable dt = bus_hdn.HienThiThongTinExport(txtSoHD.Text.ToString());
-            tenTruong.Range["B4:C7"].Font.Size = 12;
-            tenTruong.Range["B4:B4"].Value = "Mã hóa đơn:";
+
+
+            tenTruong.Range["B3:C8"].Font.Size = 12;
             tenTruong.Range["C4:E4"].MergeCells = true;
-            tenTruong.Range["C4:E4"].Value = dt.Rows[0][0].ToString();
-            tenTruong.Range["B5:B5"].Value = "Nhà cung cấp:";
+            tenTruong.Range["C4:E4"].Value = "Ngày " + dtpThoiGian.Value.Day.ToString() + " Tháng " + dtpThoiGian.Value.Month.ToString() + " Năm " + dtpThoiGian.Value.Year.ToString();
+            tenTruong.Range["B5:B5"].Value = "Mã hóa đơn:";
             tenTruong.Range["C5:E5"].MergeCells = true;
-            tenTruong.Range["C5:E5"].Value = dt.Rows[0][1].ToString();
-            tenTruong.Range["B6:B6"].Value = "Địa chỉ:";
+            tenTruong.Range["C5:E5"].Value = dt.Rows[0][0].ToString();
+            tenTruong.Range["B6:B6"].Value = "Nhà cung cấp:";
             tenTruong.Range["C6:E6"].MergeCells = true;
-            tenTruong.Range["C6:E6"].Value = dt.Rows[0][2].ToString();
-            tenTruong.Range["B7:B7"].Value = "Điện thoại:";
+            tenTruong.Range["C6:E6"].Value = dt.Rows[0][1].ToString();
+            tenTruong.Range["B7:B7"].Value = "Địa chỉ:";
             tenTruong.Range["C7:E7"].MergeCells = true;
-            tenTruong.Range["C7:E7"].Value = dt.Rows[0][3].ToString();
+            tenTruong.Range["C7:E7"].Value = dt.Rows[0][2].ToString();
+            tenTruong.Range["B8:B8"].Value = "Điện thoại:";
+            tenTruong.Range["C8:E8"].MergeCells = true;
+            tenTruong.Range["C8:E8"].Value = dt.Rows[0][3].ToString();
             //in dữ liệu từ datagraview
             int i, j;
             for (i = 0; i < dgvHoaDonNhap.Columns.Count; i++)
