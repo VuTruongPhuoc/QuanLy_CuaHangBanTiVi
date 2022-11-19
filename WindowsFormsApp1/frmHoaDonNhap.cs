@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             try
             {
                 Random rd = new Random();
-                txtSoHD.Text = "HDB" + rd.Next(1, 10000).ToString();
+                txtSoHD.Text = "HDN" + rd.Next(1, 10000).ToString();
                 if (bus_hdn.KiemTraTrungMaHDN(txtSoHD.Text.ToString().Trim()))
                 {
                     frmHoaDonNhap_Load(sender, e);
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Mã hóa đơn đã bị trùng! Vui lòng tạo mới");
             }
-            bus_nh.ThemDonNhap(txtSoHD.Text, dt.Rows[0]["MaNV"].ToString().Trim(), null, dtpThoiGian.Value.ToString(), 0);
+            bus_nh.ThemDonNhap(txtSoHD.Text.Trim(), null, dt.Rows[0]["MaNV"].ToString(), dtpThoiGian.Value.ToString(), 0);
             Lammoi();
         }
 

@@ -21,7 +21,7 @@ namespace BUS
         }
         public void ThemDonNhap(string sohdn, string mancc, string manv, string ngaynhap, double trigia)
         {
-            string sql = "insert tHoaDonNhap values(N'" + sohdn + "', N'" + mancc + "','" + manv + "','" + ngaynhap + "', '" + trigia + "')";
+            string sql = "insert tHoaDonNhap values(N'" + sohdn + "',null,N'" + manv + "','" + ngaynhap + "', '" + trigia + "')";
             da.DataChange(sql);
         }
         public void SuaDonNhap(string sohdb, string mancc, string manv, double trigia)

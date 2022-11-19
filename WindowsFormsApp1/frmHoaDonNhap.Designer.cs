@@ -469,7 +469,7 @@
             // txtKhuyenMai
             // 
             this.txtKhuyenMai.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtKhuyenMai.DefaultText = "10";
+            this.txtKhuyenMai.DefaultText = "0";
             this.txtKhuyenMai.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtKhuyenMai.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtKhuyenMai.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

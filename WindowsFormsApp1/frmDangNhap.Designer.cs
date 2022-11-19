@@ -86,7 +86,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(248, 27);
             this.txtTaiKhoan.TabIndex = 1;
-            this.txtTaiKhoan.Text = "p";
+            this.txtTaiKhoan.Text = "phuoc";
             // 
             // label1
             // 

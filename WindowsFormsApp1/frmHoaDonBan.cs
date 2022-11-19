@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Mã hóa đơn đã bị trùng! Vui lòng tạo mới");
             }
-            bus_dh.ThemDonHang(txtSoHDN.Text, dt.Rows[0]["MaNV"].ToString().Trim(), null, dtpThoiGian.Value.ToString(), 0);
+            bus_dh.ThemDonHang(txtSoHDN.Text, dt.Rows[0]["MaNV"].ToString(),null,dtpThoiGian.Value.ToString(), 0);
             Lammoi();
         }
 

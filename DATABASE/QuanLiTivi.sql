@@ -113,7 +113,7 @@ Create Table tThuongHieu
 (
 	MaTH nvarchar(10) not null,
 	TenTH nvarchar(20) not null
-	Constraint [PK_tHangSanXuat] PRIMARY KEY CLUSTERED
+	Constraint [PK_tThuongHieu] PRIMARY KEY CLUSTERED
 (
 	[MaTH] ASC
 	
@@ -142,11 +142,11 @@ ADD
 			or DIENTHOAI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'
 			or DIENTHOAI LIKE '[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 GO
-Create Table tSanPham
+CREATE Table tSanPham
 (
 	MaSP Nvarchar(10) not null,
 	TenSP Nvarchar(20) not null,
-	MaTH nvarchar(30),
+	MaTH nvarchar(10),
 	KichThuoc nvarchar(10),
 	ManHinh nvarchar(15),
 	SoLuong int ,
@@ -178,48 +178,58 @@ ALTER TABLE [tHoaDonBan]  WITH CHECK ADD  CONSTRAINT [FK_tHoaDonBan_tKhachHang] 
 REFERENCES [tKhachHang] ([MaKH])
 ALTER TABLE [tHoaDonBan]  WITH CHECK ADD  CONSTRAINT [FK_tHoaDonBan_tNhanVien] FOREIGN KEY([MaNV])
 REFERENCES [tNhanVien] ([MaNV])
-ALTER TABLE [tSanPham]  WITH CHECK ADD  CONSTRAINT [FK_tSanPham_tHangSanXuat] FOREIGN KEY([MaTH])
+ALTER TABLE [tSanPham]  WITH CHECK ADD  CONSTRAINT [FK_tSanPham_tThuongHieu] FOREIGN KEY([MaTH])
 REFERENCES [tThuongHieu] ([MaTH])
+
+insert tHoaDonNhap values(N'HDN001',N'NCC001', N'NV002', '2021-10-14', 16000000)
+insert tHoaDonNhap values(N'HDN002',N'NCC002', N'NV003', '2022-9-20', 78000000)
+--select * from tHoaDonNhap
+GO
+
+insert tChiTietHDN values(N'HDN001',N'SP002', '2', 0)
+insert tChiTietHDN values(N'HDN001',N'SP003', '4', 0)
+insert tChiTietHDN values(N'HDN002',N'SP004', '6', 0)
+insert tChiTietHDN values(N'HDN002',N'SP005', '8', 0)
+GO
+insert tHoaDonBan values(N'HDB001', N'NV002', N'KH002', '2022-10-14',21000000)
+insert tHoaDonBan values(N'HDB002', N'NV002', N'KH003', '2022-10-13',16000000)
+
+--select * from tHoaDonBan
+GO
+insert tChiTietHDB values(N'HDB001', N'SP002', '3', 0)
+insert tChiTietHDB values(N'HDB001', N'SP003', '1', 0)
+insert tChiTietHDB values(N'HDB002', N'SP004', '1', 0)
+insert tChiTietHDB values(N'HDB002', N'SP005', '1', 0)
+
+--select * from tChiTietHDB
+GO
+insert tKhachHang values(N'KH001', N'cao ba sung', N'Nữ', '0929292939', N'Hà Nội')
+insert tKhachHang values(N'KH002', N'Ngô Văn Anh', N'Nam', '0929292929', N'Hà Nội')
+insert tKhachHang values(N'KH003', N'nguyen thi cao', N'Nữ', '0939292929', N'TP HCM')
+GO
+--select * from tKhachHang
 
 insert tThuongHieu values(N'TH001', 'Sonny')
 insert tThuongHieu values(N'TH002', 'SamSung')
-select * from tThuongHieu
-
-insert tSanPham values(N'SP002', 'SamSung oled', 'TH002', '32 inch', 'oled',9 , 32432, 3432243, 'df.png','ol')
-	insert tSanPham values(N'SP003', 'sony oled', 'TH001', '39 inch', 'oled',6, 4000000, 9000000, 'd.png','ol')
-	insert tSanPham values(N'SP004', 'sony ofd', 'TH001', '56 inch', 'OLED',4, 5000000, 9000000, 'h.png','ol')
-insert tSanPham values(N'SP005', 'sony ffd', 'TH001', '48 inch', 'oled', 7, 6000000, 9000000, 'h.png','ol')
+--select * from tThuongHieu
+GO
+insert tSanPham values(N'SP002', 'SamSung OLED', N'TH002', '32 inch', 'OLED',9 , 2000000, 5000000, null,null)
+insert tSanPham values(N'SP003', 'Sony OLED', N'TH001', '39 inch', 'OLED',6, 4000000, 6000000, null,null)
+insert tSanPham values(N'SP004', 'Sony OFD', N'TH001', '56 inch', 'OLED',4, 5000000, 7000000, null,null)
+insert tSanPham values(N'SP005', 'Sony FFD', N'TH001', '48 inch', 'OLED', 7, 6000000, 9000000, null,null)
 
 select * from tSanPham
-
-insert tNhanVien values('nv003', 'vu truong phuoc', '2013-4-5', '0123456789', 'hai duong','q','222', 1)
-insert tNhanVien values('nv002', 'vuong kien quoc', '2015-6-5', '0987654321', 'ha noi','p','123', 0)
-select * from tNhanVien
-
-insert tNhaCungCap values('NCC002', 'Kha banh', '0111112222', 'ha noi')
-select * from tNhaCungCap
-
-insert tHoaDonBan values('HDB001','nv002', 'KH002', '2022-10-14', 5000000)
-insert tHoaDonBan values('HDB002','nv002', 'KH003', '2022-10-13', 9000000)
-select * from tHoaDonBan
-
-insert tKhachHang values('KH003', 'cao ba sung', 'Nữ', '0929292939', 'ha nội')
-insert tKhachHang values('KH002', 'cao ba quat', 'Nam', '0929292929', 'ha thanh')
-insert tKhachHang values('KH001', 'nguyen thi cao', 'Nữ', '0939292929', 'tp hcm')
-
-insert tChiTietHDB values('HDB001','sp002', '3', null)
-insert tChiTietHDB values('HDB001','sp003', '1', null)
-select * from tChiTietHDB
-
-select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,sum(SoLuong*DonGiaBan) as TongTien from tChiTietHDB,tSanPham 
-	where tSanPham.MaSP = tChiTietHDB.MaSP 
-	group by tSanPham.MaSP, TenSP,SLBan, DonGiaBan
-
-select * from tChiTietHDN
-select * from tHoaDonNhap
-
-select tSanPham.MaSP, TenSP,SLBan, DonGiaBan,SLBan*DonGiaBan -Khuyenmai*(SLBan*DonGiaBan)/100 as TongTien from tChiTietHDB,tSanPham 
-                where tSanPham.MaSP = tChiTietHDB.MaSP and SoHDB = 'HDB96'
+GO
+insert tNhanVien values(N'NV003', N'Vũ Trường Phước', '2002-7-7', '0123456789', N'Hải Dương','phuoc','123', 1)
+insert tNhanVien values(N'NV002', N'Vương Kiến Quốc', '2002-8-5', '0987654321', N'Hà Nội','quoc','222', 1)
+insert tNhanVien values(N'NV001', N'Ngô Văn Anh', '2002-6-5', '0987654333', N'Hà Nội','anh','222', 0)
+insert tNhanVien values(N'NV004', N'Phạm Minh Quân', '2002-11-4', '0987654322', N'Hà Nội','quan','222', 0)
+--select * from tNhanVien
+GO
+insert tNhaCungCap VALUES (N'NCC001', N'Huấn Rose', '0111312222', N'Hà Nội')
+insert tNhaCungCap VALUES (N'NCC002', N'Khá Bảnh', '0111112222', N'Hà Nội')
+--select * from tNhaCungCap
+GO
 
 --cap nhat hoa don ban--
 --cập nhật hàng trong kho sau khi đặt hàng hoặc cập nhập
@@ -360,7 +370,7 @@ from tChiTietHDB ct
 	join tSanPham s on ct.MaSP = s.MaSP
 where year(hdb.NgayLap) = @nam
 )
-select * from dbo.DoanhThuTheoTungQuy()
+--select * from dbo.DoanhThuTheoTungQuy()
 
 --thong ke theo mat hang
 create function MatHangBanRa(@ngaydau date , @ngaycuoi date) returns table
@@ -371,8 +381,8 @@ select TenSP,sum(SLBan) as SoLuongBan from tChiTietHDB,tHoaDonBan,tSanPham
 	NgayLap between @ngaydau and @ngaycuoi	
 	group by TenSP	
 )
-select * from dbo.MatHangBanRa('2022/1/2','2022/11/12')
-order by SoLuongBan desc
+--select * from dbo.MatHangBanRa('2022/1/2','2022/11/12')
+--order by SoLuongBan desc
 --thống kê doanh thu từng mặt hàng
 create function DoanhThuTungMatHang(@ngaydau date , @ngaycuoi date) returns table
 as return (
@@ -382,7 +392,7 @@ as return (
 	NgayLap between @ngaydau and @ngaycuoi
 	group by TenSP
 )
-select * from dbo.DoanhThuTungMatHang('2022/4/2','2022/11/9')
+--select * from dbo.DoanhThuTungMatHang('2022/4/2','2022/11/9')
 
 create function BaoCaoDoanhThuThang(@thang int , @nam int) returns table
 as return (

@@ -18,9 +18,9 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public void ThemDonHang(string sohdb, string manv, string makh, string ngayban, double trigia)
+        public void ThemDonHang(string sohdb, string manv,string makh, string ngayban, double trigia)
         {
-            string sql = "insert tHoaDonBan values(N'" + sohdb + "', N'" + manv + "','" + makh + "','" + ngayban + "', '" + trigia + "')";
+            string sql = "insert tHoaDonBan values(N'" + sohdb + "', N'" + manv + "',null,'" + ngayban + "', '" + trigia + "')";
             da.DataChange(sql);
         }
         public void SuaDonHang(string sohdb, string manv, string makh, double trigia)
