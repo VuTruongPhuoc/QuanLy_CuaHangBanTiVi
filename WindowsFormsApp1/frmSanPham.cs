@@ -25,6 +25,7 @@ namespace WindowsFormsApp1
         }
         public void LamMoi()
         {
+            btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
             txtMaSP.Text = "";
@@ -71,8 +72,7 @@ namespace WindowsFormsApp1
             comm.FillCombo(bus_th.HienThiTH(), cboThuongHieuSX, "TenTH", "MaTH");
             ThemcboKichThuoc();
             ThemcboManHinh();
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            LamMoi();
             dgvSanPham.DataSource = bussp.HienThiSanPham();
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -196,11 +196,19 @@ namespace WindowsFormsApp1
             catch { }
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
+            btnThem.Enabled = false;
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             LamMoi();
+        }
+
+        private void txtMaSP_TextChanged(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
     }
 }

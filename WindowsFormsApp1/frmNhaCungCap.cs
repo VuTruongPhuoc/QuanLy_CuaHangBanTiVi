@@ -137,6 +137,13 @@ namespace WindowsFormsApp1
         {
             dgvNCC.DataSource = bus_ncc.TimKiemNCC(txtTimKiem.Text);
         }
+
+        private void txtMaNCC_TextChanged(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
     }
 }
 

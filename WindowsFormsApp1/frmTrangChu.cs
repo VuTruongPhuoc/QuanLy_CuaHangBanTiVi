@@ -22,6 +22,7 @@ namespace WindowsFormsApp1
             if (!frmDangNhap.isAdmin)
             {
                 nhânViênToolStripMenuItem.Enabled = false;
+                thốngKêToolStripMenuItem.Enabled = false;
             }
         }
         private bool CheckExitsForm(string name)
@@ -226,6 +227,21 @@ namespace WindowsFormsApp1
             else
             {
                 ActiveChildForm("frmDoanhThu");
+            }
+        }
+
+        private void thươngHiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmThuongHieu"))
+            {
+                frmThuongHieu frmThuongHieu = new frmThuongHieu();
+                frmThuongHieu.MdiParent = this;
+                frmThuongHieu.Dock = DockStyle.Fill;
+                frmThuongHieu.Show();
+            }
+            else
+            {
+                ActiveChildForm("frmThuongHieu");
             }
         }
     }

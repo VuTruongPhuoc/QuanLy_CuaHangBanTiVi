@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    internal class DTO_ThuongHieu
+    public class DTO_ThuongHieu
     {
         private string math;
         private string tenth;

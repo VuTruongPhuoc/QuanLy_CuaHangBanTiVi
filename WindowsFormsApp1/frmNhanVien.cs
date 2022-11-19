@@ -90,8 +90,8 @@ namespace WindowsFormsApp1
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 dto_nv.Manv = txtMaNV.Text.Trim();
                 dto_nv.Tennv = txtTenNV.Text.Trim();
                 dto_nv.Ngaysinh = dtpNgaySinh.Value.ToString();
@@ -105,11 +105,11 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Sửa thành công", "Thông báo");
                 dgvNhanVien.DataSource = bus_nv.HienThiNhanVien();
 
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Lỗi!!!");
-            //}
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi!!!");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -161,6 +161,13 @@ namespace WindowsFormsApp1
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
             btnThem.Enabled = false;
+        }
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
         }
     }
 }

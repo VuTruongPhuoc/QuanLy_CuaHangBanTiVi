@@ -158,6 +158,11 @@ namespace WindowsFormsApp1
             LamMoi();
         }
 
-        
+        private void txtMaKH_TextChanged(object sender, EventArgs e)
+        {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
     }
 }
