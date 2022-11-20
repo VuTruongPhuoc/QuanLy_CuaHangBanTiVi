@@ -71,10 +71,10 @@ namespace WindowsFormsApp1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaKH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã KH !", "Thông báo"); return; }
-            else if (txtTenKH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên KH !", "Thông báo"); return; }
-            else if (txtSDT.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); return; }
-            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Địa Chỉ !", "Thông báo"); return; }
+            if (txtMaKH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã KH !", "Thông báo");txtMaKH.Focus(); return; }
+            else if (txtTenKH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên KH !", "Thông báo"); txtTenKH.Focus(); return; }
+            else if (txtSDT.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); txtSDT.Focus(); return; }
+            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Địa Chỉ !", "Thông báo"); txtDiaChi.Focus(); return; }
 
             if (!Regex.IsMatch(txtSDT.Text, @"^\d{9,11}$"))
             {

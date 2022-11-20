@@ -39,10 +39,10 @@ namespace WindowsFormsApp1
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaNCC.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã NCC !", "Thông báo"); return; }
-            else if (txtTenNCC.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên NCC !", "Thông báo"); return; }
-            else if (txtDienThoai.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); return; }
-            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); return; }
+            if (txtMaNCC.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã NCC !", "Thông báo");txtMaNCC.Focus(); return; }
+            else if (txtTenNCC.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên NCC !", "Thông báo"); txtTenNCC.Focus(); return; }
+            else if (txtDienThoai.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); txtDienThoai.Focus(); return; }
+            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); txtDiaChi.Focus(); return; }
             if (!Regex.IsMatch(txtDienThoai.Text, @"^\d{9,11}$"))
             {
                 MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!!", "Thông báo");

@@ -64,6 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
             this.label1.Location = new System.Drawing.Point(491, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(353, 38);
@@ -164,7 +165,7 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Năm";
             // 
-            // frmDoanhThu
+            // frmTangTruong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +179,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboDoanhThu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmDoanhThu";
+            this.Name = "frmTangTruong";
             this.Text = "frmDoanhThu";
             this.Load += new System.EventHandler(this.frmDoanhThu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ChartDoanhThu)).EndInit();

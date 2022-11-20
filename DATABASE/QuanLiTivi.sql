@@ -230,7 +230,8 @@ insert tNhaCungCap VALUES (N'NCC001', N'Huấn Rose', '0111312222', N'Hà Nội'
 insert tNhaCungCap VALUES (N'NCC002', N'Khá Bảnh', '0111112222', N'Hà Nội')
 --select * from tNhaCungCap
 GO
-
+select * from tHoaDonBan where CONVERT(date,NgayLap,105) like '%10-14-2022%'
+--select * from tHoaDonBan where CONVERT(nvarchar(20),NgayLap,105) like '2022-10-13'
 --cap nhat hoa don ban--
 --cập nhật hàng trong kho sau khi đặt hàng hoặc cập nhập
 create trigger trg_dathang on tChiTietHDB after insert as 

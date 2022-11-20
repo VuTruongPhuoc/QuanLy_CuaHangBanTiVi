@@ -173,6 +173,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.ForestGreen;
             this.label6.Location = new System.Drawing.Point(515, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(295, 32);
@@ -252,7 +253,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvKhachHang.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvKhachHang.GridColor = System.Drawing.Color.Fuchsia;
+            this.dgvKhachHang.GridColor = System.Drawing.Color.Aquamarine;
             this.dgvKhachHang.Location = new System.Drawing.Point(579, 184);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersVisible = false;
@@ -266,7 +267,7 @@
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvKhachHang.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
             this.dgvKhachHang.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvKhachHang.ThemeStyle.GridColor = System.Drawing.Color.Fuchsia;
+            this.dgvKhachHang.ThemeStyle.GridColor = System.Drawing.Color.Aquamarine;
             this.dgvKhachHang.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.dgvKhachHang.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvKhachHang.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

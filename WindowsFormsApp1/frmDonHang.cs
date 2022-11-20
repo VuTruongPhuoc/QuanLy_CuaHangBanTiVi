@@ -25,18 +25,8 @@ namespace WindowsFormsApp1
 
         public void frmDonHang_Load(object sender, EventArgs e)
         {
-            comm.FillCombo(bus_kh.HienThiKhachHang(), cboMaKH, "TenKH", "MaKH");
             dgvDonHang.DataSource = bus_dh.HienThiDonHang();
         }
-
-        private void gunadgvDonHang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtSoHDB.Text = dgvDonHang.CurrentRow.Cells["SoHDB"].Value.ToString();
-            cboMaKH.SelectedValue = dgvDonHang.CurrentRow.Cells["MaKH"].Value.ToString();       
-            gunadtpNgayLap.Value = (DateTime)dgvDonHang.CurrentRow.Cells["NgayLap"].Value;
-            txtThanhTien.Text = dgvDonHang.CurrentRow.Cells["ThanhTien"].Value.ToString();
-        }
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             dgvDonHang.DataSource = bus_dh.TimKiemDonHang(txtTimKiem.Text);           
