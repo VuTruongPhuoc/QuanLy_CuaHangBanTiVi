@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmSaoLuu : Form
     {
-        SqlConnection str = new SqlConnection("Data Source=DESKTOP-VEU6OUD\\SQLEXPRESS;database=BTL_CSharp;Integrated Security=True");
+        SqlConnection str = new SqlConnection("Data Source=DESKTOP-V6QRKTP\\SQLEXPRESS;database=BTL_CSharp;Integrated Security=True");
 
         public frmSaoLuu()
         {
