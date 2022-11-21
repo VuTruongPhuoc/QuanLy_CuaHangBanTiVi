@@ -49,15 +49,16 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(569, 32);
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Location = new System.Drawing.Point(547, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 38);
+            this.label1.Size = new System.Drawing.Size(172, 38);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nhập Hàng";
+            this.label1.Text = "Đơn Nhập";
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(368, 123);
+            this.txtTimKiem.Location = new System.Drawing.Point(369, 138);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(289, 36);
@@ -66,17 +67,16 @@
             // 
             // btnNhap
             // 
-            this.btnNhap.BorderRadius = 10;
             this.btnNhap.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnNhap.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNhap.FillColor = System.Drawing.Color.Magenta;
+            this.btnNhap.FillColor = System.Drawing.Color.DeepPink;
             this.btnNhap.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnNhap.ForeColor = System.Drawing.Color.White;
-            this.btnNhap.Location = new System.Drawing.Point(873, 123);
+            this.btnNhap.Location = new System.Drawing.Point(1056, 132);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(105, 42);
+            this.btnNhap.Size = new System.Drawing.Size(134, 42);
             this.btnNhap.TabIndex = 15;
             this.btnNhap.Text = "Nhập";
             this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
@@ -84,10 +84,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(143, 123);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(138, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 25);
+            this.label4.Size = new System.Drawing.Size(148, 32);
             this.label4.TabIndex = 17;
             this.label4.Text = "Tìm Kiếm :";
             // 
@@ -121,12 +121,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvNhapHang.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNhapHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvNhapHang.Location = new System.Drawing.Point(148, 205);
+            this.dgvNhapHang.Location = new System.Drawing.Point(86, 241);
             this.dgvNhapHang.Name = "dgvNhapHang";
             this.dgvNhapHang.RowHeadersVisible = false;
             this.dgvNhapHang.RowHeadersWidth = 51;
             this.dgvNhapHang.RowTemplate.Height = 24;
-            this.dgvNhapHang.Size = new System.Drawing.Size(1025, 347);
+            this.dgvNhapHang.Size = new System.Drawing.Size(1104, 347);
             this.dgvNhapHang.TabIndex = 18;
             this.dgvNhapHang.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvNhapHang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -188,17 +188,16 @@
             // 
             // btnLoad
             // 
-            this.btnLoad.BorderRadius = 10;
             this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoad.FillColor = System.Drawing.Color.Magenta;
+            this.btnLoad.FillColor = System.Drawing.Color.DeepPink;
             this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnLoad.ForeColor = System.Drawing.Color.White;
-            this.btnLoad.Location = new System.Drawing.Point(1055, 123);
+            this.btnLoad.Location = new System.Drawing.Point(859, 132);
             this.btnLoad.Name = "btnLoad";
-            this.btnLoad.Size = new System.Drawing.Size(118, 42);
+            this.btnLoad.Size = new System.Drawing.Size(138, 42);
             this.btnLoad.TabIndex = 19;
             this.btnLoad.Text = "LOAD";
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
@@ -208,7 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1285, 605);
+            this.ClientSize = new System.Drawing.Size(1285, 665);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.dgvNhapHang);
             this.Controls.Add(this.label4);

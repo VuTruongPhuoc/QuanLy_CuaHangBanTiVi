@@ -244,5 +244,35 @@ namespace WindowsFormsApp1
                 ActiveChildForm("frmThuongHieu");
             }
         }
+
+        private void phụcHôiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmSaoLuu"))
+            {
+                frmPhucHoi frmPhucHoi = new frmPhucHoi();
+                frmPhucHoi.MdiParent = this;
+                frmPhucHoi.Show();
+                
+            }
+            else
+            {
+                ActiveChildForm("frmPhucHoi");
+            }
+        }
+
+        private void saoLưuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!CheckExitsForm("frmSaoLuu"))
+            {
+                frmSaoLuu frmSaoLuu = new frmSaoLuu();
+                frmSaoLuu.MdiParent = this;
+                frmSaoLuu.Show();
+                
+            }
+            else
+            {
+                ActiveChildForm("frmSaoLuu");
+            }
+        }
     }
 }

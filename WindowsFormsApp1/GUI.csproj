@@ -70,6 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPhucHoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhucHoi.Designer.cs">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frSaoLuu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frSaoLuu.Designer.cs">
+      <DependentUpon>frSaoLuu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Resources\CommonFunction.cs" />
+    <EmbeddedResource Include="frmPhucHoi.resx">
+      <DependentUpon>frmPhucHoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frSaoLuu.resx">
+      <DependentUpon>frSaoLuu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoDoanhThu.resx">
       <DependentUpon>frmBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>

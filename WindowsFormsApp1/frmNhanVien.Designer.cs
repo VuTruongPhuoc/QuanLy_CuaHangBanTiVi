@@ -305,7 +305,7 @@
             this.Username,
             this.Password,
             this.LoaiTaiKhoan});
-            this.dgvNhanVien.GridColor = System.Drawing.Color.Fuchsia;
+            this.dgvNhanVien.GridColor = System.Drawing.Color.Lavender;
             this.dgvNhanVien.Location = new System.Drawing.Point(599, 207);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;

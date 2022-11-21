@@ -79,14 +79,14 @@ namespace WindowsFormsApp1
         {
             double a;
             double b;
-            if (txtMaSP.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã SP !", "Thông báo"); return; }
-            else if (txtTenSP.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên SP !", "Thông báo"); return; }
-            else if (cboThuongHieuSX.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Thương Hiệu SX !", "Thông báo"); return; }
-            else if (cboKichThuoc.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Kích Thước SP !", "Thông báo"); return; }
-            else if (cboManHinh.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Màn hình SP !", "Thông báo"); return; }
-            else if (numUDSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập Số Lượng SP !", "Thông báo"); return; }
-            else if (txtDonGiaNhap.TextLength == 0) { MessageBox.Show("Vui Lòng Nhập Đơn Giá Nhập của SP", "Thông báo"); return; }
-            else if (txtDonGiaBan.TextLength == 0) { MessageBox.Show("Vui lòng nhập Đơn Giá Bán của SP"); return; }
+            if (txtMaSP.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã SP !", "Thông báo");txtMaSP.Focus(); return; }
+            else if (txtTenSP.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên SP !", "Thông báo"); txtTenSP.Focus(); return; }
+            else if (cboThuongHieuSX.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Thương Hiệu SX !", "Thông báo"); cboThuongHieuSX.Focus(); return; }
+            else if (cboKichThuoc.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Kích Thước SP !", "Thông báo"); cboKichThuoc.Focus(); return; }
+            else if (cboManHinh.SelectedIndex == -1) { MessageBox.Show("Vui lòng nhập Màn hình SP !", "Thông báo"); cboManHinh.Focus(); return; }
+            else if (numUDSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập Số Lượng SP !", "Thông báo"); numUDSoLuong.Focus(); return; }
+            else if (txtDonGiaNhap.TextLength == 0) { MessageBox.Show("Vui Lòng Nhập Đơn Giá Nhập của SP", "Thông báo"); txtDonGiaNhap.Focus(); return; }
+            else if (txtDonGiaBan.TextLength == 0) { MessageBox.Show("Vui lòng nhập Đơn Giá Bán của SP"); txtDonGiaBan.Focus(); return; }
 
             try
             {
@@ -161,7 +161,10 @@ namespace WindowsFormsApp1
                 bussp.XoaSanPham(dtosp.MaSP1);
                 dgvSanPham.DataSource = bussp.HienThiSanPham();
             }
-            catch { }
+            catch
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
         string DuongdanAnh;
         private void btnChonAnh_Click(object sender, EventArgs e)

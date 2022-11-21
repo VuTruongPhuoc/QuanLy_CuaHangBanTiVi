@@ -48,14 +48,14 @@ namespace WindowsFormsApp1
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaNV.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã NV !", "Thông báo"); return; }
-            else if (txtTenNV.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên NV !", "Thông báo"); return; }
-            else if (dtpNgaySinh.Value == DateTime.Today) { MessageBox.Show("Vui lòng nhập ngày sinh ", "Thông báo"); return; }
-            else if (txtSDT.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); return; }
-            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Địa Chỉ !", "Thông báo"); return; }
+            if (txtMaNV.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã NV !", "Thông báo");txtMaNV.Focus(); return; }
+            else if (txtTenNV.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên NV !", "Thông báo"); txtTenNV.Focus(); return; }
+            else if (dtpNgaySinh.Value == DateTime.Today) { MessageBox.Show("Vui lòng nhập ngày sinh ", "Thông báo"); dtpNgaySinh.Focus(); return; }
+            else if (txtSDT.TextLength == 0) { MessageBox.Show("Vui lòng nhập Số Điện Thoại !", "Thông báo"); txtSDT.Focus(); return; }
+            else if (txtDiaChi.TextLength == 0) { MessageBox.Show("Vui lòng nhập Địa Chỉ !", "Thông báo"); txtDiaChi.Focus(); return; }
             if (!Regex.IsMatch(txtSDT.Text, @"^\d{9,11}$"))
             {
-                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!!", "Thông báo");
+                MessageBox.Show("Vui lòng nhập đúng định dạng số điện thoại!", "Thông báo");
                 txtSDT.Focus();
                 return;
             }

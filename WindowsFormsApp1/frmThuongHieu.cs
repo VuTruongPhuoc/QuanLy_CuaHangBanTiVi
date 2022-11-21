@@ -45,8 +45,8 @@ namespace WindowsFormsApp1
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaTH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã TH !", "Thông báo"); return; }
-            else if (txtTenTH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên TH !", "Thông báo"); return; }
+            if (txtMaTH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Mã TH !", "Thông báo");txtMaTH.Focus(); return; }
+            else if (txtTenTH.TextLength == 0) { MessageBox.Show("Vui lòng nhập Tên TH !", "Thông báo");txtTenTH.Focus(); return; }
             if (bus_th.KiemTraTrungMaTH(txtMaTH.Text))
             {
                 MessageBox.Show("Mã Thương Hiệu đã tồn tại , vui lòng nhập lại!!", "Thông báo");

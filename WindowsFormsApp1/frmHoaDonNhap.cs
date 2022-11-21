@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
             try
             {
                 Random rd = new Random();
-                txtSoHD.Text = "HDB" + rd.Next(1, 10000).ToString();
+                txtSoHD.Text = "HDN" + rd.Next(1, 10000).ToString();
                 if (bus_hdn.KiemTraTrungMaHDN(txtSoHD.Text.ToString().Trim()))
                 {
                     frmHoaDonNhap_Load(sender, e);
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Mã hóa đơn đã bị trùng! Vui lòng tạo mới");
             }
-            bus_nh.ThemDonNhap(txtSoHD.Text, dt.Rows[0]["MaNV"].ToString().Trim(), null, dtpThoiGian.Value.ToString(), 0);
+            bus_nh.ThemDonNhap(txtSoHD.Text.Trim(), null, dt.Rows[0]["MaNV"].ToString(), dtpThoiGian.Value.ToString(), 0);
             Lammoi();
         }
 
@@ -254,23 +254,23 @@ namespace WindowsFormsApp1
             int i, j;
             for (i = 0; i < dgvHoaDonNhap.Columns.Count; i++)
             {
-                exApp.Cells[9, 1] = "STT";
-                exApp.Cells[9, i + 2] = dgvHoaDonNhap.Columns[i].HeaderText;
+                exApp.Cells[10, 1] = "STT";
+                exApp.Cells[10, i + 2] = dgvHoaDonNhap.Columns[i].HeaderText;
             }
             for (i = 0; i < dgvHoaDonNhap.Rows.Count - 1; i++)
             {
                 for (j = 0; j < dgvHoaDonNhap.Columns.Count ; j++)
                 {
-                    exApp.Cells[i + 10, 1] = i + 1;
-                    exApp.Cells[i + 10, j + 2] = dgvHoaDonNhap.Rows[i].Cells[j].Value;
+                    exApp.Cells[i + 11, 1] = i + 1;
+                    exApp.Cells[i + 11, j + 2] = dgvHoaDonNhap.Rows[i].Cells[j].Value;
                 }
             }
             tenTruong.Range["A9:F9"].Font.Bold = true;
             DataTable dt2 = bus_hdn.HienThiThanhTien(txtSoHD.Text.ToString());
-            tenTruong = exSheet.Cells[5][i + 12];
+            tenTruong = exSheet.Cells[5][i + 13];
             tenTruong.Font.Bold = true;
-            tenTruong.Value2 = "Tổng tiền";
-            tenTruong = exSheet.Cells[6][i + 12];
+            tenTruong.Value2 = "Tổng tiền :";
+            tenTruong = exSheet.Cells[6][i + 13];
             tenTruong.Font.Bold = true;
             tenTruong.Value2 = dt2.Rows[0][0].ToString();
             //set save file 
