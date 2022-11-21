@@ -121,7 +121,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(248, 27);
-            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.Text = "123";
             // 
             // label2
@@ -143,7 +143,7 @@
             this.chkbHienThiMK.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.chkbHienThiMK.Name = "chkbHienThiMK";
             this.chkbHienThiMK.Size = new System.Drawing.Size(144, 22);
-            this.chkbHienThiMK.TabIndex = 12;
+            this.chkbHienThiMK.TabIndex = 3;
             this.chkbHienThiMK.Text = "Hiển thị mật khẩu";
             this.chkbHienThiMK.UseVisualStyleBackColor = true;
             this.chkbHienThiMK.CheckedChanged += new System.EventHandler(this.chkbHienThiMK_CheckedChanged);
@@ -156,7 +156,7 @@
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(154, 48);
-            this.btnDangNhap.TabIndex = 13;
+            this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -169,7 +169,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(154, 48);
-            this.btnThoat.TabIndex = 14;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);

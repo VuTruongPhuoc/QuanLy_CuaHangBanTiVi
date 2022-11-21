@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
             else if (numUDSoLuong.Value == 0) { MessageBox.Show("Vui lòng nhập Số Lượng SP !", "Thông báo"); numUDSoLuong.Focus(); return; }
             else if (txtDonGiaNhap.TextLength == 0) { MessageBox.Show("Vui Lòng Nhập Đơn Giá Nhập của SP", "Thông báo"); txtDonGiaNhap.Focus(); return; }
             else if (txtDonGiaBan.TextLength == 0) { MessageBox.Show("Vui lòng nhập Đơn Giá Bán của SP"); txtDonGiaBan.Focus(); return; }
-
+            
             try
             {
                 a = double.Parse(txtDonGiaNhap.Text.Trim());
@@ -100,11 +100,11 @@ namespace WindowsFormsApp1
             }
             if (bussp.KiemTraTrungMaSP(txtMaSP.Text))
             {
-                MessageBox.Show("Mã Sản Phẩm đã có, vui lòng nhập lại !!");
+                MessageBox.Show("Mã Sản Phẩm đã có, vui lòng nhập lại !");
                 txtMaSP.Focus();
                 return;
             }
-            if (a >= b) MessageBox.Show("Đơn Giá Bán phải lón hơn Đơn Giá Nhập , vui lòng nhập lại !!!", "Thông báo");
+            if (a >= b) { MessageBox.Show("Đơn Giá Bán phải lón hơn Đơn Giá Nhập , vui lòng nhập lại !", "Thông báo"); return; };
             try
             {
                 dtosp.MaSP1 = txtMaSP.Text.Trim();
@@ -131,6 +131,19 @@ namespace WindowsFormsApp1
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            double a;
+            double b;
+            try
+            {
+                a = double.Parse(txtDonGiaNhap.Text.Trim());
+                b = double.Parse(txtDonGiaBan.Text.Trim());
+            }
+            catch
+            {
+                MessageBox.Show("Dữ Liệu Đơn Giá Nhập và Đơn Giá Bán phải là số", "Thông báo");
+                return;
+            }
+            if (a >= b) { MessageBox.Show("Đơn Giá Bán phải lón hơn Đơn Giá Nhập , vui lòng nhập lại !", "Thông báo"); return; };
             try
             {
                 dtosp.MaSP1 = txtMaSP.Text.Trim();
@@ -149,7 +162,10 @@ namespace WindowsFormsApp1
                 dgvSanPham.DataSource = bussp.HienThiSanPham();
                 LamMoi();
             }
-            catch { }
+            catch
+            {
+                MessageBox.Show("Lỗi");
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

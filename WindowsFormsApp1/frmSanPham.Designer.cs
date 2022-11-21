@@ -81,14 +81,14 @@
             this.txtDonGiaNhap.Location = new System.Drawing.Point(245, 206);
             this.txtDonGiaNhap.Name = "txtDonGiaNhap";
             this.txtDonGiaNhap.Size = new System.Drawing.Size(169, 31);
-            this.txtDonGiaNhap.TabIndex = 25;
+            this.txtDonGiaNhap.TabIndex = 7;
             // 
             // numUDSoLuong
             // 
             this.numUDSoLuong.Location = new System.Drawing.Point(24, 206);
             this.numUDSoLuong.Name = "numUDSoLuong";
             this.numUDSoLuong.Size = new System.Drawing.Size(169, 31);
-            this.numUDSoLuong.TabIndex = 24;
+            this.numUDSoLuong.TabIndex = 6;
             // 
             // cboManHinh
             // 
@@ -96,7 +96,7 @@
             this.cboManHinh.Location = new System.Drawing.Point(465, 142);
             this.cboManHinh.Name = "cboManHinh";
             this.cboManHinh.Size = new System.Drawing.Size(169, 33);
-            this.cboManHinh.TabIndex = 20;
+            this.cboManHinh.TabIndex = 5;
             // 
             // cboKichThuoc
             // 
@@ -104,12 +104,12 @@
             this.cboKichThuoc.Location = new System.Drawing.Point(245, 142);
             this.cboKichThuoc.Name = "cboKichThuoc";
             this.cboKichThuoc.Size = new System.Drawing.Size(169, 33);
-            this.cboKichThuoc.TabIndex = 19;
+            this.cboKichThuoc.TabIndex = 4;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label9.Location = new System.Drawing.Point(25, 259);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(83, 25);
@@ -119,7 +119,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label8.Location = new System.Drawing.Point(460, 114);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 25);
@@ -129,7 +129,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label7.Location = new System.Drawing.Point(240, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(107, 25);
@@ -139,7 +139,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label5.Location = new System.Drawing.Point(460, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 25);
@@ -149,7 +149,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label4.Location = new System.Drawing.Point(240, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 25);
@@ -159,7 +159,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label3.Location = new System.Drawing.Point(25, 178);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 25);
@@ -172,12 +172,12 @@
             this.cboThuongHieuSX.Location = new System.Drawing.Point(24, 142);
             this.cboThuongHieuSX.Name = "cboThuongHieuSX";
             this.cboThuongHieuSX.Size = new System.Drawing.Size(169, 33);
-            this.cboThuongHieuSX.TabIndex = 18;
+            this.cboThuongHieuSX.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label6.Location = new System.Drawing.Point(25, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(150, 25);
@@ -189,12 +189,12 @@
             this.txtTenSP.Location = new System.Drawing.Point(245, 80);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(389, 31);
-            this.txtTenSP.TabIndex = 3;
+            this.txtTenSP.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(240, 52);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 25);
@@ -212,7 +212,7 @@
             // lbMaSP
             // 
             this.lbMaSP.AutoSize = true;
-            this.lbMaSP.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbMaSP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.lbMaSP.Location = new System.Drawing.Point(25, 52);
             this.lbMaSP.Name = "lbMaSP";
             this.lbMaSP.Size = new System.Drawing.Size(71, 25);
@@ -235,24 +235,24 @@
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(284, 30);
-            this.txtTimKiem.TabIndex = 31;
+            this.txtTimKiem.TabIndex = 14;
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label10.Location = new System.Drawing.Point(481, 20);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label10.Location = new System.Drawing.Point(502, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(292, 38);
+            this.label10.Size = new System.Drawing.Size(308, 38);
             this.label10.TabIndex = 32;
             this.label10.Text = "Quản Lí Sản Phẩm";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // guna2GroupBox1
             // 
-            this.guna2GroupBox1.BorderColor = System.Drawing.Color.Magenta;
+            this.guna2GroupBox1.BorderColor = System.Drawing.Color.LightSteelBlue;
             this.guna2GroupBox1.Controls.Add(this.txtGhiChu);
             this.guna2GroupBox1.Controls.Add(this.txtDonGiaBan);
             this.guna2GroupBox1.Controls.Add(this.label9);
@@ -271,8 +271,8 @@
             this.guna2GroupBox1.Controls.Add(this.cboThuongHieuSX);
             this.guna2GroupBox1.Controls.Add(this.label6);
             this.guna2GroupBox1.Controls.Add(this.label3);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.Bisque;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(44, 82);
@@ -287,14 +287,14 @@
             this.txtGhiChu.Location = new System.Drawing.Point(245, 259);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Size = new System.Drawing.Size(389, 31);
-            this.txtGhiChu.TabIndex = 27;
+            this.txtGhiChu.TabIndex = 9;
             // 
             // txtDonGiaBan
             // 
             this.txtDonGiaBan.Location = new System.Drawing.Point(465, 206);
             this.txtDonGiaBan.Name = "txtDonGiaBan";
             this.txtDonGiaBan.Size = new System.Drawing.Size(169, 31);
-            this.txtDonGiaBan.TabIndex = 26;
+            this.txtDonGiaBan.TabIndex = 8;
             // 
             // btnChonAnh
             // 
@@ -302,29 +302,30 @@
             this.btnChonAnh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnChonAnh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnChonAnh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChonAnh.FillColor = System.Drawing.Color.Magenta;
+            this.btnChonAnh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnChonAnh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChonAnh.ForeColor = System.Drawing.Color.Black;
-            this.btnChonAnh.Location = new System.Drawing.Point(864, 260);
+            this.btnChonAnh.Location = new System.Drawing.Point(814, 250);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(180, 45);
-            this.btnChonAnh.TabIndex = 40;
+            this.btnChonAnh.TabIndex = 10;
             this.btnChonAnh.Text = "Chọn Ảnh";
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.Color.Black;
             this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.FillColor = System.Drawing.Color.Magenta;
+            this.btnThem.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.Black;
             this.btnThem.Location = new System.Drawing.Point(1088, 82);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(180, 45);
-            this.btnThem.TabIndex = 41;
+            this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -335,13 +336,13 @@
             this.btnSua.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnSua.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSua.FillColor = System.Drawing.Color.Magenta;
+            this.btnSua.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.Black;
             this.btnSua.Location = new System.Drawing.Point(1088, 162);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(180, 45);
-            this.btnSua.TabIndex = 42;
+            this.btnSua.TabIndex = 12;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -352,13 +353,13 @@
             this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.FillColor = System.Drawing.Color.Magenta;
+            this.btnXoa.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoa.ForeColor = System.Drawing.Color.Black;
             this.btnXoa.Location = new System.Drawing.Point(1088, 250);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(180, 45);
-            this.btnXoa.TabIndex = 43;
+            this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -368,7 +369,7 @@
             this.btnLamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLamMoi.FillColor = System.Drawing.Color.Magenta;
+            this.btnLamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLamMoi.ForeColor = System.Drawing.Color.Black;
             this.btnLamMoi.Location = new System.Drawing.Point(1088, 333);
@@ -527,7 +528,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1318, 712);
             this.Controls.Add(this.picAnh);
             this.Controls.Add(this.dgvSanPham);

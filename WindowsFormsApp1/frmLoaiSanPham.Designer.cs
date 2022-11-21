@@ -53,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label1.Location = new System.Drawing.Point(521, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(386, 38);
@@ -129,10 +129,14 @@
             // 
             // ChartMatHang
             // 
+            this.ChartMatHang.BackColor = System.Drawing.Color.Bisque;
+            this.ChartMatHang.BackSecondaryColor = System.Drawing.Color.Black;
+            chartArea1.AxisX.InterlacedColor = System.Drawing.Color.White;
             chartArea1.Name = "ChartArea1";
             this.ChartMatHang.ChartAreas.Add(chartArea1);
             this.ChartMatHang.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.ItemColumnSeparatorColor = System.Drawing.Color.Transparent;
             legend1.Name = "Legend1";
             this.ChartMatHang.Legends.Add(legend1);
             this.ChartMatHang.Location = new System.Drawing.Point(4, 4);
@@ -159,6 +163,8 @@
             // 
             // ChartDoanhThu
             // 
+            this.ChartDoanhThu.BackColor = System.Drawing.Color.Bisque;
+            this.ChartDoanhThu.BorderlineColor = System.Drawing.Color.Bisque;
             chartArea2.Name = "ChartArea1";
             this.ChartDoanhThu.ChartAreas.Add(chartArea2);
             this.ChartDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -185,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1358, 690);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label3);

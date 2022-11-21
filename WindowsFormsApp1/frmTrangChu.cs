@@ -19,10 +19,23 @@ namespace WindowsFormsApp1
 
         private void frmTrangChu_Load(object sender, EventArgs e)
         {
+            if (!CheckExitsForm("frmGioiThieu"))
+            {
+                frmGioiThieu frmGioiThieu = new frmGioiThieu();
+                frmGioiThieu.MdiParent = this;
+                frmGioiThieu.Dock = DockStyle.Fill;
+                frmGioiThieu.Show();
+            }
+            else
+            {
+                ActiveChildForm("frmGioiThieu");
+            }
             if (!frmDangNhap.isAdmin)
             {
                 nhânViênToolStripMenuItem.Enabled = false;
-                thốngKêToolStripMenuItem.Enabled = false;
+                doanhThuToolStripMenuItem.Enabled = false;
+                tăngTrưởngToolStripMenuItem.Enabled = false;
+                loạiSảnPhẩmToolStripMenuItem.Enabled = false;
             }
         }
         private bool CheckExitsForm(string name)
@@ -62,7 +75,6 @@ namespace WindowsFormsApp1
             {
                 ActiveChildForm("frmTaiKhoan");
             }
-
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)

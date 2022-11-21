@@ -56,10 +56,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.BackColor = System.Drawing.Color.Bisque;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(21, 53);
+            this.label5.Location = new System.Drawing.Point(21, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(141, 25);
             this.label5.TabIndex = 0;
@@ -78,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label4.BackColor = System.Drawing.Color.Bisque;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(21, 302);
             this.label4.Name = "label4";
@@ -93,12 +93,12 @@
             this.txtTenDangNhap.Multiline = true;
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(241, 32);
-            this.txtTenDangNhap.TabIndex = 1;
+            this.txtTenDangNhap.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label3.BackColor = System.Drawing.Color.Bisque;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(21, 237);
             this.label3.Name = "label3";
@@ -113,14 +113,14 @@
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(241, 32);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label2.BackColor = System.Drawing.Color.Bisque;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(21, 170);
+            this.label2.Location = new System.Drawing.Point(21, 182);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 25);
             this.label2.TabIndex = 0;
@@ -133,14 +133,14 @@
             this.txtSDT.Multiline = true;
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(241, 32);
-            this.txtSDT.TabIndex = 1;
+            this.txtSDT.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.BackColor = System.Drawing.Color.Bisque;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 113);
+            this.label1.Location = new System.Drawing.Point(21, 120);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 25);
             this.label1.TabIndex = 0;
@@ -153,12 +153,12 @@
             this.txtTenNV.Multiline = true;
             this.txtTenNV.Name = "txtTenNV";
             this.txtTenNV.Size = new System.Drawing.Size(241, 32);
-            this.txtTenNV.TabIndex = 1;
+            this.txtTenNV.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(14, 216);
             this.label6.Name = "label6";
@@ -173,12 +173,12 @@
             this.txtNhapLai.Multiline = true;
             this.txtNhapLai.Name = "txtNhapLai";
             this.txtNhapLai.Size = new System.Drawing.Size(241, 32);
-            this.txtNhapLai.TabIndex = 1;
+            this.txtNhapLai.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 142);
             this.label7.Name = "label7";
@@ -193,12 +193,12 @@
             this.txtMatKhauMoi.Multiline = true;
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
             this.txtMatKhauMoi.Size = new System.Drawing.Size(241, 32);
-            this.txtMatKhauMoi.TabIndex = 1;
+            this.txtMatKhauMoi.TabIndex = 9;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(12, 67);
             this.label8.Name = "label8";
@@ -213,21 +213,22 @@
             this.txtMatKhauCu.Multiline = true;
             this.txtMatKhauCu.Name = "txtMatKhauCu";
             this.txtMatKhauCu.Size = new System.Drawing.Size(241, 32);
-            this.txtMatKhauCu.TabIndex = 1;
+            this.txtMatKhauCu.TabIndex = 8;
             // 
             // btnCapNhat
             // 
+            this.btnCapNhat.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnCapNhat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCapNhat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCapNhat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCapNhat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnCapNhat.FillColor = System.Drawing.Color.Magenta;
+            this.btnCapNhat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnCapNhat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCapNhat.ForeColor = System.Drawing.Color.White;
+            this.btnCapNhat.ForeColor = System.Drawing.Color.Black;
             this.btnCapNhat.Location = new System.Drawing.Point(59, 371);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(160, 41);
-            this.btnCapNhat.TabIndex = 5;
+            this.btnCapNhat.TabIndex = 6;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
@@ -237,13 +238,13 @@
             this.btnLamMoi.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLamMoi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLamMoi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLamMoi.FillColor = System.Drawing.Color.Magenta;
+            this.btnLamMoi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnLamMoi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLamMoi.ForeColor = System.Drawing.Color.White;
+            this.btnLamMoi.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLamMoi.Location = new System.Drawing.Point(311, 371);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(160, 41);
-            this.btnLamMoi.TabIndex = 6;
+            this.btnLamMoi.TabIndex = 7;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
@@ -253,18 +254,19 @@
             this.btnDoiMatKhau.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnDoiMatKhau.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDoiMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDoiMatKhau.FillColor = System.Drawing.Color.Magenta;
+            this.btnDoiMatKhau.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnDoiMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnDoiMatKhau.ForeColor = System.Drawing.Color.White;
+            this.btnDoiMatKhau.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDoiMatKhau.Location = new System.Drawing.Point(152, 295);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
             this.btnDoiMatKhau.Size = new System.Drawing.Size(184, 45);
-            this.btnDoiMatKhau.TabIndex = 3;
+            this.btnDoiMatKhau.TabIndex = 11;
             this.btnDoiMatKhau.Text = "Đổi Mật Khẩu";
             this.btnDoiMatKhau.Click += new System.EventHandler(this.btnDoiMatKhau_Click);
             // 
             // guna2GroupBox1
             // 
+            this.guna2GroupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.guna2GroupBox1.Controls.Add(this.btnLamMoi);
             this.guna2GroupBox1.Controls.Add(this.txtTenDangNhap);
             this.guna2GroupBox1.Controls.Add(this.label4);
@@ -277,7 +279,8 @@
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.Controls.Add(this.txtMaNV);
             this.guna2GroupBox1.Controls.Add(this.label5);
-            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.Magenta;
+            this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.Bisque;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.guna2GroupBox1.Location = new System.Drawing.Point(111, 62);
@@ -296,7 +299,8 @@
             this.guna2GroupBox2.Controls.Add(this.label7);
             this.guna2GroupBox2.Controls.Add(this.txtMatKhauCu);
             this.guna2GroupBox2.Controls.Add(this.label8);
-            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.Magenta;
+            this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.Bisque;
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(719, 62);
@@ -310,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.Bisque;
             this.ClientSize = new System.Drawing.Size(1284, 654);
             this.Controls.Add(this.guna2GroupBox2);
             this.Controls.Add(this.guna2GroupBox1);

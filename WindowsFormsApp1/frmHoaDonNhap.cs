@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
         BUS.BUS_HoaDonNhap bus_hdn = new BUS_HoaDonNhap();
         BUS_SanPham bus_sp = new BUS_SanPham();
         BUS_DonNhap bus_nh = new BUS_DonNhap();
+        BUS_CTHDN bus_ctn = new BUS_CTHDN();
         DTO_HoaDonNhap dto_hdn = new DTO_HoaDonNhap();
         DTO_DonNhap dto_nh = new DTO_DonNhap();
         Resources.CommonFunction comm = new Resources.CommonFunction();
@@ -214,6 +215,15 @@ namespace WindowsFormsApp1
             numSoLuong.Value = 0;
             txtKhuyenMai.Text = "0";
             txtThanhTien.Text = "";
+        }
+        private void btnHuyDonNhap_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa hóa đơn này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bus_ctn.XoaHDN(txtSoHD.Text);
+                MessageBox.Show("Bạn đã hủy đơn hàng thành công");
+                this.Close();
+            }
         }
         private void ExportExcel(string path)
         {

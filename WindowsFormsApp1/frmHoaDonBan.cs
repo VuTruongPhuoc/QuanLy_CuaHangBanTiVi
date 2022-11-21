@@ -24,8 +24,9 @@ namespace WindowsFormsApp1
         Resources.CommonFunction comm = new Resources.CommonFunction();
         BUS_KhachHang bus_kh = new BUS_KhachHang();
         BUS_SanPham bus_sp = new BUS_SanPham();
-        DTO_HoaDonBan dto_hd = new DTO_HoaDonBan();
         BUS_DonHang bus_dh = new BUS_DonHang();
+        BUS_CTHD bus_ct = new BUS_CTHD();
+        DTO_HoaDonBan dto_hd = new DTO_HoaDonBan();
         DTO_DonHang dto_dh = new DTO_DonHang();
         public frmHoaDonBan()
         {
@@ -218,6 +219,15 @@ namespace WindowsFormsApp1
             txtKhuyenMai.Text = "0";
             txtThanhTien.Text = "";
         }
+        private void btnHuyDonHang_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn hủy hóa đơn này không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                bus_ct.XoaHD(txtSoHDB.Text);
+                MessageBox.Show("Bạn đã hủy hóa đơn thành công");
+                this.Close();
+            }
+        }
         private void ExportExcel(string path)
         {
             Excel.Application exApp = new Excel.Application();
@@ -283,6 +293,6 @@ namespace WindowsFormsApp1
             exApp.Columns.ColumnWidth = 15;
             exApp.ActiveWorkbook.SaveCopyAs(path);
             exApp.ActiveWorkbook.Saved = true;
-        }   
+        }
     }
 }
