@@ -33,7 +33,7 @@ namespace BUS
         }
         public void XoaKhachHang(String MaKh)
         {
-            string sql = "delete tKhachHang where MaKh = '" + MaKh + "'";
+            string sql = "delete from tKhachHang where MaKh = '" + MaKh + "'";
             da.DataChange(sql);
         }
         public bool KiemTraTrungMaKH(string MaKH)

@@ -18,9 +18,9 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public void ThemDonHang(string sohdb, string manv, string makh, string ngayban, double trigia)
+        public void ThemDonHang(string sohdb, string manv,string makh, string ngayban, double trigia)
         {
-            string sql = "insert tHoaDonBan values(N'" + sohdb + "', N'" + manv + "','" + makh + "','" + ngayban + "', '" + trigia + "')";
+            string sql = "insert tHoaDonBan values(N'" + sohdb + "', N'" + manv + "',null,'" + ngayban + "', '" + trigia + "')";
             da.DataChange(sql);
         }
         public void SuaDonHang(string sohdb, string manv, string makh, double trigia)
@@ -36,16 +36,13 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public DataView TimKiemDonHang(string tk)
+        public DataTable TimKiemDonHang(string tk)
         {
-            DataView dv = new DataView();
             DataTable dt = new DataTable();
 
-            dt = HienThiDonHang();
-            dv = dt.DefaultView;
-            dv.RowFilter = "SoHDB like '%" + tk + "%' or MaKH like '%" + tk + "%'";
-            
-            return dv;
+            string sql = "select * from tHoaDonBan where SoHDB like '%" + tk + "%' or MaKH like '%" + tk + "%' or CONVERT(nvarchar,NgayLap,101) like '%" + tk + "%'";
+            dt = da.DataReader(sql);
+            return dt;
         }
     }
 }

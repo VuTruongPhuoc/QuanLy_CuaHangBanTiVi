@@ -1,0 +1,11 @@
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\BUS.dll
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\BUS.pdb
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\DAO.dll
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\DTO.dll
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\DAO.pdb
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\bin\Debug\DTO.pdb
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\obj\Debug\BUS.csproj.AssemblyReference.cache
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\obj\Debug\BUS.dll
+C:\Users\24h\Downloads\QuanLy_CuaHangBanTiVi2-master\QuanLy_CuaHangBanTiVi-master\BUS\obj\Debug\BUS.pdb

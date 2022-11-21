@@ -21,7 +21,7 @@ namespace BUS
         }
         public void ThemDonNhap(string sohdn, string mancc, string manv, string ngaynhap, double trigia)
         {
-            string sql = "insert tHoaDonNhap values(N'" + sohdn + "', N'" + mancc + "','" + manv + "','" + ngaynhap + "', '" + trigia + "')";
+            string sql = "insert tHoaDonNhap values(N'" + sohdn + "',null,N'" + manv + "','" + ngaynhap + "', '" + trigia + "')";
             da.DataChange(sql);
         }
         public void SuaDonNhap(string sohdb, string mancc, string manv, double trigia)
@@ -37,14 +37,13 @@ namespace BUS
             dt = da.DataReader(sql);
             return dt;
         }
-        public DataView TimKiemDonNhap(string tk)
+        public DataTable TimKiemDonNhap(string tk)
         {
-            DataView dv = new DataView();
-            DataTable dt = new DataTable();          
-            dt = HienThiDonNhap();
-            dv = dt.DefaultView;
-            dv.RowFilter = "SoHDN like '%" + tk + "%', MaNCC like '%" + tk + "%'";
-            return dv;
+            DataTable dt = new DataTable();
+
+            string sql = "select * from tHoaDonNhap where SoHDN like '%" + tk + "%' or MaNCC like '%" + tk + "%' CONVERT(nvarchar,NgayNhap,101) like '%" + tk + "%'";
+            dt = da.DataReader(sql);
+            return dt;
         }
     }
 }
